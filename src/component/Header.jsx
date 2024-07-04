@@ -1,10 +1,13 @@
 import React from 'react'
+import "./header.scss"
 
 const Header = () => {
-  return (
-    <>
-     <h1>Header</h1> 
-    </>
+  return ( 
+    // Header Component start
+    
+    <div className='container header'>
+        <h1>Hello</h1>
+    </div>
   )
 }
 

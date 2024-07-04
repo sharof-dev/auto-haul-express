@@ -6,7 +6,6 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
