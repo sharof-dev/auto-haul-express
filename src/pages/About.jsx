@@ -1,17 +1,29 @@
 import React from "react";
-import { Stack, Typography } from "@mui/material";
-import "../pages/about.scss";
+import { Box, Stack, Typography, styled } from "@mui/material";
+import "./about.scss";
 
 const About = () => {
   return (
-    <Stack>
-      <Typography>About Us</Typography>
-      <Typography>
-        From preschool to pre-tertiary, our students enjoy fun, interactive
-        and relevant lessons and are empowered to think beyond the confines of
-        the classroom.
-      </Typography>
-    </Stack>
+    <Box>
+      <Box
+        sx={{
+          backgroundImage: 'url(./public/assets/about_bg.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          height: '100vh',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Typography>About Us</Typography>
+        <Typography>
+          From preschool to pre-tertiary, our students enjoy fun, interactive
+          and relevant lessons and are empowered to think beyond the confines of
+          the classroom.
+        </Typography>
+      </Box>
+    </Box>
   );
 };
 
