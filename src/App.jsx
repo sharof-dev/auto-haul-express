@@ -1,10 +1,11 @@
 import { Routes, Route } from "react-router-dom"
 import { Header, Navbar, Footer} from "./component/"
 import {Home, About, Blog, Contact, Services} from "./pages/"
+import { Container } from "@mui/material"
 
 const App = () => {
   return (
-    <div>
+    <Container>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -14,7 +15,7 @@ const App = () => {
         <Route path="/services" element={<Services />} />
       </Routes>
       <Footer />
-    </div>
+    </Container>
   )
 }
 
