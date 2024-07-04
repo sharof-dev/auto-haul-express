@@ -1,6 +1,7 @@
-import { Routes, Route } from "react-router-dom"
-import { Header, Navbar, Footer} from "./component/"
-import {Home, About, Blog, Contact, Services} from "./pages/"
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Header, Navbar, Footer } from "./component/";
+import { Home, About, Blog, Contact, Services } from "./pages/";
+import { Box } from "@mui/material/";
 
 const App = () => {
   return (
@@ -15,7 +16,7 @@ const App = () => {
       </Routes>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

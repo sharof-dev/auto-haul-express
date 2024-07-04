@@ -1,14 +1,13 @@
 import React from 'react'
 import "./header.scss"
+import { Box } from "@mui/material";
 
 const Header = () => {
-  return ( 
-    // Header Component start
-    
-    <div className='container header'>
-        <h1>Hello</h1>
-    </div>
-  )
-}
+  return (
+    <Box className="container header">
+      <h1>Header</h1>
+    </Box>
+  );
+};
 
 export default Header
