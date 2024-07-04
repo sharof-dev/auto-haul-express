@@ -1,13 +1,14 @@
 import React from 'react'
 import "./header.scss"
+import { Stack, Typography } from '@mui/material'
 
 const Header = () => {
   return ( 
     // Header Component start
     
-    <div className='container header'>
-        <h1>Hello</h1>
-    </div>
+    <Stack>
+        <Typography>Hello</Typography>
+    </Stack>
   )
 }
 

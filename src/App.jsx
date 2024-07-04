@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom"
-import { Header, Navbar, Footer} from "./component/"
+import { Header, Footer} from "./component/"
 import {Home, About, Blog, Contact, Services} from "./pages/"
 import { Container } from "@mui/material"
 
