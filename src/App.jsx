@@ -1,11 +1,11 @@
-import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { Header, Navbar, Footer } from "./component/";
+import { Routes, Route } from "react-router-dom";
+import { Header, Footer } from "./component/";
 import { Home, About, Blog, Contact, Services } from "./pages/";
-import { Box } from "@mui/material/";
+import { Container } from "@mui/material";
 
 const App = () => {
   return (
-    <div>
+    <Container>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -15,7 +15,7 @@ const App = () => {
         <Route path="/services" element={<Services />} />
       </Routes>
       <Footer />
-    </div>
+    </Container>
   );
 };
 
