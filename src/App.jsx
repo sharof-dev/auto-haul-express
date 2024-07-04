@@ -1,0 +1,21 @@
+import { Routes, Route } from "react-router-dom"
+import {Navbar, Footer} from "./component/"
+import {Home, About, Blog, Contact, Services} from "./pages/"
+
+const App = () => {
+  return (
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Services />} />
+      </Routes>
+      <Footer />
+    </div>
+  )
+}
+
+export default App
