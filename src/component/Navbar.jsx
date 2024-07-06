@@ -14,27 +14,6 @@ const MyButton = styled(Button)({
   borderRadius: "50%",
 });
 
-const MyBox = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'flex-end',
-  flex: 'wrap',
-  gap: '1rem',
-  height: '100%',
-  width: '100%',
-  [theme.breakpoints.down('sm')]: {
-    display: 'none',
-  },
-}));
-
-const MobileBox = styled(Box)(({ theme }) => ({
-  display: 'none',
-  [theme.breakpoints.down('sm')]: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    width: '100%',
-  },
-}));
-
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const theme = useTheme();
@@ -50,12 +29,20 @@ const Navbar = () => {
 
   const drawer = (
     <Box
-      sx={{ width: '50%', height: '50%', display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', }}
+      sx={{ 
+        width: '50%',
+        height: '50%',
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+        mt: 2
+       }}
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
     >
-      
+
       <List>
         {['Home', 'About', 'Services', 'Contact'].map((text) => (
           <ListItem component={Link} to={text.toLowerCase() === 'home' ? '/' : `/${text.toLowerCase()}`} key={text}>
@@ -86,8 +73,8 @@ const Navbar = () => {
           boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
         }}>
         <Toolbar>
-         <Box
-            sx={{ display: { xs: 'none', sm: 'none', md: 'flex' }, flexGrow: 1, justifyContent: 'space-between', flexDirection: {md: 'column', lg: 'row'} }}
+          <Box
+            sx={{ display: { xs: 'none', sm: 'none', md: 'flex' }, flexGrow: 1, justifyContent: 'space-between', flexDirection: { md: 'column', lg: 'row' } }}
           >
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               {['Home', 'About', 'Services', 'Contact'].map((text) => (
@@ -102,14 +89,14 @@ const Navbar = () => {
                 </Link>
               ))}
             </Box>
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: {md: 'column', lg: 'row'}, gap: 2 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: { md: 'column', lg: 'row' }, gap: 2 }}>
               <ButtonGroup variant='' color='inherit'>
                 <Button><InstagramIcon /></Button>
                 <Button><FacebookIcon /></Button>
                 <Button><XIcon /></Button>
                 <Button><LinkedInIcon /></Button>
               </ButtonGroup>
-                <Button variant='contained' color='warning'>Apply Now</Button>
+              <Button variant='contained' color='warning'>Apply Now</Button>
             </Box>
           </Box>
 
