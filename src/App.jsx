@@ -1,21 +1,25 @@
-import { Routes, Route } from "react-router-dom";
-import { Header, Footer } from "./component/";
+import { Routes, Route, useParams } from "react-router-dom";
+import { Header, Footer, Navbar } from "./component/";
 import { Home, About, Blog, Contact, Services } from "./pages/";
-import { Container } from "@mui/material";
+import { Box, Container, Stack } from "@mui/material";
+
 
 const App = () => {
   return (
-    <Container>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/services" element={<Services />} />
-      </Routes>
-      <Footer />
-    </Container>
+    <Box sx={{ width: '100%' }}>
+      <Stack direction={"column"}>
+        <Header />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Services />} />
+        </Routes>
+        <Footer />
+      </Stack>
+    </Box>
   );
 };
 

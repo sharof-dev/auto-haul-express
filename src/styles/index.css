@@ -1,9 +1,15 @@
-/* * {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.container {
-    width: 1440px;
-    height: 100vh;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+
+
+body {
+    height: 100%;
+    background: -webkit-linear-gradient(to top #38B6FF, to bottom,  #FFBD59);  
+    background: linear-gradient( #38B6FF,   #FFBD59); 
+    /* background: #FFBD59; */
+}
