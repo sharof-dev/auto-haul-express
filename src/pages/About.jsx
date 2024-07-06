@@ -14,7 +14,7 @@ const About = () => {
           backgroundImage: 'url(./public/assets/about_bg.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          height: isMobile ? 'auto' : '100vh',
+          height: '100vh',
           width: '100%',
           display: 'flex',
           justifyContent: 'center',

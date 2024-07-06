@@ -86,54 +86,7 @@ const Navbar = () => {
           boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
         }}>
         <Toolbar>
-          {/* {isMobile ? (
-            <>
-              <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                onClick={toggleDrawer(true)}
-              >
-                <MenuIcon />
-              </IconButton>
-              <MobileBox>
-                <ButtonGroup variant="" color="inherit" size="small">
-                  <Button><InstagramIcon /></Button>
-                  <Button><FacebookIcon /></Button>
-                  <Button><XIcon /></Button>
-                  <Button><LinkedInIcon /></Button>
-                </ButtonGroup>
-              </MobileBox>                                      
-            </>
-          ) : (
-            <>
-              <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
-                {['Home', 'About', 'Services', 'Contact'].map((text) => (
-                  <Link
-                    to={text.toLowerCase() === 'home' ? '/' : `/${text.toLowerCase()}`}
-                    style={{ textDecoration: 'none', color: 'inherit' }}
-                    key={text}
-                  >
-                    <MyButton>{text}</MyButton>
-                  </Link>
-                ))}
-              </Box>
-              <MyBox>
-                <ButtonGroup variant="" color="inherit" size="small">
-                  <Button><InstagramIcon /></Button>
-                  <Button><FacebookIcon /></Button>
-                  <Button><XIcon /></Button>
-                  <Button><LinkedInIcon /></Button>
-                </ButtonGroup>
-                <ButtonGroup variant="contained" color="primary" size="small">
-                  <Button>Apply Now</Button>
-                </ButtonGroup>
-              </MyBox>
-            </>
-          )} */}
-
-
-          <Box
+         <Box
             sx={{ display: { xs: 'none', sm: 'none', md: 'flex' }, flexGrow: 1, justifyContent: 'space-between', flexDirection: {md: 'column', lg: 'row'} }}
           >
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

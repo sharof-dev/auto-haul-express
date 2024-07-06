@@ -6,7 +6,7 @@ import { Box, Container, Stack } from "@mui/material";
 
 const App = () => {
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%', height: 100 }}>
       <Stack direction={"column"}>
         <Header />
         <Navbar />

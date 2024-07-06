@@ -97,7 +97,7 @@ const Header = () => {
                     <CustomToolbar>
                         <Logo style={{ order: isSmallScreen ? {md: 0 , lg: 1} : 0 }}>
                             <LogoImg src="./public/assets/logo-re.png" alt="Chartwell Logistics" />
-                            <Typography variant="h6" >
+                            <Typography variant="h6" color={"white"}>
                                 AUTO HAUL EXPRESS LLC 
                             </Typography>
                         </Logo>
