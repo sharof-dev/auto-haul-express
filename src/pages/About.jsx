@@ -1,5 +1,7 @@
 import React from "react";
+
 import { Box, Typography, Button, useTheme } from "@mui/material";
+
 import "./about.scss";
 
 const About = () => {
@@ -741,7 +743,6 @@ const About = () => {
                 fontSize: "24px",
                 fontWeight: 600,
                 color: "#000000",
-                marginTop: "20px",
                 [theme.breakpoints.down("md")]: {
                   fontSize: "18px",
                   marginTop: "15px",
@@ -761,7 +762,6 @@ const About = () => {
                 fontWeight: 400,
                 color: "#848383",
                 textAlign: "center",
-                marginTop: "20px",
                 [theme.breakpoints.down("md")]: {
                   fontSize: "14px",
                   marginTop: "15px",
@@ -855,5 +855,8 @@ const About = () => {
     </Box>
   );
 };
+
+
+
 
 export default About;

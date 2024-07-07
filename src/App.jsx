@@ -1,12 +1,14 @@
-import { Routes, Route } from "react-router-dom";
-import { Header, Footer } from "./component/";
+import { Routes, Route, useParams } from "react-router-dom";
+import { Header, Footer, Navbar } from "./component/";
 import { Home, About, Blog, Contact, Services } from "./pages/";
-import { Container } from "@mui/material";
+import { Box, Container, Stack } from "@mui/material";
+
 
 const App = () => {
   return (
-    <Container maxWidth={"xxl"}>
+    <Stack>
       <Header />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -15,7 +17,7 @@ const App = () => {
         <Route path="/services" element={<Services />} />
       </Routes>
       <Footer />
-    </Container>
+    </Stack>
   );
 };
 
