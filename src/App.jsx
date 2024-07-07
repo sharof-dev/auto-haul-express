@@ -5,7 +5,7 @@ import { Container } from "@mui/material";
 
 const App = () => {
   return (
-    <Container>
+    <Container maxWidth={"xxl"}>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
