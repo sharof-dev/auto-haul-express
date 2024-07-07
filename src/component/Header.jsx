@@ -96,9 +96,9 @@ const Header = () => {
                 <CustomAppBar position="static">
                     <CustomToolbar>
                         <Logo style={{ order: isSmallScreen ? {md: 0 , lg: 1} : 0 }}>
-                            <LogoImg src="./public/assets/logo-re.png" alt="Chartwell Logistics" />
+                            <LogoImg src="./public/assets/logo-re.png" alt="auto haul express" />
                             <Typography variant="h6" color={"white"}>
-                                AUTO HAUL EXPRESS LLC 
+                                AUTO HAUL EXPRESS LLC
                             </Typography>
                         </Logo>
                         <ContactInfo style={{ order: isSmallScreen ? 1 : 0, justifyContent: isSmallScreen ? 'left' : 'flex-start' }}>

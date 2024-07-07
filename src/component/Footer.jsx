@@ -1,115 +1,102 @@
 import React from 'react';
-import { Box, Container, Grid, Link, Typography, IconButton, TextField, Button, Toolbar } from '@mui/material';
-import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import FacebookIcon from '@mui/icons-material/Facebook';
+import { Box, Container, Grid, Typography, TextField, Button, IconButton } from '@mui/material';
+import { Email, Phone, LinkedIn, Twitter, Facebook } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <Box
+      component="footer"
       sx={{
-        backgroundColor: '#003366',
-        color: 'white',
-        py: 4,
-        mt: 5,
+        backgroundColor: '#00408B',
+        color: '#ffffff',
+        py: 6,
+        px: 2,
       }}
     >
-      <Toolbar>
+      <Container maxWidth="lg">
         <Grid container spacing={4}>
-          <Grid item xs={12} sm={4}>
-            <Box mb={2}>
+          <Grid item xs={12} sm={12} md={6} lg={4}>
+            <Typography variant="h6" gutterBottom>
+              <img src="./public/assets/logo-re.png" alt="Logo" width={100} height={80} />
               <Typography variant="h6" gutterBottom>
-                CHARTWELL LOGISTICS
+                AUTO HAUL EXPRESS LLC
               </Typography>
-              <Typography variant="body2" paragraph>
-                Leverage agile frameworks to provide a robust synopsis for strategy collaborative thinking to further the overall value proposition.
-              </Typography>
-            </Box>
-            <Box display="flex" alignItems="center" mb={1}>
-              <EmailIcon />
-              <Typography variant="body2" ml={1}>
-                contact@logistics.com
-              </Typography>
+            </Typography>
+            <Typography variant="body2" sx={{ mb: 2 }}>
+              Leverage agile frameworks to provide a robust synopsis for strategy collaborative thinking to further the overall value proposition.
+            </Typography>
+            <Box display="flex" alignItems="center" sx={{ mb: 1 }}>
+              <Email sx={{ mr: 1 }} />
+              <Typography variant="body2">contact@logistics.com</Typography>
             </Box>
             <Box display="flex" alignItems="center">
-              <PhoneIcon />
-              <Typography variant="body2" ml={1}>
-                (00) 112 365 489
-              </Typography>
+              <Phone sx={{ mr: 1 }} />
+              <Typography variant="body2">(00) 112 365 489</Typography>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={4}>
-            <Typography variant="h6" ml={2.5} gutterBottom>
+
+          <Grid item xs={12} sm={12} md={6} lg={4}>
+            <Typography variant="h6" gutterBottom ml={2.5}>
               Pages
             </Typography>
-            <Box>
-              <Link href="/about" color="inherit" underline="none" display="block" mb={1}>
-                <Button color='inherit'>
-                About Us
+            <Box display="flex" flexDirection="column">
+              <Link to={'/'} color="inherit" underline="none" sx={{ mb: 10 }} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button>
+                  Home
                 </Button>
               </Link>
-              <Link href="/team" color="inherit" underline="none" display="block" mb={1}>
-                <Button color='inherit'>
-                Our Team
+              <Link to={'/about'} color="inherit" underline="none" sx={{ mb: 1 }} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button>
+                  About
                 </Button>
               </Link>
-              <Link href="/jobs" color="inherit" underline="none" display="block" mb={1}>
-                <Button color='inherit'>
-                Jobs
+              <Link to={'/services'} color="inherit" underline="none" sx={{ mb: 1 }} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button>
+                  Services
                 </Button>
               </Link>
-              <Link href="/contact" color="inherit" underline="none" display="block" mb={1}>
-                <Button color='inherit'>
-                Contact
+              <Link to={'/contact'} color="inherit" underline="none" sx={{ mb: 1 }} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Button>
+                  Contact
                 </Button>
               </Link>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={4}>
+
+          <Grid item xs={12} sm={12} md={6} lg={4}>
             <Typography variant="h6" gutterBottom>
               Subscribe
             </Typography>
-            <Box display="flex" alignItems="center" mb={2}>
-              <TextField
-                label="Email here"
-                variant="outlined"
-                size="small"
-                sx={{
-                  backgroundColor: 'white',
-                  borderRadius: 1,
-                  mr: 1,
-                  '& .MuiOutlinedInput-root': {
-                    '& fieldset': {
-                      borderColor: 'white',
-                    },
-                  },
-                }}
-              />
-              <Button variant="contained" color="warning">
-                Send Now
-              </Button>
-            </Box>
-            <Box display="flex" alignItems="center" mt={2}>
-              <IconButton href="https://www.linkedin.com" target="_blank" color="inherit">
-                <LinkedInIcon />
+            <TextField
+              label="Email here*"
+              variant="outlined"
+              size="small"
+              fullWidth
+              sx={{ mb: 2, backgroundColor: '#ffffff', borderRadius: '4px' }}
+            />
+            <Button variant="contained" color="primary" fullWidth>
+              Send Now
+            </Button>
+            <Box display="flex" justifyContent={{ xs: 'center', sm: 'flex-start' }} mt={2}>
+              <IconButton color="inherit">
+                <LinkedIn />
               </IconButton>
-              <IconButton href="https://www.twitter.com" target="_blank" color="inherit">
-                <TwitterIcon />
+              <IconButton color="inherit">
+                <Twitter />
               </IconButton>
-              <IconButton href="https://www.facebook.com" target="_blank" color="inherit">
-                <FacebookIcon />
+              <IconButton color="inherit">
+                <Facebook />
               </IconButton>
             </Box>
           </Grid>
         </Grid>
-      </Toolbar>
-        <Box textAlign="center" mt={5} borderTop="1px solid grey" pt={2}>
+        <Box mt={4} textAlign="center">
           <Typography variant="body2">
-            &copy; {new Date().getFullYear()} AUTO HAUL EXPRESS LLC 
+            &copy;Chartwell Logistics Ltd | Designed by Goliath Marketing.
           </Typography>
         </Box>
+      </Container>
     </Box>
   );
 };
