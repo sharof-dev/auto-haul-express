@@ -42,22 +42,22 @@ const Footer = () => {
             </Typography>
             <Box display="flex" flexDirection="column">
               <Link to={'/'} color="inherit" underline="none" sx={{ mb: 10 }} style={{ textDecoration: 'none', color: 'inherit' }}>
-                <Button>
+                <Button color='inherit'>
                   Home
                 </Button>
               </Link>
               <Link to={'/about'} color="inherit" underline="none" sx={{ mb: 1 }} style={{ textDecoration: 'none', color: 'inherit' }}>
-                <Button>
+                <Button color='inherit'>
                   About
                 </Button>
               </Link>
               <Link to={'/services'} color="inherit" underline="none" sx={{ mb: 1 }} style={{ textDecoration: 'none', color: 'inherit' }}>
-                <Button>
+                <Button color='inherit'>
                   Services
                 </Button>
               </Link>
               <Link to={'/contact'} color="inherit" underline="none" sx={{ mb: 1 }} style={{ textDecoration: 'none', color: 'inherit' }}>
-                <Button>
+                <Button color='inherit'>
                   Contact
                 </Button>
               </Link>

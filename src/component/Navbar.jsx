@@ -36,7 +36,7 @@ const Navbar = () => {
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center',
-        mt: 2
+        mt: 5
        }}
       role="presentation"
       onClick={toggleDrawer(false)}
