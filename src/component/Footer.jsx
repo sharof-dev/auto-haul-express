@@ -18,7 +18,7 @@ const Footer = () => {
         <Grid container spacing={4}>
           <Grid item xs={12} sm={12} md={6} lg={4}>
             <Box>
-              <img src="./public/assets/logo_re.png" alt="Logo" width={100} height={80} />
+              <img src="/assets/logo_re.png" alt="Logo" width={100} height={80} />
             </Box>
               <Typography variant="h6" gutterBottom>
                 AUTO HAUL EXPRESS LLC
