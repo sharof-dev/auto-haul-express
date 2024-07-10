@@ -9,7 +9,7 @@ const Home = () => {
       <Box
         component='main'
         sx={{
-          backgroundImage: 'url(./public/assets/header-image.jpg)',
+          backgroundImage: 'url(./assets/header-image.jpg)',
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'revert-layer',
           justifyContent: 'center',
