@@ -11,7 +11,7 @@ const About = () => {
     <>
       <Box
         sx={{
-          backgroundImage: "url(./public/assets/header_image.jpg)",
+          backgroundImage: "url(/assets/about_bg.png)",
           backgroundSize: "100% 550px",
           height: "550px",
           display: "flex",
