@@ -14,14 +14,14 @@ const Footer = () => {
         px: 2,
       }}
     >
-      <Container maxWidth="lg">
+      <Box pl={1.5}>
         <Grid container spacing={4}>
           <Grid item xs={12} sm={12} md={6} lg={4}>
-            <Typography variant="h6" gutterBottom>
+            <Box>
               <img src="./public/assets/logo-re.png" alt="Logo" width={100} height={80} />
+            </Box>
               <Typography variant="h6" gutterBottom>
                 AUTO HAUL EXPRESS LLC
-              </Typography>
             </Typography>
             <Typography variant="body2" sx={{ mb: 2 }}>
               Leverage agile frameworks to provide a robust synopsis for strategy collaborative thinking to further the overall value proposition.
@@ -65,7 +65,7 @@ const Footer = () => {
           </Grid>
 
           <Grid item xs={12} sm={12} md={6} lg={4}>
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom sx={{textAlign: {sm: 'center', md: 'left'}}}>
               Subscribe
             </Typography>
             <TextField
@@ -75,7 +75,7 @@ const Footer = () => {
               fullWidth
               sx={{ mb: 2, backgroundColor: '#ffffff', borderRadius: '4px' }}
             />
-            <Button variant="contained" color="primary" fullWidth>
+            <Button variant="contained" color="warning" fullWidth>
               Send Now
             </Button>
             <Box display="flex" justifyContent={{ xs: 'center', sm: 'flex-start' }} mt={2}>
@@ -91,12 +91,12 @@ const Footer = () => {
             </Box>
           </Grid>
         </Grid>
-        <Box mt={4} textAlign="center">
+        <Box mt={4} textAlign="center" borderTop={'1px solid grey'} pt={2}>
           <Typography variant="body2">
             &copy;Chartwell Logistics Ltd | Designed by Goliath Marketing.
           </Typography>
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 };

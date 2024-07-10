@@ -6,7 +6,7 @@ const Blog = () => {
     <Container maxWidth="xxl" fixed>
       <Grid container spacing={2}>
         {/* Job Description Section */}
-        <Grid item xs={12} md={8} spacing={4}>
+        <Grid item sm={12} md={8} spacing={4}>
           <Paper elevation={3} style={{ padding: "20px" }}>
             <Typography variant="h4" gutterBottom>
               JOB DESCRIPTION:

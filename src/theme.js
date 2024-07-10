@@ -17,7 +17,7 @@ export const theme = createTheme({
         },
     },
     typography: {
-        fontFamily: 'Comfortaa, Arial, sans-serif',
+        fontFamily: 'Inter, sans-serif',
     },
     breakpoints: {
         values: {

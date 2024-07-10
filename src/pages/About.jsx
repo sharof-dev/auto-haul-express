@@ -8,7 +8,7 @@ const About = () => {
   const theme = useTheme();
 
   return (
-    <Box className="bigcontainer">
+    <>
       <Box
         sx={{
           backgroundImage: "url(./assets/about_bg.png)",
@@ -852,7 +852,7 @@ const About = () => {
           </Box>
         </Box>
       </Box>
-    </Box>
+    </>
   );
 };
 

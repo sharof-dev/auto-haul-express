@@ -44,7 +44,7 @@ const Navbar = () => {
     >
 
       <List>
-        {['Home', 'About', 'Services', 'Contact'].map((text) => (
+        {['Home', 'About', 'Services', 'Contact', 'Blog'].map((text) => (
           <ListItem component={Link} to={text.toLowerCase() === 'home' ? '/' : `/${text.toLowerCase()}`} key={text}>
             <ListItemText primary={text} />
           </ListItem>
@@ -77,7 +77,7 @@ const Navbar = () => {
             sx={{ display: { xs: 'none', sm: 'none', md: 'flex' }, flexGrow: 1, justifyContent: 'space-between', flexDirection: { md: 'column', lg: 'row' } }}
           >
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              {['Home', 'About', 'Services', 'Contact'].map((text) => (
+              {['Home', 'About', 'Services', 'Contact', 'Blog'].map((text) => (
                 <Link
                   to={text.toLowerCase() === 'home' ? '/' : `/${text.toLowerCase()}`}
                   style={{ textDecoration: 'none', color: 'inherit' }}
