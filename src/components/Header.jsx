@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Home', 'About', 'Services', 'Blog', 'Contact'];
+const pages = ['Home', 'Services', 'About', 'Blog', 'Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = () => {
@@ -36,22 +36,15 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="fixed"
-      sx={{
-        backgroundColor: 'rgba(0, 0, 0, .6)',
-        backdropFilter: 'blur(12px)',
-        border: '1px solid rgba(255, 255, 255, 0.18)',
-        boxShadow: 'rgba(0, 0, 0, 0.37) 0px 8px 32px 0px',
-        top: 0,
-        left: 0,
-        zIndex: 2,
-}}
-    >
+    <AppBar position="sticky" sx={{backgroundColor: '#fff', color: 'black'}}>
   <Container maxWidth='xl'>
     <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-      <Box sx={{ flexGrow: 1, display: 'flex' }}>
+      <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
         <Typography variant='h6'>
           <img src="/assets/logo_re.png" alt="logo" width={80} height={50} />
+        </Typography>
+        <Typography variant='body1' mt={-1}>
+         Auto haul express LLC
         </Typography>
       </Box>
 
@@ -88,16 +81,13 @@ const Header = () => {
           <Button
             key={page}
             onClick={handleCloseNavMenu}
-            sx={{ my: 2, color: 'white', display: 'block' }}
+            sx={{ my: 2, display: 'block' }}
           >
             {page}
           </Button>
         ))}
       </Box>
       <Box sx={{ flexGrow: 1, display: { sm: 'none', md: 'none', lg: 'flex' }, justifyContent: 'flex-end', gap: 2 }}>
-        <Button variant='outlined' color='inherit' size='small' >
-          +998999999999
-        </Button>
         <Button variant='contained' color='info' size='small'>
           Get a Quote
         </Button>

@@ -9,7 +9,7 @@ const FormContainer = styled(Box)(({ theme }) => ({
     borderRadius: theme.shape.borderRadius,
     boxShadow: theme.shadows[3],
     maxWidth: 500,
-    margin: 'auto',
+    margin: 'auto 0 auto auto',
     marginTop: theme.spacing(4),
     color: 'black'
 }));
