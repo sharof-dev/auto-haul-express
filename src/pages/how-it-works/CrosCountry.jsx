@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputCom = () => {
+const CrosCountry = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const InputCom = () => {
   )
 }
 
-export default InputCom
+export default CrosCountry
