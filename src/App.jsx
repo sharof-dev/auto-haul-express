@@ -1,10 +1,10 @@
 import { Routes, Route, useParams } from "react-router-dom";
 import { Header, Footer, Navbar } from "./components/";
 import {
-  Home, 
-  About,  
-  Contact, 
-  WhatWeDo, 
+  Home,
+  About,
+  Contact,
+  WhatWeDo,
   TermsOfUse,
   FAQs,
   Privacypolicy,
@@ -23,15 +23,18 @@ import {
   OnlinePurches,
   OpenAuotTransport,
   SnowBirds,
-  StudentAuto,  
+  StudentAuto,
 } from "./pages/";
 import { Box, Container, Stack } from "@mui/material";
-
+import CarShippingCost from "./pages/how-it-works/CarShippingCost";
+import CrosCountry from "./pages/how-it-works/CrosCountry";
+import HowDoesCarShipping from "./pages/how-it-works/HowDoesCarShipping";
 
 const App = () => {
   return (
     <>
       <Header />
+
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -47,7 +50,10 @@ const App = () => {
         <Route path="/car-collector" element={<CarCollector />} />
         <Route path="/classic-car" element={<ClassicCar />} />
         <Route path="/door-to-door" element={<DoorToDoor />} />
-        <Route path="/enclosed-auto-transport" element={<EnclosedAutoTransport />} />
+        <Route
+          path="/enclosed-auto-transport"
+          element={<EnclosedAutoTransport />}
+        />
         <Route path="/expedited-car" element={<ExpeditedCar />} />
         <Route path="/heavy-shipping" element={<HeavyShipping />} />
         <Route path="/innoperable-vehicles" element={<InoperableVehicles />} />
@@ -57,6 +63,17 @@ const App = () => {
         <Route path="/open-auto-transport" element={<OpenAuotTransport />} />
         <Route path="/snow-birds" element={<SnowBirds />} />
         <Route path="/student-auto" element={<StudentAuto />} />
+
+        {/* MY pages */}
+        <Route
+          path="/how-does-car-shipping-work/"
+          element={<CarShippingCost />}
+        />
+        <Route path="/car-shipping-costs/" element={<CrosCountry />} />
+        <Route
+          path="/cross-country-car-shipping/"
+          element={<HowDoesCarShipping />}
+        />
       </Routes>
       <Footer />
     </>

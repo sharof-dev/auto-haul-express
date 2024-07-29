@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const MilitaryCar = () => {
   return (
     <div>
       <h1>MilitaryCar</h1>
     </div>
-  )
-}
+  );
+};
 
-export default MilitaryCar
+export default MilitaryCar;
