@@ -25,7 +25,6 @@ import {
   SnowBirds,
   StudentAuto,  
 } from "./pages/";
-import { Box, Container, Stack } from "@mui/material";
 
 
 const App = () => {
