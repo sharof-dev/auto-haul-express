@@ -62,17 +62,6 @@ const App = () => {
         <Route path="/open-auto-transport" element={<OpenAuotTransport />} />
         <Route path="/snow-birds" element={<SnowBirds />} />
         <Route path="/student-auto" element={<StudentAuto />} />
-
-        {/* MY pages */}
-        <Route
-          path="/how-does-car-shipping-work/"
-          element={<CarShippingCost />}
-        />
-        <Route path="/car-shipping-costs/" element={<CrosCountry />} />
-        <Route
-          path="/cross-country-car-shipping/"
-          element={<HowDoesCarShipping />}
-        />
       </Routes>
       <Footer />
     </>
