@@ -17,9 +17,9 @@ const CrosCountry = () => {
       <Faq />
       <WhatOur />
       <AutoTransport />
-      {/* end */}
       <WhatFactors />
       <OurAuto />
+      {/* end */}
       <WhatToKnow />
     </>
   );
