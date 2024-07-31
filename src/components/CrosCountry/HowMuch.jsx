@@ -1,11 +1,11 @@
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
 import { Section } from "../../pages/how-it-works/styles";
-import CardImg from "../cards/CardImg";
+import CardImg from "../CarShippingCost/cards/CardImg";
 
 function HowMuch() {
   return (
     <>
-      <Section component={"section"} id="process-of">
+      <Section component={"section"} id="how-much">
         <Container
           maxWidth="xl"
           sx={{

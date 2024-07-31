@@ -14,10 +14,10 @@ const CrosCountry = () => {
     <>
       <Costs />
       <HowMuch />
-      {/* end */}
       <Faq />
       <WhatOur />
       <AutoTransport />
+      {/* end */}
       <WhatFactors />
       <OurAuto />
       <WhatToKnow />

@@ -1,4 +1,4 @@
-import CardImg from "../cards/CardImg";
+import CardImg from "./cards/CardImg";
 import CardDrop from "./CardDrop";
 import { Section } from "../../pages/how-it-works/styles";
 import { Box, Container } from "@mui/material";

@@ -1,8 +1,7 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
-import LocalShippingIcon from "@mui/icons-material/LocalShipping";
-import { Title4 } from "../../pages/how-it-works/styles";
+import { Title4 } from "../../../pages/how-it-works/styles";
 
-const CardIcon = () => {
+const CardIcon = ({ Icon }) => {
   return (
     <Box
       component={"div"}
@@ -11,7 +10,7 @@ const CardIcon = () => {
         alignItems: "center",
         flexDirection: "column",
         position: "absolute",
-        top: "-80px",
+        top: "-75px",
         left: "50%",
         transform: "translate(-50%, 0)",
         zIndex: "-1",
@@ -23,13 +22,14 @@ const CardIcon = () => {
           display: "flex",
           justifyItems: "center",
           alignItems: "center",
-          padding: "10px",
+          padding: "4px",
           marginBottom: "14px",
-          border: "2px solid #E01933",
+          border: "4px solid #E01933",
+          backgroundColor: "#fff",
           borderRadius: "50%",
         }}
       >
-        <LocalShippingIcon fontSize="large" sx={{ color: "#E01933" }} />
+        <Icon fontSize="large" sx={{ color: "#E01933" }} />
       </Box>
 
       <Box
@@ -45,13 +45,14 @@ const CardIcon = () => {
   );
 };
 
-function SliderCard() {
+function SliderCard({ Icon, img, title, text }) {
   return (
     <Card
       sx={{
-        marginTop: "80px",
+        marginTop: `${Icon ? "75px" : "0px"}`,
         maxWidth: "493px",
         width: "100%",
+        minHeight: "570px",
         padding: "30px",
         boxShadow:
           "5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
@@ -69,20 +70,21 @@ function SliderCard() {
         component={"div"}
         sx={{
           borderRadius: "35px",
-          maxWidth: "433px",
+          maxWidth: { xs: "400px", sm: "400px", md: "433px" },
           width: "100%",
           overflow: "hidden",
           marginBottom: "10px",
         }}
       >
-        <CardIcon />
+        {Icon && <CardIcon Icon={Icon} />}
         <Box
           component={"img"}
           width={"433px"}
           height={"288px"}
           loading="lazy"
-          src={"/assets/how-it-works/faq_slider0.webp"}
+          src={img}
           sx={{
+            maxWidth: { xs: "300px", sm: "300px", md: "433px" },
             height: "auto",
             objectFit: "cover",
             objectPosition: "top",
@@ -99,7 +101,7 @@ function SliderCard() {
             marginBottom: "10px",
           }}
         >
-          Calculating my car shipping estimate and auto shipper math
+          {title}
         </Title4>
         <Typography
           variant="body1"
@@ -110,11 +112,7 @@ function SliderCard() {
             color: "#fff",
           }}
         >
-          The auto transport industry is an important part of the transportation
-          industry. It offers a variety of services to move cars from one place
-          to another. Over the past few years, the industry has grown a lot, and
-          that growth is expected to continue because more and more people need
-          services to move cars.
+          {text}
         </Typography>
       </CardContent>
     </Card>
