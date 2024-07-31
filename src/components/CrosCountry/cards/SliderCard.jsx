@@ -100,7 +100,7 @@ function SliderCard({ Icon, img, title, text, dark, timeline, matches }) {
           variant="h6"
           textcolor={`${dark ? "#000000" : "#E01933"}`}
           sx={{
-            display: `${timeline ? `${!matches ? "none" : "block"}` : "block"}`,
+            display: `${timeline ? `${matches ? "block" : "none"}` : "block"}`,
             marginBottom: "10px",
           }}
         >

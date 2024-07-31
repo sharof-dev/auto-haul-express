@@ -87,7 +87,7 @@ function WhatFactors() {
       <Section component={"section"} id="what-factors">
         {/* Banner Image */}
         <BannerImage
-          image={"../../../public/assets/how-it-works/what_factors.jpg"}
+          image={"/assets/how-it-works/what_factors.jpg"}
           parallax={"true"}
           component={"div"}
         />
@@ -119,7 +119,7 @@ function WhatFactors() {
             {sliderData.map((card, idx) => (
               <VerticalTimelineElement
                 style={{ marginTop: `${matches ? "50px" : "20px"}` }}
-                date={!matches ? card.title : null}
+                date={matches ? null : card.title}
                 iconStyle={{ background: "#E01933", color: "#fff" }}
                 icon={<CircleIcon />}
                 key={idx}
