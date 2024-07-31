@@ -34,6 +34,7 @@ const App = () => {
   return (
     <>
       <Header />
+
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -63,12 +64,12 @@ const App = () => {
         <Route path="/snow-birds" element={<SnowBirds />} />
         <Route path="/student-auto" element={<StudentAuto />} />
         <Route
-          path="/how-does-car-shipping-work"
+          path="/how-does-car-shipping-work/"
           element={<CarShippingCost />}
         />
-        <Route path="/car-shipping-costs" element={<CrosCountry />} />
+        <Route path="/car-shipping-costs/" element={<CrosCountry />} />
         <Route
-          path="/cross-country-car-shipping"
+          path="/cross-country-car-shipping/"
           element={<HowDoesCarShipping />}
         />
       </Routes>

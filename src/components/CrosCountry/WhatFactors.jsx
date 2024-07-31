@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography, useMediaQuery } from "@mui/material";
 import {
   BannerColor,
   BannerImage,
@@ -11,70 +11,83 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import CircleIcon from "@mui/icons-material/Circle";
+import { useTheme } from "@emotion/react";
 
 const sliderData = [
   {
     img: "/assets/how-it-works/faq_slider0.webp",
-    title: "What is Car Transport?",
+    title: "Distance of the Transport",
     text: `
-    Car transport
-     is a service that helps people move their cars from one place to another. It is a service that many car dealerships, car manufacturers, and people who need to move their cars over long distances use. Companies that move cars use special trucks, trailers, and carriers to get the job done quickly and safely.
+    One of the biggest things that can affect how much it costs to ship a car  is how far it has to go. In general, the farther away something is, the more it will cost to ship it. For instance, it will cost more to ship a car from New York to California than it will to ship a car from New York to Pennsylvania.
     `,
   },
   {
     img: "/assets/how-it-works/faq_slider1.webp",
-
-    title: "How do I get is car transport quote?",
-    text: (
-      <>
-        Car transport companies give different car shipping quotes based on the
-        distance, type of transport, and other factors. So, the best way to get
-        a quote that fits your needs is to answer all the questions on the{" "}
-        <Box
-          component={"a"}
-          href="#"
-          sx={{
-            textDecoration: "none",
-            color: "#fff",
-            "&:hover": {
-              color: "#E01933",
-            },
-          }}
-        >
-          "Get a quote"
-        </Box>{" "}
-        page about your transport.
-      </>
-    ),
+    title: "Vehicle Make & Model",
+    text: `
+      Most of the time, it costs more to ship trucks or SUVs than it does to ship smaller cars. Also, luxury or classic cars may need extra safety measures and specialized tools to be transported safely, which can add to the cost.`,
   },
   {
     img: "/assets/how-it-works/faq_slider2.png",
-    title: "Overview of the auto transport industry",
+    title: "Auto Transport Type",
     text: `
-   The auto transport industry is an important part of the transportation industry. It offers a variety of services to move cars from one place to another. Over the past few years, the industry has grown a lot, and that growth is expected to continue because more and more people need services to move cars.
+   Another thing that can affect how much it costs to ship a car  is how it gets there. There are two main ways to ship a car:  and. Open transport is the most frequent and least expensive way to move a car, but it leaves your car open to the weather while it’s being moved. On the other hand, enclosed transportation is safer and better protected, but it costs more.
     `,
   },
   {
     img: "/assets/how-it-works/faq_slider3.webp",
-    title: "Calculating my car shipping estimate and auto shipper math",
-    text: (
-      <>
-        Getting an <strong>estimate of shipping costs</strong> with auto-shipper
-        math is pretty easy. But you need to know how it works and figure out
-        the distance between where you pick up and where you drop off, the type
-        of transport, the size and weight of your vehicle, and any extra fees.
-      </>
-    ),
+    title: "Seasonality",
+    text: `
+    The time of year can have a big effect on car shipping costs. Most of the time, the summer is the busy time of year for car shipping companies because more people move during this time. Because of this, prices can be higher during peak season than when it’s not. If you can ship your car when it’s not busy, you can save money.
+    `,
+  },
+  {
+    img: "/assets/how-it-works/faq_slider3.webp",
+    title: "Location",
+    text: `
+   Car shipping cost depends on where the car is picked up and dropped off. If you’re shipping your car from a big city, you may pay less than shipping it from the middle of nowhere. In the same way, if you’re shipping your car to a big city, it may cost less than if you were shipping it to a small town. Also, the farther you go, the more you’ll have to pay.
+    `,
+  },
+  {
+    img: "/assets/how-it-works/faq_slider3.webp",
+    title: "Route",
+    text: `
+  The route the carrier takes to ship your car can have a big effect on how much it costs. Shipping costs may go up because of longer distances, remote locations, or rough terrain. In the same way, shipping to and from big cities can add to the cost because of traffic and higher demand.
+    `,
+  },
+  {
+    img: "/assets/how-it-works/faq_slider3.webp",
+    title: "Shipping Date",
+    text: `
+  The vehicle shipping quote can also depend on when you send your package. When there are a lot of people looking for car shipping services at the same time, prices tend to go up. Also, if you need to ship your car quickly, you might have to pay more for “expedited” services.
+    `,
+  },
+  {
+    img: "/assets/how-it-works/faq_slider3.webp",
+    title: "Vehicle Condition",
+    text: `
+  If your car doesn’t run, you might need special tools or services to load and unload it. This can add to the cost. Also, if your car is too big or needs special care, like a classic or luxury car, you may have to pay more for enclosed transport or extra insurance.
+    `,
+  },
+  {
+    img: "/assets/how-it-works/faq_slider3.webp",
+    title: "Vehicle Details",
+    text: `
+ Vehicles that are bigger and heavier often need more fuel and space on the carrier, which can raise the price. Also, if your car has been customized or has aftermarket parts, they may need extra care during shipping, which can add to the cost.
+    `,
   },
 ];
 
 function WhatFactors() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("xl"));
+
   return (
     <>
       <Section component={"section"} id="what-factors">
         {/* Banner Image */}
         <BannerImage
-          image={"/assets/how-it-works/costs.jpg"}
+          image={"../../../public/assets/how-it-works/what_factors.jpg"}
           parallax={"true"}
           component={"div"}
         />
@@ -83,19 +96,40 @@ function WhatFactors() {
           color={"linear-gradient(180deg, #11172b 40%, #11172B 100%)"}
         />
         <Container maxWidth="xl">
+          <Typography
+            variant="h4"
+            sx={{
+              marginBottom: "20px",
+              fontWeight: 700,
+              fontSize: { sm: "35px", md: "60px" },
+              color: "#fff",
+              textAlign: "center",
+            }}
+          >
+            What Factors Are Used to Calculate <br />
+            <Box component="span" sx={{ color: "#E01933" }}>
+              Car Shipping Costs?
+            </Box>
+          </Typography>
           <VerticalTimeline
-            animate={"true"}
+            animate={true}
             lineColor={"#E01933"}
             style={{ boxShadow: "none", border: "0" }}
           >
             {sliderData.map((card, idx) => (
               <VerticalTimelineElement
-                date="Distance of the Transport"
+                style={{ marginTop: `${matches ? "50px" : "20px"}` }}
+                date={!matches ? card.title : null}
                 iconStyle={{ background: "#E01933", color: "#fff" }}
                 icon={<CircleIcon />}
                 key={idx}
               >
-                <SliderCard {...card} />
+                <SliderCard
+                  {...card}
+                  dark={"true"}
+                  timeline={"true"}
+                  matches={matches}
+                />
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>

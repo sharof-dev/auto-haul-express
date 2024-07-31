@@ -45,19 +45,19 @@ const CardIcon = ({ Icon }) => {
   );
 };
 
-function SliderCard({ Icon, img, title, text }) {
+function SliderCard({ Icon, img, title, text, dark, timeline, matches }) {
   return (
     <Card
       sx={{
         marginTop: `${Icon ? "75px" : "0px"}`,
-        maxWidth: "493px",
+        maxWidth: `${timeline ? "100%" : "493px"}`,
         width: "100%",
-        minHeight: "570px",
+        minHeight: `${timeline ? "auto" : "570px"}`,
         padding: "30px",
         boxShadow:
           "5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
         borderRadius: "35px",
-        backgroundColor: "#11172B",
+        backgroundColor: `${dark ? "#ffffff" : "#11172B"}`,
         position: "relative",
         overflow: "visible",
         "&:hover": {
@@ -70,7 +70,9 @@ function SliderCard({ Icon, img, title, text }) {
         component={"div"}
         sx={{
           borderRadius: "35px",
-          maxWidth: { xs: "400px", sm: "400px", md: "433px" },
+          maxWidth: `${
+            timeline ? "100%" : { xs: "400px", sm: "400px", md: "433px" }
+          }`,
           width: "100%",
           overflow: "hidden",
           marginBottom: "10px",
@@ -84,7 +86,7 @@ function SliderCard({ Icon, img, title, text }) {
           loading="lazy"
           src={img}
           sx={{
-            maxWidth: { xs: "300px", sm: "300px", md: "433px" },
+            width: "100%",
             height: "auto",
             objectFit: "cover",
             objectPosition: "top",
@@ -96,8 +98,9 @@ function SliderCard({ Icon, img, title, text }) {
       <CardContent sx={{ padding: "0" }}>
         <Title4
           variant="h6"
-          textcolor={"#E01933"}
+          textcolor={`${dark ? "#000000" : "#E01933"}`}
           sx={{
+            display: `${timeline ? `${!matches ? "none" : "block"}` : "block"}`,
             marginBottom: "10px",
           }}
         >
@@ -109,7 +112,7 @@ function SliderCard({ Icon, img, title, text }) {
             fontSize: { sm: "0.8rem", md: "1rem" },
             fontWeight: "400",
             lineHeight: "1.5",
-            color: "#fff",
+            color: `${dark ? "#000000" : "#ffffff"}`,
           }}
         >
           {text}
