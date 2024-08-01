@@ -2,7 +2,7 @@ import { Box, Card, CardContent, Typography } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import FormatQuoteOutlinedIcon from "@mui/icons-material/FormatQuoteOutlined";
 
-function SliderOurCard({ starLength = 5, description, userName, logo }) {
+function SliderOurCard({ starLength = 5, description, userName, logo, mini }) {
   let starArr = [];
   for (let i = 0; i < starLength; i++) starArr.push(i);
 
@@ -11,6 +11,7 @@ function SliderOurCard({ starLength = 5, description, userName, logo }) {
       sx={{
         width: "100%",
         padding: "30px",
+        minHeight: " 462px",
         borderRadius: "35px",
         overflow: "visible",
         boxShadow:
@@ -21,7 +22,9 @@ function SliderOurCard({ starLength = 5, description, userName, logo }) {
         },
       }}
     >
-      <CardContent sx={{ padding: 0 }}>
+      <CardContent
+        sx={{ padding: 0, display: "flex", flexDirection: "column" }}
+      >
         <Typography
           variant="body1"
           sx={{
@@ -39,6 +42,7 @@ function SliderOurCard({ starLength = 5, description, userName, logo }) {
             sx={{
               display: "flex",
               alignItems: "center",
+              justifyContent: `${mini ? "center" : "flex-start"}`,
               gap: "5px",
             }}
           >
@@ -56,7 +60,13 @@ function SliderOurCard({ starLength = 5, description, userName, logo }) {
             </Typography>
           </Box>
 
-          <Box component={"div"}>
+          <Box
+            component={"div"}
+            sx={{
+              display: "flex",
+              justifyContent: `${mini ? "center" : "flex-start"}`,
+            }}
+          >
             {starArr.map((_, idx) => (
               <StarIcon
                 sx={{ fontSize: "1.5rem", color: "#7a7a7a" }}
@@ -69,6 +79,7 @@ function SliderOurCard({ starLength = 5, description, userName, logo }) {
         <Box
           component={"div"}
           sx={{
+            order: `${mini ? "-1" : "1"}`,
             display: "flex",
             justifyContent: "space-between",
             width: "100%",

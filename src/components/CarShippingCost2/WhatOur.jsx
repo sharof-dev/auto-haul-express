@@ -68,7 +68,13 @@ function WhatOur() {
             </Box>
           </Typography>
 
-          <Box component={"div"} sx={{ position: "relative" }}>
+          <Box
+            component={"div"}
+            sx={{
+              position: "relative",
+              padding: { xs: "0", sm: "0", md: "0 50px" },
+            }}
+          >
             <Swiper
               style={{ padding: "5px" }}
               centeredSlides={true}
@@ -98,7 +104,7 @@ function WhatOur() {
                 display: { xs: "none", sm: "none", md: "flex" },
                 justifyContent: "space-between",
                 alignItems: "center",
-                width: "108%",
+                width: "100%",
                 position: "absolute",
                 top: "50%",
                 left: "50%",

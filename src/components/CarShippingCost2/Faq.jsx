@@ -1,6 +1,6 @@
 import { Box, Button, Container } from "@mui/material";
 import { Section, Title2 } from "../../pages/how-it-works/styles";
-import { SliderCard } from "../";
+import SliderCard from "./cards/SliderCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";

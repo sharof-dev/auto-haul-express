@@ -1,6 +1,6 @@
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
 import { Section } from "../../pages/how-it-works/styles";
-import CardImg from "../CarShippingCost/cards/CardImg";
+import CardImg from "../HowDoesCarShipping/cards/CardImg";
 
 function HowMuch() {
   return (

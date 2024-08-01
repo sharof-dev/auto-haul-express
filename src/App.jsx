@@ -10,7 +10,7 @@ import {
   Privacypolicy,
   AtvRtvShipping,
   BoatOrYacht,
-  BusinessServices, 
+  BusinessServices,
   CarCollector,
   ClassicCar,
   DoorToDoor,
@@ -64,14 +64,11 @@ const App = () => {
         <Route path="/snow-birds" element={<SnowBirds />} />
         <Route path="/student-auto" element={<StudentAuto />} />
         <Route
-          path="/how-does-car-shipping-work/"
-          element={<CarShippingCost />}
-        />
-        <Route path="/car-shipping-costs/" element={<CrosCountry />} />
-        <Route
-          path="/cross-country-car-shipping/"
+          path="/how-does-car-shipping-work"
           element={<HowDoesCarShipping />}
         />
+        <Route path="/car-shipping-costs" element={<CarShippingCost />} />
+        <Route path="/cross-country-car-shipping" element={<CrosCountry />} />
       </Routes>
       <Footer />
     </>

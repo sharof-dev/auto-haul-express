@@ -1,5 +1,5 @@
-import CardImg from "./cards/CardImg";
-import CardDrop from "./CardDrop";
+import CardImg from "../HowDoesCarShipping/cards/CardImg";
+import CardDrop from "../HowDoesCarShipping/CardDrop";
 import { Section } from "../../pages/how-it-works/styles";
 import { Box, Container } from "@mui/material";
 

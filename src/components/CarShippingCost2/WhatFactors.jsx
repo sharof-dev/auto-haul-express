@@ -1,4 +1,4 @@
-import { Box, Container, Typography, useMediaQuery } from "@mui/material";
+import { Box, Container, useMediaQuery } from "@mui/material";
 import {
   BannerColor,
   BannerImage,
