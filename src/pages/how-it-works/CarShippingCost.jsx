@@ -1,11 +1,25 @@
-import React from 'react'
+import {
+  CarShipping,
+  HowToShip,
+  Receive,
+  WePick,
+  ProcessOf,
+  WantTo,
+  GetQuote,
+} from "../../components";
 
 const CarShippingCost = () => {
   return (
-    <div>
-      <h1>CarShippingCost</h1>
-    </div>
-  )
-}
+    <>
+      <CarShipping />
+      <ProcessOf />
+      <HowToShip />
+      <GetQuote />
+      <WePick />
+      <Receive />
+      <WantTo />
+    </>
+  );
+};
 
-export default CarShippingCost
+export default CarShippingCost;

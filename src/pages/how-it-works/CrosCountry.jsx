@@ -1,11 +1,28 @@
-import React from 'react'
+import {
+  AutoTransport,
+  Costs,
+  Faq,
+  HowMuch,
+  OurAuto,
+  WhatFactors,
+  WhatOur,
+  WhatToKnow,
+} from "../../components";
 
 const CrosCountry = () => {
   return (
-    <div>
-      <h1>CrosCountry</h1>
-    </div>
-  )
-}
+    <>
+      <Costs />
+      <HowMuch />
+      <Faq />
+      <WhatOur />
+      <AutoTransport />
+      {/* end */}
+      <WhatFactors />
+      <OurAuto />
+      <WhatToKnow />
+    </>
+  );
+};
 
-export default CrosCountry
+export default CrosCountry;
