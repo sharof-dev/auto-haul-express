@@ -78,7 +78,7 @@ function WhatAreThe() {
 
   return (
     <>
-      <Section component={"section"} id="what-factors">
+      <Section component={"section"} id="what-are-the">
         {/* Banner Image */}
         <BannerImage
           image={"/assets/how-it-works/what_are_the.jpg"}

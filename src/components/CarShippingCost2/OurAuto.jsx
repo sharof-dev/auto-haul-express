@@ -46,7 +46,7 @@ function OurAuto() {
 
   return (
     <>
-      <Section component={"section"} id="how-much">
+      <Section component={"section"} id="our-auto">
         <Container maxWidth="xl">
           <Box component={"div"}>
             <Title2

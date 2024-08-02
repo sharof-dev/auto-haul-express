@@ -38,7 +38,7 @@ const CardData = [
 function WhatToConsider() {
   return (
     <>
-      <Section component={"section"} id="want-to">
+      <Section component={"section"} id="what-to-consider">
         <BannerImage
           image={"/assets/how-it-works/what_to_know.jpg"}
           parallax={"true"}
@@ -77,7 +77,7 @@ function WhatToConsider() {
           <Grid
             container
             justifyContent="center"
-            columnSpacing={2}
+            columnSpacing={0}
             rowSpacing={1}
           >
             {CardData.map((card, idx) => (

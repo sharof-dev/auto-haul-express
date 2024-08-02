@@ -19,7 +19,6 @@ const CrosCountry = () => {
       <CostToShip />
       <HowMuchDoes />
       <HowGet />
-      {/* END */}
       <WhatAreThe />
     </>
   );

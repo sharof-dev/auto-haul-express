@@ -40,7 +40,7 @@ const sliderData = [
 function ClientsSay() {
   return (
     <>
-      <Section component={"section"} id="what-our">
+      <Section component={"section"} id="clients-say">
         {/* Banner Image */}
         <BannerImage
           image={"/assets/how-it-works/clients-say.jpg"}

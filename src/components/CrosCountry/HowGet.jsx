@@ -24,7 +24,7 @@ const howGetCardData = [
 function HowGet() {
   return (
     <>
-      <Section component={"section"} id="want-to">
+      <Section component={"section"} id="how-get">
         <Container maxWidth="xl">
           <Box
             component={"div"}

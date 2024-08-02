@@ -8,7 +8,7 @@ import {
 function HowMuchDoes() {
   return (
     <>
-      <Section component={"section"} id="how-does-cross">
+      <Section component={"section"} id="how-much-does">
         <BannerImage
           image={"/assets/how-it-works/what_to_know.jpg"}
           parallax={"true"}

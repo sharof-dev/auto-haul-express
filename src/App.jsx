@@ -25,7 +25,7 @@ import {
   SnowBirds,
   StudentAuto,
 } from "./pages/";
-import { Box, Container, Stack } from "@mui/material";
+import { Box, Container, Stack, Grid } from "@mui/material";
 import CarShippingCost from "./pages/how-it-works/CarShippingCost";
 import CrosCountry from "./pages/how-it-works/CrosCountry";
 import HowDoesCarShipping from "./pages/how-it-works/HowDoesCarShipping";
@@ -34,7 +34,7 @@ const App = () => {
   return (
     <>
       <Header />
-
+      
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

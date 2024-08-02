@@ -4,7 +4,7 @@ import { Box, Card, CardContent, Container, Typography } from "@mui/material";
 function WhatIsCross() {
   return (
     <>
-      <Section component={"section"} id="how-much">
+      <Section component={"section"} id="what-is-cross">
         <Container
           maxWidth="xl"
           sx={{

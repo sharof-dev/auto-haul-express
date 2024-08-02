@@ -13,7 +13,7 @@ import DescriptionIcon from "@mui/icons-material/Description";
 function WhatToKnow() {
   return (
     <>
-      <Section component={"section"} id="want-to">
+      <Section component={"section"} id="what-to-know">
         <BannerImage
           image={"/assets/how-it-works/what_to_know.jpg"}
           parallax={"true"}
