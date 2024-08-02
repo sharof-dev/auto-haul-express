@@ -2,10 +2,11 @@ import { Box, Button, FormGroup, Input, Typography, styled } from "@mui/material
 import React from "react";
 const FormContainer = styled(FormGroup)(({ theme }) => ({
   padding: "20px 30px",
-  width: "100%",
+  width: "85%",
   borderRadius: "35px",
+  backgroundColor: 'transparent',
   backgroundImage: "linear-gradient(180deg, #11172b 20%, #21212480 100%);",
-  boxShadow: "0px 0px 10px 0px rgba(255, 255, 255, 0.08)",
+  boxShadow: "0px 0px 15px 0px rgba(255, 255, 255, 0.09)",
   [theme.breakpoints.up("lg")]: {
     padding: "50px",
   },
