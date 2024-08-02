@@ -25,7 +25,6 @@ import {
   SnowBirds,
   StudentAuto,
 } from "./pages/";
-import { Box, Container, Stack } from "@mui/material";
 import CarShippingCost from "./pages/how-it-works/CarShippingCost";
 import CrosCountry from "./pages/how-it-works/CrosCountry";
 import HowDoesCarShipping from "./pages/how-it-works/HowDoesCarShipping";
