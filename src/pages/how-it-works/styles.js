@@ -171,7 +171,7 @@ export const BodyText1 = styled(Typography)(({ theme, color }) => ({
     fontSize: "25px",
   },
   [theme.breakpoints.up("lg")]: {
-    marginBottom: "19px",
+    marginBottom: "20px",
   },
 }));
 

@@ -16,8 +16,8 @@ const About = () => {
       <AboutForm />
       <Info />
       <Logistics />
-      {/* END */}
       <ClientsSay />
+      {/* END */}
       <Services />
       <CarGo />
       <Teamwork />
