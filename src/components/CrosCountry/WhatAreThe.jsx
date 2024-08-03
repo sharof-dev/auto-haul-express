@@ -12,7 +12,7 @@ import {
 } from "react-vertical-timeline-component";
 import { useTheme } from "@emotion/react";
 import CircleIcon from "@mui/icons-material/Circle";
-import SliderCard from "../CarShippingCost2/cards/SliderCard";
+import SliderCard from "../CarShippingCost/cards/SliderCard";
 
 const sliderData = [
   {

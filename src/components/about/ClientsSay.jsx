@@ -1,14 +1,14 @@
 import { Box, Container, IconButton, Typography } from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
 import {
   BannerColor,
   BannerImage,
   Section,
 } from "../../pages/how-it-works/styles";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
+import SliderOurCard from "../CarShippingCost/cards/SliderOurCard";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import SliderOurCard from "../CarShippingCost/cards/SliderOurCard";
 
 const sliderData = [
   {
@@ -43,7 +43,7 @@ function ClientsSay() {
       <Section component={"section"} id="clients-say">
         {/* Banner Image */}
         <BannerImage
-          image={"/assets/how-it-works/clients-say.jpg"}
+          image={"/assets/about/clients_say_background.jpg"}
           parallax={"true"}
           component={"div"}
         />
@@ -103,7 +103,7 @@ function ClientsSay() {
             >
               {sliderData.map((card, idx) => (
                 <SwiperSlide key={idx} style={{ width: "50%" }}>
-                  <SliderOurCard {...card} mini={"true"} />
+                  <SliderOurCard {...card} />
                 </SwiperSlide>
               ))}
             </Swiper>
