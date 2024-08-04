@@ -1,8 +1,8 @@
 import { Section, Title3 } from "../../pages/how-it-works/styles";
 import { Box, Container, Stack } from "@mui/material";
-import CardMiniDrop from "../HowDoesCarShipping/cards/CardMiniDrop";
-import CardImg from "../HowDoesCarShipping/cards/CardImg";
-import ItemDrop from "../HowDoesCarShipping/ItemDrop";
+import CardMiniDrop from "../how-does-car-shipping/cards/CardMiniDrop";
+import CardImg from "../how-does-car-shipping/cards/CardImg";
+import ItemDrop from "../how-does-car-shipping/ItemDrop";
 
 const itemStep3Data = [
   {

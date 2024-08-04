@@ -6,7 +6,7 @@ import {
   Title,
 } from "../../pages/how-it-works/styles";
 import { Box, Container } from "@mui/material";
-import CardStep from "../HowDoesCarShipping/cards/CardStep";
+import CardStep from "../how-does-car-shipping/cards/CardStep";
 
 const cardStepData = [
   {

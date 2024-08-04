@@ -1,6 +1,6 @@
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
 import { Section } from "../../pages/how-it-works/styles";
-import CardImg from "../HowDoesCarShipping/cards/CardImg";
+import CardImg from "../how-does-car-shipping/cards/CardImg";
 
 function Teamwork() {
   return (

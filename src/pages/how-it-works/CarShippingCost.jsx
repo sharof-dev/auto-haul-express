@@ -1,11 +1,11 @@
-import Costs from "../../components/CarShippingCost/Costs";
-import HowMuch from "../../components/CarShippingCost/HowMuch";
-import Faq from "../../components/CarShippingCost/Faq";
-import WhatOur from "../../components/CarShippingCost/WhatOur";
-import AutoTransport from "../../components/CarShippingCost/AutoTransport";
-import WhatFactors from "../../components/CarShippingCost/WhatFactors";
-import OurAuto from "../../components/CarShippingCost/OurAuto";
-import WhatToKnow from "../../components/CarShippingCost/WhatToKnow";
+import Costs from "../../components/car-shipping-cost/Costs";
+import HowMuch from "../../components/car-shipping-cost/HowMuch";
+import Faq from "../../components/car-shipping-cost/Faq";
+import WhatOur from "../../components/car-shipping-cost/WhatOur";
+import AutoTransport from "../../components/car-shipping-cost/AutoTransport";
+import WhatFactors from "../../components/car-shipping-cost/WhatFactors";
+import OurAuto from "../../components/car-shipping-cost/OurAuto";
+import WhatToKnow from "../../components/car-shipping-cost/WhatToKnow";
 
 const CarShippingCost = () => {
   return (
@@ -13,7 +13,7 @@ const CarShippingCost = () => {
       <Costs />
       <HowMuch />
       <Faq />
-      <WhatOur /> 
+      <WhatOur />
       <AutoTransport />
       <WhatFactors />
       <OurAuto />

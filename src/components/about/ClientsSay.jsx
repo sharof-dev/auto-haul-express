@@ -6,7 +6,7 @@ import {
 } from "../../pages/how-it-works/styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
-import SliderOurCard from "../CarShippingCost/cards/SliderOurCard";
+import SliderOurCard from "../car-shipping-cost/cards/SliderOurCard";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 

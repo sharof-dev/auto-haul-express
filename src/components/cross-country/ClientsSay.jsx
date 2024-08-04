@@ -8,7 +8,7 @@ import {
 import { Autoplay, Navigation } from "swiper/modules";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import SliderOurCard from "../CarShippingCost/cards/SliderOurCard";
+import SliderOurCard from "../car-shipping-cost/cards/SliderOurCard";
 
 const sliderData = [
   {

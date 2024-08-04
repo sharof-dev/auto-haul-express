@@ -1,35 +1,25 @@
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
 import { Section } from "../../pages/how-it-works/styles";
-import CardImg from "../HowDoesCarShipping/cards/CardImg";
+import CardImg from "../how-does-car-shipping/cards/CardImg";
 
-function HowMuch() {
+function AutoTransport() {
   return (
     <>
-      <Section component={"section"} id="how-much">
-        <Container
-          maxWidth="xl"
-          sx={{
-            overflow: "visible",
-            padding: { xs: "0px", sm: "0px", md: "0 24px" },
-          }}
-        >
+      <Section component={"section"} id="auto-transport">
+        <Container maxWidth="xl">
           <Box
             component={"ul"}
             sx={{
               display: "flex",
               alignItems: "center",
+              justifyContent: "center",
               flexDirection: {
-                xs: "column",
-                sm: "column",
+                xs: "column-reverse",
+                sm: "column-reverse",
                 md: "row",
               },
             }}
           >
-            <CardImg
-              img={"/assets/how-it-works/how_much.webp"}
-              reverse={true}
-            />
-
             <Card
               component="li"
               sx={{
@@ -44,10 +34,9 @@ function HowMuch() {
               <Box
                 sx={{
                   width: "100%",
-                  maxWidth: { xs: "520px", sm: "900px", md: "520px" },
-                  height: { md: "auto", lg: "476px" },
+                  height: { md: "auto", lg: "389px" },
                   boxShadow:
-                    "5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
+                    "-5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
                   borderRadius: "35px",
                   overflow: "hidden",
                   backgroundColor: "#11172B",
@@ -68,9 +57,9 @@ function HowMuch() {
                       color: "white",
                     }}
                   >
-                    How Much Does <br />
+                    Auto Transport <br />
                     <span style={{ fontWeight: 700, color: "#E01933" }}>
-                      Car Shipping Cost?
+                      Insurance.
                     </span>
                   </Typography>
 
@@ -83,17 +72,17 @@ function HowMuch() {
                       color: "white",
                     }}
                   >
-                    US Car-G0 Freight prices depend on many things, and we try
-                    to give our customers the best service we can at a price
-                    they can afford. We suggest that you call us directly to get
-                    an accurate estimate of <strong>car transport cost</strong>.
-                    We'll be happy to give you a quote that's tailored to your
-                    wants and preferences. Our expert team can help you figure
-                    out the most affordable way to ship your vehicle.
+                    Insurance is a very important thing to think about when
+                    sending a car, whether it's an old model, a luxury car, or a
+                    regular car. US Car-G0 offers different kinds of auto
+                    transport insurance to protect your car while it's being
+                    moved. These protect your car if it gets damaged or is
+                    stolen.
                   </Typography>
                 </CardContent>
               </Box>
             </Card>
+            <CardImg img={"/assets/how-it-works/how_much.webp"} mini={"true"} />
           </Box>
         </Container>
       </Section>
@@ -101,4 +90,4 @@ function HowMuch() {
   );
 }
 
-export default HowMuch;
+export default AutoTransport;

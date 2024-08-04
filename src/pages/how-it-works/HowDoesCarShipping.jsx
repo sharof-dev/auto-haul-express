@@ -1,10 +1,10 @@
-import CarShipping from "../../components/HowDoesCarShipping/CarShipping";
-import ProcessOf from "../../components/HowDoesCarShipping/ProcessOf";
-import HowToShip from "../../components/HowDoesCarShipping/HowToShip";
-import GetQuote from "../../components/HowDoesCarShipping/GetQuote";
-import WePick from "../../components/HowDoesCarShipping/WePick";
-import Receive from "../../components/HowDoesCarShipping/Receive";
-import WantTo from "../../components/HowDoesCarShipping/WantTo";
+import CarShipping from "../../components/how-does-car-shipping/CarShipping";
+import ProcessOf from "../../components/how-does-car-shipping/ProcessOf";
+import HowToShip from "../../components/how-does-car-shipping/HowToShip";
+import GetQuote from "../../components/how-does-car-shipping/GetQuote";
+import WePick from "../../components/how-does-car-shipping/WePick";
+import Receive from "../../components/how-does-car-shipping/Receive";
+import WantTo from "../../components/how-does-car-shipping/WantTo";
 
 const HowDoesCarShipping = () => {
   return (

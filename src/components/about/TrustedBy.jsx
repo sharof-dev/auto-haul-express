@@ -42,7 +42,6 @@ function TrustedBy() {
                 .
               </Box>
             </Heading>
-
             <Swiper
               breakpoints={{
                 640: {
