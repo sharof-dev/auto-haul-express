@@ -17,13 +17,13 @@ const About = () => {
       <Info />
       <Logistics />
       <ClientsSay />
-      {/* END */}
       <Services />
       <CarGo />
       <Teamwork />
       <Integrity />
       <Dynamic />
       <Statistics />
+      {/* END */}
       <TrustedBy />
     </>
   );
