@@ -13,11 +13,11 @@ const WhatWeDo = () => {
   return (
     <>
       <Nationwide />
-      {/* END */}
       <ShipYour />
       <Open />
       <OpenAuto />
       <EnclosedAuto />
+      {/* END */}
       <Door />
       <OurServices />
       <Additional />

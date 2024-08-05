@@ -13,7 +13,7 @@ function Nationwide() {
   return (
     <>
       <Box
-        id="card-shipping"
+        id="nationwide"
         component={"section"}
         sx={{ padding: { xs: "80px 0", sm: "150px 0" }, position: "relative" }}
       >

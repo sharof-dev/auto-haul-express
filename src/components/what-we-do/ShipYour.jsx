@@ -4,7 +4,7 @@ import { Section } from "../../pages/how-it-works/styles";
 function ShipYour() {
   return (
     <>
-      <Section component={"section"} id="how-much-does">
+      <Section component={"section"} id="ship-your">
         <Container
           maxWidth="xl"
           sx={{
