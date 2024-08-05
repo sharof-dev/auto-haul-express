@@ -97,6 +97,23 @@ export const Title = styled(Typography)(({ theme, color }) => ({
   },
 }));
 
+export const Title1 = styled(Typography)(({ theme, color }) => ({
+  marginBottom: "10px",
+  fontSize: "35px",
+  fontWeight: 600,
+  lineHeight: "1.2em",
+  color: `${color ? color : "#ffffff"}`,
+  [theme.breakpoints.up("xs")]: {
+    fontSize: "30px",
+  },
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "40px",
+  },
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "43px",
+  },
+}));
+
 export const Title2 = styled(Typography)(({ theme, color }) => ({
   marginBottom: "20px",
   fontSize: "35px",

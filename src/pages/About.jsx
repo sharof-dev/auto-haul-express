@@ -23,7 +23,6 @@ const About = () => {
       <Integrity />
       <Dynamic />
       <Statistics />
-      {/* END */}
       <TrustedBy />
     </>
   );
