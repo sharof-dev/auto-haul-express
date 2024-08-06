@@ -45,7 +45,7 @@ const CardIcon = ({ Icon }) => {
   );
 };
 
-function SliderCard({ Icon, img, title, text }) {
+function SliderCard({ Icon, img, title, text, textin }) {
   return (
     <Card
       sx={{

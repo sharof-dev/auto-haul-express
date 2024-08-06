@@ -25,13 +25,9 @@ import {
   SnowBirds,
   StudentAuto,
 } from "./pages/";
-<<<<<<< HEAD
-
-=======
 import CarShippingCost from "./pages/how-it-works/CarShippingCost";
 import CrosCountry from "./pages/how-it-works/CrosCountry";
 import HowDoesCarShipping from "./pages/how-it-works/HowDoesCarShipping";
->>>>>>> behruz
 
 const App = () => {
   return (

@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import {
   BannerColor,
   BannerImage,
@@ -67,37 +67,53 @@ const sliderData = [
     ),
   },
 ];
+import './custom.css';
 
-function WhatFactors() {
+function WhatFactors({ whyChooseData, text }) {
   return (
     <>
       <Section component={"section"} id="what-factors">
         {/* Banner Image */}
         <BannerImage
-          image={"/assets/how-it-works/costs.jpg"}
+          image={text ? '' : "/assets/how-it-works/costs.jpg"}
           parallax={"true"}
           component={"div"}
         />
         {/* Banner Color */}
         <BannerColor
-          color={"linear-gradient(180deg, #11172b 40%, #11172B 100%)"}
+          color={text ? '' : "linear-gradient(180deg, #11172b 40%, #11172B 100%)"}
         />
         <Container maxWidth="xl">
+          {text ? (<Typography variant="h2" textAlign={'center'} mb={10} fontWeight={600}>
+            Why choose <span style={{color: '#e01933'}}>Us Car-Go</span>
+          </Typography>): ""}
           <VerticalTimeline
             animate={"true"}
             lineColor={"#E01933"}
             style={{ boxShadow: "none", border: "0" }}
           >
-            {sliderData.map((card, idx) => (
-              <VerticalTimelineElement
-                date="Distance of the Transport"
-                iconStyle={{ background: "#E01933", color: "#fff" }}
-                icon={<CircleIcon />}
-                key={idx}
-              >
-                <SliderCard {...card} />
-              </VerticalTimelineElement>
-            ))}
+            {whyChooseData ?
+              (whyChooseData.map((card, idx) => (
+                <VerticalTimelineElement
+                  dateClassName="vertical-timeline-element-date"
+                  date={card.title}
+                  iconStyle={{ background: "#E01933", color: "#fff" }}
+                  icon={<CircleIcon />}
+                  key={idx}
+                >
+                  <SliderCard {...card} />
+                </VerticalTimelineElement>
+             ))) :
+              (sliderData.map((card, idx) => (
+                <VerticalTimelineElement
+                  date="Distance of the Transport"
+                  iconStyle={{ background: "#E01933", color: "#fff" }}
+                  icon={<CircleIcon />}
+                  key={idx}
+                >
+                  <SliderCard {...card} textin={text} />
+                </VerticalTimelineElement>
+              )))}
           </VerticalTimeline>
         </Container>
       </Section>

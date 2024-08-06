@@ -2,7 +2,7 @@ import { Box, Button, FormGroup, Input, Typography, styled } from "@mui/material
 import React from "react";
 const FormContainer = styled(FormGroup)(({ theme }) => ({
   padding: "20px 30px",
-  width: "85%",
+  width: "80%",
   borderRadius: "35px",
   backgroundColor: 'transparent',
   backgroundImage: "linear-gradient(180deg, #11172b 20%, #21212480 100%);",

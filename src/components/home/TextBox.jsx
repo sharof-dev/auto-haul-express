@@ -1,24 +1,7 @@
 import { Box, Container, Typography, styled } from '@mui/material';
 import React from 'react';
 
-const TextS = styled(Typography)(({ theme }) => ({
-  fontWeight: 500,
-  lineHeight: 1.2,
-  letterSpacing: '-0.015em',
-  marginBottom: '2rem',
-  [theme.breakpoints.up('sm')]: {
-    fontSize: '1.75rem',
-  },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '2rem',
-  },
-  [theme.breakpoints.up('lg')]: {
-    fontSize: '2.5rem',
-  },
-  [theme.breakpoints.down('xs')]: {
-    fontSize: '1.2rem',
-  },
-}));
+
 
 const TextBox = () => {
   return (

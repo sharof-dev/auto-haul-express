@@ -17,6 +17,8 @@ import {
 import Phone from '@mui/icons-material/Phone';
 import MenuIcon from '@mui/icons-material/Menu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Link } from 'react-router-dom';
+const list = ['Home', 'What_We_Do', 'How_It_Works', ]
 
 const Header = () => {
   const theme = useTheme();
@@ -30,19 +32,14 @@ const Header = () => {
 
   const menuItems = (
     <>
-      <Button color="inherit">
-        Home
+    {list.map(item => (
+      <Link to={item.replace(/_/g, ' ').toLowerCase() === 'home' ? '/' : `/${item.toLowerCase()}`} key={item} style={{color: 'white'}}>
+        <Button color="inherit">
+        {item.replace(/_/g, ' ')}
         <span style={{ display: 'flex', alignItems: 'flex-end', marginTop: 10, color: '#e01933' }}>•</span>
-      </Button>
-      <Button color="inherit">
-        What We Do
-        <span style={{ display: 'flex', alignItems: 'flex-end', marginTop: 10, color: '#e01933' }}>•</span>
-      </Button>
-      <Button color="inherit">
-        How It Works
-        <span style={{ display: 'flex', alignItems: 'flex-end', marginTop: 10, color: '#e01933' }}>•</span>
-        <KeyboardArrowDownIcon />
-      </Button>
+        </Button>
+      </Link>
+    ))}
     </>
   );
 
