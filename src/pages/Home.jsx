@@ -4,7 +4,7 @@ import TextBox from '../components/home/TextBox'
 import ShippingSteps from '../components/home/ShippingSets'
 import TransportCard from '../components/home/TransportCard'
 import ClientsSay from '../components//home/ClientsSay'
-import { WhatFactors } from '../components'
+import WhatAreThe from '../components/cross-country/WhatAreThe'
 import OurServices from '../components/home/OurServices'
 import UseDifferent from '../components/home/UseDifferent'
 import MiniCard from '../components/home/MiniCard'
@@ -113,7 +113,7 @@ const Home = () => {
       <ShippingSteps title={title} titleMark={titleMark} data={steps} cardStyle={shippingBox} cardBg={cardBg} />
       <TransportCard />
       <ClientsSay text={text} />
-      <WhatFactors whyChooseData={whyChooseData} text={text}/>
+      <WhatAreThe whyChooseData={whyChooseData} text={text}/>
       <OurServices />
       <UseDifferent />
       <MiniCard />

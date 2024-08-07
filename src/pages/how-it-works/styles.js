@@ -63,6 +63,23 @@ export const ButtonStyled = styled(Button)(() => ({
   borderRadius: "50px",
 }));
 
+export const Heading = styled(Typography)(({ theme, color }) => ({
+  marginBottom: "19px",
+  fontSize: "35px",
+  fontWeight: 700,
+  lineHeight: "1em",
+  color: `${color ? color : "#ffffff"}`,
+  [theme.breakpoints.up("xs")]: {
+    fontSize: "35px",
+  },
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "45px",
+  },
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "60px",
+  },
+}));
+
 export const Title = styled(Typography)(({ theme, color }) => ({
   marginBottom: "19px",
   fontSize: "35px",
@@ -80,8 +97,25 @@ export const Title = styled(Typography)(({ theme, color }) => ({
   },
 }));
 
+export const Title1 = styled(Typography)(({ theme, color }) => ({
+  marginBottom: "10px",
+  fontSize: "35px",
+  fontWeight: 600,
+  lineHeight: "1.2em",
+  color: `${color ? color : "#ffffff"}`,
+  [theme.breakpoints.up("xs")]: {
+    fontSize: "30px",
+  },
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "40px",
+  },
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "43px",
+  },
+}));
+
 export const Title2 = styled(Typography)(({ theme, color }) => ({
-  marginBottom: "19px",
+  marginBottom: "20px",
   fontSize: "35px",
   fontWeight: 700,
   lineHeight: "1em",
@@ -104,9 +138,9 @@ export const Title3 = styled(Typography)(({ textcolor }) => ({
   color: textcolor ? textcolor : "#ffffff",
 }));
 
-export const Title4 = styled(Typography)(({ theme, textcolor }) => ({
+export const Title4 = styled(Typography)(({ theme, textcolor, weight }) => ({
   fontSize: "18px",
-  fontWeight: "bold",
+  fontWeight: weight ? weight : 700,
   lineHeight: "1.2em",
   color: textcolor ? textcolor : "#ffffff",
   [theme.breakpoints.up("xs")]: {
@@ -117,6 +151,25 @@ export const Title4 = styled(Typography)(({ theme, textcolor }) => ({
   },
   [theme.breakpoints.up("md")]: {
     fontSize: "22px",
+  },
+}));
+
+export const BodyText = styled(Typography)(({ theme, color }) => ({
+  marginBottom: "10px",
+  width: "100%",
+  fontSize: "18px",
+  fontWeight: 600,
+  lineHeight: "1.4em",
+  color: `${color ? color : "#ffffff"}`,
+  [theme.breakpoints.up("xs")]: {
+    fontSize: "18px",
+    marginBottom: "10px",
+  },
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "25px",
+  },
+  [theme.breakpoints.up("lg")]: {
+    marginBottom: "30px",
   },
 }));
 
@@ -135,12 +188,12 @@ export const BodyText1 = styled(Typography)(({ theme, color }) => ({
     fontSize: "25px",
   },
   [theme.breakpoints.up("lg")]: {
-    marginBottom: "19px",
+    marginBottom: "20px",
   },
 }));
 
 export const FormContainer = styled(FormGroup)(({ theme }) => ({
-  padding: "20px 30px",
+  padding: "50px 40px",
   width: "100%",
   borderRadius: "35px",
   backgroundImage: "linear-gradient(180deg, #11172b 20%, #21212480 100%);",
