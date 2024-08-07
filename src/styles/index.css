@@ -15,3 +15,7 @@ body {
 body {
   font-family: "Raleway", sans-serif;
 }
+
+header {
+  overflow: hidden;
+}

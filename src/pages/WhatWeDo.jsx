@@ -17,11 +17,11 @@ const WhatWeDo = () => {
       <Open />
       <OpenAuto />
       <EnclosedAuto />
-      {/* END */}
       <Door />
       <OurServices />
       <Additional />
       <WantToKnow />
+      {/* END */}
       <OurServiceProgress />
     </>
   );
