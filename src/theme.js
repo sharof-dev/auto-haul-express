@@ -17,15 +17,7 @@ export const theme = createTheme({
         },
     },
     typography: {
-        fontFamily: 'Inter, sans-serif',
-    },
-    breakpoints: {
-        values: {
-            sm: 0,
-            md: 600,
-            lg: 960,
-            xl: 1280,
-        },
+        fontFamily: 'Raleway, sans-serif',
     },
     shape: {
         borderRadius: 10,
@@ -46,7 +38,7 @@ export const theme = createTheme({
             sm: 576,
             md: 768,
             lg: 992,
-            xl: 1320,
+            xl: 1200,
             xxl: 1400,
         },
     }

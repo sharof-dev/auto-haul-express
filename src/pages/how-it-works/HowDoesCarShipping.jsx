@@ -1,11 +1,23 @@
-import React from 'react'
+import CarShipping from "../../components/how-does-car-shipping/CarShipping";
+import ProcessOf from "../../components/how-does-car-shipping/ProcessOf";
+import HowToShip from "../../components/how-does-car-shipping/HowToShip";
+import GetQuote from "../../components/how-does-car-shipping/GetQuote";
+import WePick from "../../components/how-does-car-shipping/WePick";
+import Receive from "../../components/how-does-car-shipping/Receive";
+import WantTo from "../../components/how-does-car-shipping/WantTo";
 
 const HowDoesCarShipping = () => {
   return (
-    <div>
-      <h1>HowDoesCarShipping</h1>
-    </div>
-  )
-}
+    <>
+      <CarShipping />
+      <ProcessOf />
+      <HowToShip />
+      <GetQuote />
+      <WePick />
+      <Receive />
+      <WantTo />
+    </>
+  );
+};
 
-export default HowDoesCarShipping
+export default HowDoesCarShipping;

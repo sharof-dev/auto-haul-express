@@ -1,11 +1,9 @@
-import React from "react";
+import React from 'react'
 
-const MilitaryCar = () => {
+function militaryCar() {
   return (
-    <div>
-      <h1>MilitaryCar</h1>
-    </div>
-  );
-};
+    <div>militaryCar</div>
+  )
+}
 
-export default MilitaryCar;
+export default militaryCar
