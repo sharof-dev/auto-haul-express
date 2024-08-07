@@ -1,16 +1,20 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography, styled } from "@mui/material";
 import {
   BannerColor,
   BannerImage,
   Section,
 } from "../../pages/how-it-works/styles";
 import SliderCard from "./cards/SliderCard";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import CircleIcon from "@mui/icons-material/Circle";
+import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
+
+const VerticalTimelineText = styled(VerticalTimeline)(({ theme }) => ({
+  '&:before': {
+    top: '8% !important',
+    height: '84% !important',
+  }
+}))
 
 const sliderData = [
   {
@@ -85,36 +89,48 @@ function WhatFactors({ whyChooseData, text }) {
         />
         <Container maxWidth="xl">
           {text ? (<Typography variant="h2" textAlign={'center'} mb={10} fontWeight={600}>
-            Why choose <span style={{color: '#e01933'}}>Us Car-Go</span>
-          </Typography>): ""}
-          <VerticalTimeline
-            animate={"true"}
-            lineColor={"#E01933"}
-            style={{ boxShadow: "none", border: "0" }}
-          >
-            {whyChooseData ?
-              (whyChooseData.map((card, idx) => (
+            Why choose <span style={{ color: '#e01933' }}>Us Car-Go</span>
+          </Typography>) : ""}
+
+          {text ? (
+            <VerticalTimelineText
+              animate="true"
+              lineColor={"#E01933"}
+              style={{ boxShadow: "none", border: "0" }}
+            >
+
+              {whyChooseData.map((card, idx) => (
                 <VerticalTimelineElement
                   dateClassName="vertical-timeline-element-date"
                   date={card.title}
                   iconStyle={{ background: "#E01933", color: "#fff" }}
-                  icon={<CircleIcon />}
+                  icon={<RadioButtonCheckedIcon />}
                   key={idx}
                 >
                   <SliderCard {...card} />
                 </VerticalTimelineElement>
-             ))) :
-              (sliderData.map((card, idx) => (
+              ))}
+            </VerticalTimelineText>
+          ) : (
+            <VerticalTimeline
+              animate="true"
+              lineColor={"#E01933"}
+              style={{ boxShadow: "none", border: "0" }}
+            >
+
+              {sliderData.map((card, idx) => (
                 <VerticalTimelineElement
                   date="Distance of the Transport"
                   iconStyle={{ background: "#E01933", color: "#fff" }}
-                  icon={<CircleIcon />}
+                  icon={<RadioButtonCheckedIcon />}
                   key={idx}
                 >
                   <SliderCard {...card} textin={text} />
                 </VerticalTimelineElement>
-              )))}
-          </VerticalTimeline>
+              ))}
+            </VerticalTimeline>
+          )}
+
         </Container>
       </Section>
     </>
