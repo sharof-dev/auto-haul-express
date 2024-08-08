@@ -181,14 +181,13 @@ function Blog() {
   const [disabled, setDisabled] = useState(false);
 
   const handleClick = () => {
-    // added new obj in data state //
-    if (!blog.length - 1 === countLoad) {
-      setCoutLoad((prev) => prev + 1);
-      setData((prevData) => [...prevData, blog[countLoad]].flat());
-    } else {
-      // stop added obj and disabled lore button //
+    // stop added obj and disabled lore button //
+    if (blog.length - 1 === countLoad) {
       setDisabled(true);
     }
+    // added new obj in data state //
+    setCoutLoad((prev) => prev + 1);
+    setData((prevData) => [...prevData, blog[countLoad]].flat());
   };
 
   return (
