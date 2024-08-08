@@ -37,7 +37,8 @@ const sliderData = [
   },
 ];
 
-function WhatOur() {
+function  WhatOur({text}) {
+  console.log(text);
   return (
     <>
       <Section component={"section"} id="what-our">
@@ -64,9 +65,23 @@ function WhatOur() {
           >
             What Our {""}
             <Box component="span" sx={{ color: "#E01933" }}>
-              Clients Say!!​
+              Clients Say!
             </Box>
           </Typography>
+            {text && (
+              <Typography  sx={{
+                marginBottom: "20px",
+                fontWeight: 400,
+                fontSize: { sm: "35px", md: "18px" },
+                color: "#fff",
+                textAlign: "center",
+              }}>
+            US Car-Go freight is a trusted industry leader in US car and vehicle shipping, providing reliable and exceptional <br />
+            transportation services
+            to satisfied clients nationwide. With an outstanding customer satisfaction rating of <br /> 97%, we are the go-to choice for most affordable, efficient and safest vehicle transportation.
+            </Typography>
+            )}
+          
 
           <Box
             component={"div"}
@@ -78,22 +93,22 @@ function WhatOur() {
             <Swiper
               style={{ padding: "5px" }}
               centeredSlides={true}
-              spaceBetween={10}
-              slidesPerView={1}
+              spaceBetween={text ? 30 : 10}
+              slidesPerView={text ? 3 : 1}
               navigation={{
                 nextEl: ".swipper-button-next",
                 prevEl: ".swipper-button-prev",
               }}
               speed={2500}
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-              }}
+              // autoplay={{
+              //   delay: 3000,
+              //   disableOnInteraction: false,
+              // }}
               modules={[Navigation, Autoplay]}
             >
               {sliderData.map((card, idx) => (
                 <SwiperSlide key={idx}>
-                  <SliderOurCard {...card} />
+                  <SliderOurCard {...card} text={text} />
                 </SwiperSlide>
               ))}
             </Swiper>

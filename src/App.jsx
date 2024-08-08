@@ -24,8 +24,10 @@ import {
   OpenAuotTransport,
   SnowBirds,
   StudentAuto,
+  Blog,
+  BlogPost,
 } from "./pages/";
-import { Box, Container, Stack, Grid } from "@mui/material";
+
 import CarShippingCost from "./pages/how-it-works/CarShippingCost";
 import CrosCountry from "./pages/how-it-works/CrosCountry";
 import HowDoesCarShipping from "./pages/how-it-works/HowDoesCarShipping";
@@ -34,11 +36,12 @@ const App = () => {
   return (
     <>
       <Header />
-      
+
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+
         <Route path="/contact" element={<Contact />} />
         <Route path="/what-we-do" element={<WhatWeDo />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
@@ -69,6 +72,10 @@ const App = () => {
         />
         <Route path="/car-shipping-costs" element={<CarShippingCost />} />
         <Route path="/cross-country-car-shipping" element={<CrosCountry />} />
+        {/* BLOG page */}
+        <Route path="/blog" element={<Blog />}>
+          <Route path=":name" element={<BlogPost />} />
+        </Route>
       </Routes>
       <Footer />
     </>

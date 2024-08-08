@@ -1,5 +1,7 @@
 export { default as Home } from "./Home";
 export { default as About } from "./About";
+export { default as Blog } from "./blog/Blog";
+export { default as BlogPost } from "./blog/BlogPost";
 export { default as OurGallery } from "./OurGallery";
 export { default as Privacypolicy } from "./Privacypolicy";
 export { default as TermsOfUse } from "./TermsOfUse";
