@@ -1,23 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import BlogCard from "../blog/BlogCard";
 import { Section } from "../../pages/how-it-works/styles";
 import { Box, Button, Container } from "@mui/material";
 
-function BlogCardContainer() {
+function BlogCardContainer({ handleClick, data, disabled }) {
   return (
     <>
       <Section component={"section"} id="blog-card-container">
         <Container maxWidth={"xl"}>
           <Box
             component={"div"}
-            sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: { xs: "15px 0", sm: "15px 0", md: "24px 0" },
+            }}
           >
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
+            {data?.map((card, idx) => (
+              <BlogCard {...card} key={idx} />
+            ))}
           </Box>
           <Box
             component={"div"}
@@ -43,6 +45,8 @@ function BlogCardContainer() {
                   opacity: 0.8,
                 },
               }}
+              onClick={handleClick}
+              disabled={disabled}
             >
               Load More
             </Button>

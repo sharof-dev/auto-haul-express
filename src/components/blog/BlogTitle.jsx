@@ -18,7 +18,7 @@ function BlogTitle() {
         />
         {/* Banner Color */}
         <BannerColor
-          color={"linear-gradient(180deg, #11172b 40%, #11172B 100%)"}
+          color={"linear-gradient(180deg, #11172B 40%, #101010 100%)"}
         />
         <Container maxWidth={"xl"}>
           <Heading variant="h1" sx={{ textAlign: "center" }}>

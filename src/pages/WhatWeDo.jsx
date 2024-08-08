@@ -21,7 +21,6 @@ const WhatWeDo = () => {
       <OurServices />
       <Additional />
       <WantToKnow />
-      {/* END */}
       <OurServiceProgress />
     </>
   );
