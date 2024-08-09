@@ -8,6 +8,10 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 function BlogCard({ img, title, date, text }) {
   const navigate = useNavigate();
 
+  function navigatePath() {
+    navigate(title.toLowerCase().replaceAll(" ", "-"));
+  }
+
   return (
     <>
       {title && (
@@ -43,6 +47,7 @@ function BlogCard({ img, title, date, text }) {
                 },
               },
             }}
+            onClick={navigatePath}
           >
             <Box
               component={"img"}
@@ -93,6 +98,7 @@ function BlogCard({ img, title, date, text }) {
                   color: "#E01933",
                 },
               }}
+              onClick={navigatePath}
             >
               {title}
             </Typography>
@@ -126,6 +132,7 @@ function BlogCard({ img, title, date, text }) {
                   color: "#E01933",
                 },
               }}
+              onClick={navigatePath}
             >
               Read More...
             </Button>

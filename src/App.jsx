@@ -31,6 +31,7 @@ import {
 import CarShippingCost from "./pages/how-it-works/CarShippingCost";
 import CrosCountry from "./pages/how-it-works/CrosCountry";
 import HowDoesCarShipping from "./pages/how-it-works/HowDoesCarShipping";
+import BlogRout from "./layout/BlogRout";
 
 const App = () => {
   return (
@@ -73,7 +74,8 @@ const App = () => {
         <Route path="/car-shipping-costs" element={<CarShippingCost />} />
         <Route path="/cross-country-car-shipping" element={<CrosCountry />} />
         {/* BLOG page */}
-        <Route path="/blog" element={<Blog />}>
+        <Route path="/blog" element={<BlogRout />}>
+          <Route index element={<Blog />} />
           <Route path=":name" element={<BlogPost />} />
         </Route>
       </Routes>
