@@ -10,12 +10,16 @@ import {
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import DescriptionIcon from "@mui/icons-material/Description";
 
-function WantToKnow() {
+function WantToKnow({ text }) {
   return (
     <>
       <Section component={"section"} id="what-to-know">
         <BannerImage
-          image={"/assets/what-we-do/want_to_know_background.jpg"}
+          image={
+            text
+              ? "/assets/open-transport/want_to_know_background.jpg"
+              : "/assets/what-we-do/want_to_know_background.jpg"
+          }
           parallax={"true"}
           component={"div"}
         />
@@ -34,12 +38,16 @@ function WantToKnow() {
             }}
           >
             <Title2 variant="h2" sx={{ marginBottom: "30px" }}>
-              Want to know the cost of our nationwide auto transport services?
+              {text
+                ? "Want to know the cost of shipping a car with us?"
+                : "Want to know the cost of our nationwide auto transport services?"}
             </Title2>
             <BodyText1 variant="subtitle1">
-              US Car-Go stands out from competitors thanks to its commitment to
+              {text
+                ? "Ride in Style with Our Open Carrier Transport - The Perfect Blend of Affordability and Convenience"
+                : ` US Car-Go stands out from competitors thanks to its commitment to
               top-notch service and an impressive selection of customizable
-              services.
+              services.`}
             </BodyText1>
           </Box>
           <Box

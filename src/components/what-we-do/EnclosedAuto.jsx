@@ -14,13 +14,17 @@ import {
 } from "../../pages/how-it-works/styles";
 import { useNavigate } from "react-router-dom";
 
-function EnclosedAuto() {
+function EnclosedAuto({ text }) {
   const navigate = useNavigate();
   return (
     <>
       <Section component={"section"} id="enclosed-auto">
         <BannerImage
-          image={"/assets/what-we-do/enclosed_auto.jpg"}
+          image={
+            text
+              ? "/assets/open-transport/open-auto-about_background.jpg"
+              : "/assets/what-we-do/enclosed_auto.jpg"
+          }
           parallax={"true"}
           component={"div"}
         />
@@ -38,7 +42,7 @@ function EnclosedAuto() {
               flexDirection: {
                 xs: "column-reverse",
                 sm: "column-reverse",
-                md: "row",
+                md: text ? "row-reverse" : "row",
               },
             }}
           >
@@ -57,9 +61,14 @@ function EnclosedAuto() {
               <Box
                 sx={{
                   width: "100%",
-                  maxWidth: { xs: "520px", sm: "900px", md: "578px" },
-                  boxShadow:
-                    "-5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
+                  maxWidth: {
+                    xs: "520px",
+                    sm: "900px",
+                    md: text ? "530px" : "578px",
+                  },
+                  boxShadow: text
+                    ? "5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)"
+                    : "-5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
                   borderRadius: "35px",
                   padding: 0,
                   overflow: "hidden",
@@ -84,7 +93,9 @@ function EnclosedAuto() {
                     }}
                     onClick={() => navigate("/enclosed-auto-transport")}
                   >
-                    Open Auto Transport
+                    {text
+                      ? "Stress-free car shipping with US Car-Go"
+                      : "Open Auto Transport"}
                     <Box
                       component={"span"}
                       sx={{ fontWeight: 700, color: "#E01933" }}
@@ -102,7 +113,11 @@ function EnclosedAuto() {
                       color: "#7A7A7A",
                     }}
                   >
-                    With US Car-Go's enclosed carriers, your vehicle enjoys
+                    {text
+                      ? `
+                    With our expertise in the car shipping industry, US Car-Go freight logistics llc understands the concerns and worries that come with transporting your vehicle. Our dedicated Auto Transport Experts are here to handle all aspects of your vehicle shipping, ensuring a stress-free experience and providing you with peace of mind.
+                   `
+                      : ` With US Car-Go's enclosed carriers, your vehicle enjoys
                     unparalleled protection and peace of mind during
                     transportation. Our fully enclosed trailers shield your
                     valuable asset from all external elements throughout the
@@ -111,16 +126,17 @@ function EnclosedAuto() {
                     enclosed environment. Enclosed carriers are ideal for
                     luxury, vintage, and sports cars, or any vehicle requiring
                     an extra layer of protection. Choose US Car-go for the
-                    utmost peace of mind during auto transport.
+                    utmost peace of mind during auto transport.`}
                   </Typography>
-
-                  <IconButton
-                    sx={{ background: "#E01933", marginTop: "10px" }}
-                    onClick={() => navigate("/open-auto-transport")}
-                    disableRipple
-                  >
-                    <ArrowForwardIosIcon sx={{ color: "#fff" }} />
-                  </IconButton>
+                  {!text && (
+                    <IconButton
+                      sx={{ background: "#E01933", marginTop: "10px" }}
+                      onClick={() => navigate("/open-auto-transport")}
+                      disableRipple
+                    >
+                      <ArrowForwardIosIcon sx={{ color: "#fff" }} />
+                    </IconButton>
+                  )}
                 </CardContent>
               </Box>
             </Card>
@@ -139,14 +155,19 @@ function EnclosedAuto() {
                 component={"div"}
                 sx={{
                   width: "100%",
-                  maxWidth: "373px",
-                  height: "403px",
+                  maxWidth: text ? "570px" : "373px",
+                  height: text ? "339px" : "403px",
                   flexGrow: 1,
-                  boxShadow:
-                    "5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
+                  boxShadow: text
+                    ? "-5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)"
+                    : "5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
                   borderRadius: "35px",
                   overflow: "hidden",
-                  backgroundImage: `url(/assets/what-we-do/enclosed_auto.jpg)`,
+                  backgroundImage: `url(${
+                    text
+                      ? "/assets/open-transport/open-auto-about_background.jpg"
+                      : "/assets/what-we-do/enclosed_auto.jpg"
+                  })`,
                   backgroundPosition: "center",
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",

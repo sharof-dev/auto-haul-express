@@ -9,7 +9,7 @@ import {
   Title1,
 } from "../../pages/how-it-works/styles";
 
-function Nationwide() {
+function Nationwide({ text }) {
   return (
     <>
       <Box
@@ -19,7 +19,11 @@ function Nationwide() {
       >
         {/* Banner Image */}
         <BannerImage
-          image={"/assets/what-we-do/nationwide-background.jpg"}
+          image={
+            text
+              ? "/assets/open-transport/open_transport_background.jpg"
+              : "/assets/what-we-do/nationwide-background.jpg"
+          }
           component={"div"}
         />
         {/* Banner Color */}
@@ -42,8 +46,22 @@ function Nationwide() {
                 width: "100%",
               }}
             >
-              <Title1 variant="h1" sx={{ textAlign: "left" }}>
-                Nationwide Auto Transport <br />
+              <Title1
+                variant="h1"
+                sx={{
+                  textAlign: text
+                    ? { xs: "center", sm: "center", md: "left" }
+                    : "left",
+                }}
+              >
+                {text ? (
+                  <>
+                    Open Auto Transport <br /> Carrier
+                  </>
+                ) : (
+                  "Nationwide Auto Transport"
+                )}
+                {!text && <br />}
                 <Box
                   component="span"
                   sx={{
@@ -51,23 +69,32 @@ function Nationwide() {
                     color: "#E01933",
                   }}
                 >
-                  by Reliable Carriers.
+                  {text ? "." : "by Reliable Carriers."}
                 </Box>
               </Title1>
 
               <BodyText1
                 sx={{
-                  textAlign: "left",
+                  textAlign: text
+                    ? { xs: "center", sm: "center", md: "left" }
+                    : "left",
                 }}
               >
-                US Car-Go offers <em>Nationwide Auto Transport</em>, making
-                vehicle transportation a breeze. With us, you can enjoy
-                hassle-free and affordable transport services. From start to
-                finish, we handle everything, allowing you to sit back and
-                relax. Whether you need to ship your car, boat, or anything in
-                between, our wide range of services has got you covered. Let us
-                make your next move stress-free and easy. Discover our services
-                today and experience seamless vehicle transportation.
+                {text ? (
+                  text
+                ) : (
+                  <>
+                    US Car-Go offers <em>Nationwide Auto Transport</em>, making
+                    vehicle transportation a breeze. With us, you can enjoy
+                    hassle-free and affordable transport services. From start to
+                    finish, we handle everything, allowing you to sit back and
+                    relax. Whether you need to ship your car, boat, or anything
+                    in between, our wide range of services has got you covered.
+                    Let us make your next move stress-free and easy. Discover
+                    our services today and experience seamless vehicle
+                    transportation.
+                  </>
+                )}
               </BodyText1>
             </Box>
             <Box

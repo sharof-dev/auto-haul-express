@@ -37,7 +37,7 @@ const sliderData = [
   },
 ];
 
-function  WhatOur({text}) {
+function WhatOur({ text }) {
   console.log(text);
   return (
     <>
@@ -68,20 +68,24 @@ function  WhatOur({text}) {
               Clients Say!
             </Box>
           </Typography>
-            {text && (
-              <Typography  sx={{
+          {text && (
+            <Typography
+              sx={{
                 marginBottom: "20px",
                 fontWeight: 400,
                 fontSize: { sm: "35px", md: "18px" },
                 color: "#fff",
                 textAlign: "center",
-              }}>
-            US Car-Go freight is a trusted industry leader in US car and vehicle shipping, providing reliable and exceptional <br />
-            transportation services
-            to satisfied clients nationwide. With an outstanding customer satisfaction rating of <br /> 97%, we are the go-to choice for most affordable, efficient and safest vehicle transportation.
+              }}
+            >
+              US Car-Go freight is a trusted industry leader in US car and
+              vehicle shipping, providing reliable and exceptional <br />
+              transportation services to satisfied clients nationwide. With an
+              outstanding customer satisfaction rating of <br /> 97%, we are the
+              go-to choice for most affordable, efficient and safest vehicle
+              transportation.
             </Typography>
-            )}
-          
+          )}
 
           <Box
             component={"div"}

@@ -1,14 +1,14 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 
-function HowGetCard({ title, icon }) {
+function HowGetCard({ title, icon, data }) {
   return (
     <Grid
       item
       sx={{
         padding: "10px",
         width: "100%",
-        maxWidth: "285px",
+        maxWidth: data ? "351px" : "285px",
         backgroundColor: "#fff",
         transition: "transform 0.3s",
         "&:hover": {

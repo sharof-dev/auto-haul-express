@@ -65,7 +65,7 @@ const sliderData = [
   },
 ];
 
-function WhatAreThe() {
+function WhatAreThe({ data }) {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("xl"));
   const separate = (num) => {
@@ -107,7 +107,7 @@ function WhatAreThe() {
             lineColor={"#E01933"}
             style={{ boxShadow: "none", border: "0" }}
           >
-            {sliderData.map((card, idx) => (
+            {data.map((card, idx) => (
               <VerticalTimelineElement
                 style={{ marginTop: `${matches ? "50px" : "20px"}` }}
                 date={matches ? null : card.title}

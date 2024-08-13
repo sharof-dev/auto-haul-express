@@ -21,7 +21,7 @@ const howGetCardData = [
   },
 ];
 
-function HowGet() {
+function HowGet({ data }) {
   return (
     <>
       <Section component={"section"} id="how-get">
@@ -36,9 +36,12 @@ function HowGet() {
             }}
           >
             <Title2 variant="h2" color={"#11172B"}>
-              How to Get a Quote for <br />
+              {data
+                ? "Factor Affects Car Shipping Cost"
+                : " How to Get a Quote for"}{" "}
+              {!data && <br />}
               <Box component="span" sx={{ color: "#E01933" }}>
-                Shipping Car Across Country
+                {data ? "." : " Shipping Car Across Country"}
               </Box>
             </Title2>
             <BodyText1
@@ -46,15 +49,26 @@ function HowGet() {
               color={"#7A7A7A"}
               sx={{ marginTop: "10px" }}
             >
-              Getting an accurate{" "}
-              <Box
-                component={"a"}
-                href={"#"}
-                sx={{ textDecoration: "none", color: "#7A7A7A" }}
-              >
-                <strong>quote to ship</strong>
-              </Box>
-              , a car depends on the following information:
+              {data ? (
+                <>
+                  US CAR-GO FREIGHT, understand that the cost and transit time
+                  of an <b>open carrier car shipping</b> are influenced by
+                  various factors. Here are some of the key factors that can
+                  impact the cost and transit time of your shipment:
+                </>
+              ) : (
+                <>
+                  Getting an accurate{" "}
+                  <Box
+                    component={"a"}
+                    href={"#"}
+                    sx={{ textDecoration: "none", color: "#7A7A7A" }}
+                  >
+                    <strong>quote to ship</strong>
+                  </Box>
+                  , a car depends on the following information:
+                </>
+              )}
             </BodyText1>
           </Box>
 
@@ -65,9 +79,19 @@ function HowGet() {
             rowSpacing={1}
             sx={{ padding: "20px 0" }}
           >
-            {howGetCardData.map((card, idx) => (
-              <HowGetCard {...card} key={idx} />
-            ))}
+            {data ? (
+              <>
+                {data?.map((card, idx) => (
+                  <HowGetCard {...card} key={idx} data={data} />
+                ))}
+              </>
+            ) : (
+              <>
+                {howGetCardData.map((card, idx) => (
+                  <HowGetCard {...card} key={idx} />
+                ))}
+              </>
+            )}
           </Grid>
 
           <Box>
@@ -81,9 +105,11 @@ function HowGet() {
                 color: "#7A7A7A",
               }}
             >
-              A price from the shipping business will be based on the details
+              {data
+                ? "At US CAR-GO FREIGHT, we take all these factors into consideration when providing you with a quote for shipping your vehicle. Our team of experts will work with you to determine the most efficient and cost-effective shipping solution for your unique needs, ensuring that your vehicle arrives safely and on time."
+                : `  A price from the shipping business will be based on the details
               you supply. It is smart to inquire about any extra expenses that
-              may be incurred, such those for insurance or rush delivery.
+              may be incurred, such those for insurance or rush delivery.`}
             </Typography>
           </Box>
         </Container>
