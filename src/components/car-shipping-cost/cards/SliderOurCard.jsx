@@ -2,7 +2,7 @@ import { Box, Card, CardContent, Typography } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import FormatQuoteOutlinedIcon from "@mui/icons-material/FormatQuoteOutlined";
 
-function SliderOurCard({ starLength = 5, description, userName, logo, mini }) {
+function SliderOurCard({ starLength = 5, description, userName, logo, mini  }) {
   let starArr = [];
   for (let i = 0; i < starLength; i++) starArr.push(i);
 
@@ -11,7 +11,7 @@ function SliderOurCard({ starLength = 5, description, userName, logo, mini }) {
       sx={{
         width: "100%",
         padding: "30px",
-        minHeight: " 462px",
+        minHeight: "540px",
         borderRadius: "35px",
         overflow: "visible",
         boxShadow:
