@@ -5,7 +5,6 @@ import {
   FormInput,
   BannerImage,
   BannerColor,
-  Heading,
   BodyText,
   Section,
   ButtonStyled,

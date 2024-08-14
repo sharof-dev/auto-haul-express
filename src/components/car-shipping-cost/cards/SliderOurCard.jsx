@@ -11,7 +11,7 @@ function SliderOurCard({ starLength = 5, description, userName, logo, mini  }) {
       sx={{
         width: "100%",
         padding: "30px",
-        minHeight: "540px",
+        minHeight: "340px",
         borderRadius: "35px",
         overflow: "visible",
         boxShadow:

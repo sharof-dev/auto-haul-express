@@ -45,9 +45,8 @@ const CardIcon = ({ Icon }) => {
   );
 };
 
-
 function SliderCard({ Icon, img, title, text, dark, timeline, matches }) {
-    return (
+  return (
     <Card
       sx={{
         marginTop: `${Icon ? "75px" : "0px"}`,

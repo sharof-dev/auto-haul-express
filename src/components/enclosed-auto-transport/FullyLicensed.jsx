@@ -2,10 +2,12 @@ import {
   BannerColor,
   BannerImage,
   Section,
+  Title,
 } from "../../pages/how-it-works/styles";
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
 
 function FullyLicensed({
+  title,
   background,
   backgroundColor,
   cardImage,
@@ -33,6 +35,15 @@ function FullyLicensed({
       )}
 
       <Container maxWidth="xl">
+        {title && (
+          <Title
+            color={background ? "#fff" : "#11172B"}
+            sx={{ textAlign: "center", marginBottom: "20px" }}
+          >
+            {title}
+          </Title>
+        )}
+
         <Box
           component={"ul"}
           sx={{
@@ -66,12 +77,12 @@ function FullyLicensed({
                   md: Width ? Width : "500px",
                 },
                 boxShadow: reverse
-                  ? "5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)"
-                  : "-5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
+                  ? "-5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)"
+                  : "5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
                 borderRadius: "35px",
                 padding: 0,
                 overflow: "hidden",
-                backgroundColor: "#11172B",
+                backgroundColor: background ? "#fff " : "#11172B",
               }}
             >
               <CardContent sx={{ padding: "30px", width: "100%" }}>
@@ -86,7 +97,7 @@ function FullyLicensed({
                     },
                     fontWeight: 600,
                     lineHeight: "1em",
-                    color: "white",
+                    color: background ? "#11172B" : "white",
                   }}
                 >
                   {cardTitle}
@@ -98,7 +109,7 @@ function FullyLicensed({
                     fontSize: "20px",
                     fontWeight: 400,
                     lineHeight: "1.4em",
-                    color: "white",
+                    color: background ? "#7A7A7A" : "white",
                   }}
                 >
                   {cardText}
@@ -125,8 +136,8 @@ function FullyLicensed({
                 height: imageHeight,
                 flexGrow: 1,
                 boxShadow: reverse
-                  ? "-5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)"
-                  : "5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
+                  ? "5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)"
+                  : "-5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
                 borderRadius: "35px",
                 overflow: "hidden",
                 backgroundImage: `url(${cardImage})`,

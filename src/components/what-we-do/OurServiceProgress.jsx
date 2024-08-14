@@ -5,7 +5,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { useTheme } from "@emotion/react";
-import CircleIcon from "@mui/icons-material/Circle";
+import TripOriginIcon from "@mui/icons-material/TripOrigin";
 import SliderCard from "../car-shipping-cost/cards/SliderCard";
 
 const sliderData = [
@@ -126,7 +126,7 @@ function OurServiceProgress() {
                 style={{ marginTop: `${matches ? "50px" : "20px"}` }}
                 date={matches ? null : card.title}
                 iconStyle={{ background: "#E01933", color: "#fff" }}
-                icon={<CircleIcon />}
+                icon={<TripOriginIcon />}
                 key={idx}
                 position={separate(idx)}
               >
