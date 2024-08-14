@@ -38,7 +38,10 @@ function WhyChoose({ background, backgroundColor, sliderData }) {
         )}
 
         <Container maxWidth="xl">
-          <Title2 color={"#11172B"} sx={{ textAlign: "center" }}>
+          <Title2
+            color={background ? "#fff" : "#11172B"}
+            sx={{ textAlign: "center" }}
+          >
             Why Choose{" "}
             <Box component="span" sx={{ color: "#E01933" }}>
               Us?
@@ -63,6 +66,7 @@ function WhyChoose({ background, backgroundColor, sliderData }) {
                   {...card}
                   image={false}
                   timeline={"true"}
+                  background={background}
                   matches={matches}
                 />
               </VerticalTimelineElement>

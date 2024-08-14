@@ -22,7 +22,7 @@ function GetQuote({
 }) {
   return (
     <>
-      <Section component={"section"} id="fully-licensed">
+      <Section component={"section"} id="get-quote">
         {background && (
           <>
             <BannerImage
@@ -73,23 +73,24 @@ function GetQuote({
               >
                 {text}
               </BodyText>
-
-              <ButtonStyled
-                component="a"
-                href={buttonLink}
-                sx={{
-                  color: "#fff",
-                  transition: "0.1s linear",
-                  margin: { xs: "10px auto", sm: "10px auto", md: "0" },
-                  "&:hover": {
-                    backgroundColor: "#E01933",
-                    opacity: 0.8,
-                  },
-                }}
-                startIcon={buttonIcon} // Corrected here
-              >
-                {buttonText}
-              </ButtonStyled>
+              {buttonText && (
+                <ButtonStyled
+                  component="a"
+                  href={buttonLink}
+                  sx={{
+                    color: "#fff",
+                    transition: "0.1s linear",
+                    margin: { xs: "10px auto", sm: "10px auto", md: "0" },
+                    "&:hover": {
+                      backgroundColor: "#E01933",
+                      opacity: 0.8,
+                    },
+                  }}
+                  startIcon={buttonIcon} // Corrected here
+                >
+                  {buttonText}
+                </ButtonStyled>
+              )}
             </Box>
             <Box
               sx={{

@@ -67,6 +67,11 @@ const sliderData = [
     `,
   },
 ];
+const wantToKnowData = {
+  background: "/assets/open-transport/want_to_know_background.jpg",
+  title: "Want to know the cost of shipping a car with us?",
+  text: "Ride in Style with Our Open Carrier Transport - The Perfect Blend of Affordability and Convenience",
+};
 
 const OpenAuotTransport = () => {
   const text =
@@ -80,7 +85,7 @@ const OpenAuotTransport = () => {
       <OpenAuto text={true} />
       <HowMuchDoes text={true} />
       <ShipYour text={true} />
-      <WantToKnow text={true} />
+      <WantToKnow {...wantToKnowData} />
       <HowGet data={dataCard} />
       <WhatAreThe data={sliderData} />
       <HowMuch text={true} />
