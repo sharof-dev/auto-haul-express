@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Additional from "../components/what-we-do/Additional";
 import Door from "../components/what-we-do/Door";
 import EnclosedAuto from "../components/what-we-do/EnclosedAuto";
@@ -70,6 +71,35 @@ const sliderData = [
 const WhatWeDo = () => {
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Best Nationwide Auto Transport - #1 Services - US Car-Go</title>
+        <meta
+          name="description"
+          content="Trust us to handle your vehicle with care & make the shipping services process stress-free. Explore Us Car-Go's nationwide auto transport & get your free quote."
+        />
+        {/* meta property */}
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:title"
+          content="Best Nationwide Auto Transport - #1 Services - US Car-Go"
+        />
+        <meta
+          property="og:description"
+          content="Trust us to handle your vehicle with care &amp; make the shipping services process stress-free. Explore Us Car-Go's nationwide auto transport &amp; get your free quote."
+        />
+        <meta property="og:site_name" content="Auto Haul Express LLC" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Best Nationwide Auto Transport - #1 Services - US Car-Go"
+        />
+        <meta
+          name="twitter:description"
+          content="Trust us to handle your vehicle with care &amp; make the shipping services process stress-free. Explore Us Car-Go's nationwide auto transport &amp; get your free quote."
+        />
+      </Helmet>
       <Nationwide />
       <ShipYour />
       <Open />
