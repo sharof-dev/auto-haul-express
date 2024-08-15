@@ -26,6 +26,7 @@ import {
   StudentAuto,
   Blog,
   BlogPost,
+  MotorcycleShipping,
 } from "./pages/";
 
 import CarShippingCost from "./pages/how-it-works/CarShippingCost";
@@ -58,6 +59,7 @@ const App = () => {
           path="/enclosed-auto-transport"
           element={<EnclosedAutoTransport />}
         />
+        <Route path="/motorcycle-shipping" element={<MotorcycleShipping />} />
         <Route path="/expedited-car" element={<ExpeditedCar />} />
         <Route path="/heavy-shipping" element={<HeavyShipping />} />
         <Route path="/innoperable-vehicles" element={<InoperableVehicles />} />

@@ -24,3 +24,4 @@ export { default as OpenAuotTransport } from "./what-we-do/OpenAuotTransport";
 export { default as SnowBirds } from "./what-we-do/SnowBirds";
 export { default as StudentAuto } from "./what-we-do/StudentAuto";
 export { default as MilitaryCar } from "./what-we-do/MilitaryCar";
+export { default as MotorcycleShipping } from "./what-we-do/MotorcycleShipping";

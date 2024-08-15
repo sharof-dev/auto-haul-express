@@ -257,7 +257,7 @@ const ExpeditedCar = () => {
       <WhyChoose
         sliderData={sliderData}
         background={"/assets/expedited-car/why_choose_background.jpg"}
-      />
+      /> 
       <OurAuto />
     </>
   );
