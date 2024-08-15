@@ -27,6 +27,7 @@ import {
   Blog,
   BlogPost,
   MotorcycleShipping,
+  GetQuote,
 } from "./pages/";
 
 import CarShippingCost from "./pages/how-it-works/CarShippingCost";
@@ -45,6 +46,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
 
         <Route path="/contact" element={<Contact />} />
+        <Route path="/get-a-quote" element={<GetQuote />} />
         <Route path="/what-we-do" element={<WhatWeDo />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/faq" element={<FAQs />} />
