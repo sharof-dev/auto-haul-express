@@ -1,6 +1,7 @@
 import {
   BannerColor,
   BannerImage,
+  BodyText1,
   Section,
   Title,
 } from "../../pages/how-it-works/styles";
@@ -8,6 +9,7 @@ import { Box, Card, CardContent, Container, Typography } from "@mui/material";
 
 function FullyLicensed({
   title,
+  text,
   background,
   backgroundColor,
   cardImage,
@@ -42,6 +44,11 @@ function FullyLicensed({
           >
             {title}
           </Title>
+        )}
+        {text && (
+          <BodyText1 sx={{ color: "#7A7A7A", textAlign: "center" }}>
+            {text}
+          </BodyText1>
         )}
 
         <Box

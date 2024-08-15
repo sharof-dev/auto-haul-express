@@ -13,7 +13,7 @@ import {
 } from "react-vertical-timeline-component";
 import TimelineCard from "./card/TimelineCard";
 
-function WhyChoose({ background, backgroundColor, sliderData }) {
+function WhyChoose({ background, backgroundColor, sliderData, title }) {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("xl"));
   return (
@@ -42,9 +42,9 @@ function WhyChoose({ background, backgroundColor, sliderData }) {
             color={background ? "#fff" : "#11172B"}
             sx={{ textAlign: "center" }}
           >
-            Why Choose{" "}
+            {title ? title : " Why Choose"}
             <Box component="span" sx={{ color: "#E01933" }}>
-              Us?
+              {title ? "US Car-Go." : "Us?"}
             </Box>
           </Title2>
           <VerticalTimeline

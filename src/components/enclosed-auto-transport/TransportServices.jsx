@@ -73,7 +73,7 @@ function TransportServices({ background, title, text, text1 }) {
 
           <ButtonStyled
             component="a"
-            href="#getaquote"
+            href="#get-quote"
             sx={{
               color: "#fff",
               margin: "30px auto",

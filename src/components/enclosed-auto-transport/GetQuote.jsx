@@ -13,6 +13,7 @@ import {
 
 function GetQuote({
   background,
+  color,
   backgroundColor,
   title,
   text,
@@ -22,7 +23,11 @@ function GetQuote({
 }) {
   return (
     <>
-      <Section component={"section"} id="get-quote">
+      <Section
+        component={"section"}
+        id="get-quote"
+        sx={{ backgroundColor: color }}
+      >
         {background && (
           <>
             <BannerImage
@@ -60,7 +65,12 @@ function GetQuote({
               <Title1
                 variant="h1"
                 sx={{
-                  textAlign: { xs: "center", sm: "left", fontWeight: "500" },
+                  textAlign: {
+                    xs: "center",
+                    sm: "left",
+                    fontWeight: "500",
+                    color: background ? "#fff" : "#11172B",
+                  },
                 }}
               >
                 {title}
@@ -68,7 +78,12 @@ function GetQuote({
 
               <BodyText
                 sx={{
-                  textAlign: { xs: "center", sm: "left", fontWeight: "500" },
+                  textAlign: {
+                    xs: "center",
+                    sm: "left",
+                    fontWeight: "500",
+                    color: background ? "#fff" : "#7A7A7A",
+                  },
                 }}
               >
                 {text}
