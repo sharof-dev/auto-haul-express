@@ -5,12 +5,16 @@ import {
   Section,
 } from "../../pages/how-it-works/styles";
 
-function HowMuchDoes() {
+function HowMuchDoes({ text }) {
   return (
     <>
       <Section component={"section"} id="how-much-does">
         <BannerImage
-          image={"/assets/how-it-works/what_to_know.jpg"}
+          image={
+            text
+              ? "/assets/open-transport/how_much_does_background.jpg"
+              : "/assets/how-it-works/what_to_know.jpg"
+          }
           parallax={"true"}
           component={"div"}
         />
@@ -54,13 +58,17 @@ function HowMuchDoes() {
                 sx={{
                   width: "100%",
                   maxWidth: "550px",
-                  height: "632px",
+                  height: text ? "341px" : "632px",
                   flexGrow: 1,
                   boxShadow:
                     "-5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
                   borderRadius: "35px",
                   overflow: "hidden",
-                  backgroundImage: `url(/assets/how-it-works/how_much_does.webp)`,
+                  backgroundImage: `url(${
+                    text
+                      ? "/assets/open-transport/how_much_does_background.jpg"
+                      : "/assets/how-it-works/how_much_does.webp"
+                  })`,
                   backgroundPosition: "center",
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
@@ -81,13 +89,13 @@ function HowMuchDoes() {
               <Box
                 sx={{
                   width: "100%",
-                  maxWidth: { xs: "520px", sm: "900px", md: "500px" },
+                  maxWidth: { xs: "520px", sm: "900px", md: "580px" },
                   boxShadow:
                     "5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
                   borderRadius: "35px",
                   padding: 0,
                   overflow: "hidden",
-                  backgroundColor: "#11172B",
+                  backgroundColor: text ? "#fff" : "#11172B",
                 }}
               >
                 <CardContent sx={{ padding: "30px", width: "100%" }}>
@@ -102,12 +110,15 @@ function HowMuchDoes() {
                       },
                       fontWeight: 600,
                       lineHeight: "1em",
-                      color: "white",
+                      color: text ? "#11172B" : "white",
                     }}
                   >
-                    How Much Does it Cost to Ship a Car <br />
+                    {text
+                      ? "Affordability at Its Best"
+                      : " How Much Does it Cost to Ship a Car "}
+                    {!text && <br />}
                     <span style={{ fontWeight: 700, color: "#E01933" }}>
-                      Across the Country?
+                      {text ? "." : "Across the Country?"}
                     </span>
                   </Typography>
 
@@ -117,32 +128,53 @@ function HowMuchDoes() {
                       fontSize: "20px",
                       fontWeight: 400,
                       lineHeight: "1.4em",
-                      color: "white",
+                      color: text ? "#7A7A7A" : "white",
                     }}
                   >
-                    Typically, it costs between $900 and $1,500 for
-                    <strong>shipping cross country</strong>. Yet, the
-                    aforementioned conditions may cause a wide range of values.
-                    Shipping a compact vehicle 1,000 miles on an open trailer
-                    may cost as little as $800, while transporting a huge SUV
-                    2,000 miles on an enclosed trailer could cost more than
-                    $2,000.
+                    {text ? (
+                      <>
+                        If you're seeking the best value for your money, open
+                        auto transport is the way to go. Compared to{" "}
+                        <Box component={"span"} sx={{ color: "#7a7a7a" }}>
+                          <strong> enclosed car shipping</strong>
+                        </Box>
+                        , open transport is more cost-effective, making it the
+                        preferred choice for most individuals. By utilizing open
+                        carriers capable of transporting multiple vehicles
+                        (typically 8-10 cars at once), we ensure competitive
+                        pricing without compromising on quality.
+                      </>
+                    ) : (
+                      <>
+                        Typically, it costs between $900 and $1,500 for
+                        <strong>shipping cross country</strong>. Yet, the
+                        aforementioned conditions may cause a wide range of
+                        values. Shipping a compact vehicle 1,000 miles on an
+                        open trailer may cost as little as $800, while
+                        transporting a huge SUV 2,000 miles on an enclosed
+                        trailer could cost more than $2,000.
+                      </>
+                    )}
                   </Typography>
-                  <br />
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      fontSize: "20px",
-                      fontWeight: 400,
-                      lineHeight: "1.4em",
-                      color: "white",
-                    }}
-                  >
-                    It's worth remembering that going with the lowest choice
-                    isn't always the greatest move. Selecting a provider
-                    primarily on pricing might result in compromised service or
-                    inadequate protection.
-                  </Typography>
+                  {!text && (
+                    <>
+                      <br />
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          fontSize: "20px",
+                          fontWeight: 400,
+                          lineHeight: "1.4em",
+                          color: "white",
+                        }}
+                      >
+                        It's worth remembering that going with the lowest choice
+                        isn't always the greatest move. Selecting a provider
+                        primarily on pricing might result in compromised service
+                        or inadequate protection.
+                      </Typography>
+                    </>
+                  )}
                 </CardContent>
               </Box>
             </Card>

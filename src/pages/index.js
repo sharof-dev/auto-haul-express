@@ -1,5 +1,7 @@
 export { default as Home } from "./Home";
 export { default as About } from "./About";
+export { default as Blog } from "./blog/Blog";
+export { default as BlogPost } from "./blog/BlogPost";
 export { default as OurGallery } from "./OurGallery";
 export { default as Privacypolicy } from "./Privacypolicy";
 export { default as TermsOfUse } from "./TermsOfUse";
@@ -21,4 +23,5 @@ export { default as OnlinePurches } from "./what-we-do/OnlinePurches";
 export { default as OpenAuotTransport } from "./what-we-do/OpenAuotTransport";
 export { default as SnowBirds } from "./what-we-do/SnowBirds";
 export { default as StudentAuto } from "./what-we-do/StudentAuto";
-export { default as MilitaryCar } from "./what-we-do/militaryCar";
+export { default as MilitaryCar } from "./what-we-do/MilitaryCar";
+export { default as MotorcycleShipping } from "./what-we-do/MotorcycleShipping";

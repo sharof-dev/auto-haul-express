@@ -3,7 +3,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import React, { useState } from "react";
 
-function ItemDrop({ list, title, text, dark }) {
+function ItemDrop({ list, title, text, dark, listDot }) {
   const [dropToggle, setDropToggle] = useState(false);
 
   return (
@@ -63,18 +63,24 @@ function ItemDrop({ list, title, text, dark }) {
           display: `${dropToggle ? "block" : "none"}`,
         }}
       >
-        <Typography
-          variant="body1"
-          sx={{
-            color: `${dark ? "#fff" : "#7A7A7A"}`,
-            display: "inline-block",
-            overflow: "hidden",
-            maxHeight: `${dropToggle ? "50rem" : "0"}`,
-          }}
+        {text && (
+          <Typography
+            variant="body1"
+            sx={{
+              color: `${dark ? "#fff" : "#7A7A7A"}`,
+              display: "inline-block",
+              overflow: "hidden",
+              maxHeight: `${dropToggle ? "50rem" : "0"}`,
+            }}
+          >
+            {text}
+          </Typography>
+        )}
+
+        <Box
+          component={listDot ? "ul" : "ol"}
+          sx={{ paddingLeft: "2rem", marginTop: "1rem" }}
         >
-          {text}
-        </Typography>
-        <Box component={"ol"} sx={{ paddingLeft: "2rem", marginTop: "1rem" }}>
           {list?.map(({ name, listText }, idx) => (
             <Box
               component={"li"}
@@ -83,11 +89,12 @@ function ItemDrop({ list, title, text, dark }) {
                 fontSize: "1rem",
                 fontWeight: 400,
                 lineHeight: "1.7",
+                marginBottom: "10px",
               }}
               key={idx}
             >
-              <Box component={"span"} sx={{ textDecoration: "" }}>
-                {name}
+              <Box component={"span"} sx={{ textDecoration: "none" }}>
+                <strong>{name}</strong>{" "}
               </Box>
               {listText}
             </Box>

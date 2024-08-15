@@ -37,13 +37,17 @@ const sliderData = [
   },
 ];
 
-function ClientsSay() {
+function ClientsSay({ text }) {
   return (
     <>
       <Section component={"section"} id="clients-say">
         {/* Banner Image */}
         <BannerImage
-          image={"/assets/about/clients_say_background.jpg"}
+          image={
+            text
+              ? "/assets/open-transport/clients_say_background.jpg"
+              : "/assets/about/clients_say_background.jpg"
+          }
           parallax={"true"}
           component={"div"}
         />
@@ -62,9 +66,10 @@ function ClientsSay() {
               textAlign: "center",
             }}
           >
-            What Our {""}
+            {text ? "Our Customer’s" : " What Our"}
+
             <Box component="span" sx={{ color: "#E01933" }}>
-              Clients Say!!​
+              {text ? " Experience!!" : " Clients Say!!​"}
             </Box>
           </Typography>
 

@@ -1,6 +1,8 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import { Title4 } from "../../../pages/how-it-works/styles";
 
+
+
 const CardIcon = ({ Icon }) => {
   return (
     <Box
@@ -31,7 +33,6 @@ const CardIcon = ({ Icon }) => {
       >
         <Icon fontSize="large" sx={{ color: "#E01933" }} />
       </Box>
-
       <Box
         component={"div"}
         sx={{
@@ -66,34 +67,36 @@ function SliderCard({ Icon, img, title, text, dark, timeline, matches }) {
         },
       }}
     >
-      <Box
-        component={"div"}
-        sx={{
-          borderRadius: "35px",
-          maxWidth: `${
-            timeline ? "100%" : { xs: "400px", sm: "400px", md: "433px" }
-          }`,
-          width: "100%",
-          overflow: "hidden",
-          marginBottom: "10px",
-        }}
-      >
-        {Icon && <CardIcon Icon={Icon} />}
+      {img && (
         <Box
-          component={"img"}
-          width={"433px"}
-          height={"288px"}
-          loading="lazy"
-          src={img}
+          component={"div"}
           sx={{
+            borderRadius: "35px",
+            maxWidth: `${
+              timeline ? "100%" : { xs: "400px", sm: "400px", md: "433px" }
+            }`,
             width: "100%",
-            height: "auto",
-            objectFit: "cover",
-            objectPosition: "top",
+            overflow: "hidden",
+            marginBottom: "10px",
           }}
-          alt="FAQ image"
-        />
-      </Box>
+        >
+          {Icon && <CardIcon Icon={Icon} />}
+          <Box
+            component={"img"}
+            width={"433px"}
+            height={"288px"}
+            loading="lazy"
+            src={img}
+            sx={{
+              width: "100%",
+              height: "auto",
+              objectFit: "cover",
+              objectPosition: "top",
+            }}
+            alt="FAQ image"
+          />
+        </Box>
+      )}
 
       <CardContent sx={{ padding: "0" }}>
         <Title4
