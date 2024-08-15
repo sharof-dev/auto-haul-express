@@ -45,11 +45,7 @@ const CardIcon = ({ Icon }) => {
   );
 };
 
-<<<<<<< HEAD:src/components/CrosCountry/cards/SliderCard.jsx
-function SliderCard({ Icon, img, title, text, textin }) {
-=======
-function SliderCard({ Icon, img, title, text, dark, timeline, matches }) {
->>>>>>> behruz:src/components/car-shipping-cost/cards/SliderCard.jsx
+function SliderCard({ Icon, img, title, text, dark, timeline, matches, textin }) {
   return (
     <Card
       sx={{

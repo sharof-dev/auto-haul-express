@@ -6,6 +6,8 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const ourAutoData = [
   {
@@ -55,6 +57,7 @@ function OurAuto() {
               sx={{
                 textAlign: "center",
               }}
+              data-aos='fade-up'
             >
               Our Auto Transport{" "}
               <Box component="span" sx={{ color: "#E01933" }}>
@@ -101,6 +104,7 @@ function OurAuto() {
                   backgroundColor: "#11172B",
                   color: "#fff",
                 }}
+                data-aos='fade-up'
               >
                 <Typography
                   variant="h4"
@@ -127,6 +131,7 @@ function OurAuto() {
                   nextEl: ".swipper-button-next",
                   prevEl: ".swipper-button-prev",
                 }}
+                data-aos='fade-up'
                 autoplay={{
                   delay: 3000,
                   disableOnInteraction: false,

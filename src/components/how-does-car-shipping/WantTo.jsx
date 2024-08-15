@@ -10,6 +10,8 @@ import {
 import { Box, Container } from "@mui/material";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import DescriptionIcon from "@mui/icons-material/Description";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function WantTo() {
   return (
@@ -36,10 +38,10 @@ function WantTo() {
               textAlign: "center",
             }}
           >
-            <Title2 variant="h2">
+            <Title2 variant="h2" data-aos='fade-up'>
               Want to know the cost of <br /> shipping a car with us?
             </Title2>
-            <BodyText1 variant="subtitle1">
+            <BodyText1 variant="subtitle1" data-aos='fade-up'>
               US Car-Go stands out from competitors thanks to its commitment to
               top-notch service and an impressive selection of customizable
               services.
@@ -71,6 +73,7 @@ function WantTo() {
                   opacity: 0.8,
                 },
               }}
+              data-aos='fade-right'
             >
               Get Instant Quote
             </ButtonStyled>
@@ -88,6 +91,7 @@ function WantTo() {
                   opacity: 0.8,
                 },
               }}
+              data-aos='fade-left'
             >
               Call At (888) 249-8840
             </ButtonStyled>

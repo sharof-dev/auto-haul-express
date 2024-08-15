@@ -2,6 +2,8 @@ import { Box, Container } from "@mui/material";
 import { BodyText1, Heading, Section } from "../../pages/how-it-works/styles";
 import { NavLink } from "react-router-dom";
 import ServicesCard from "./cards/ServicesCard";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const servicesCardData = [
   {
@@ -47,6 +49,7 @@ function Services() {
                 variant="h3"
                 color={"#11172B"}
                 sx={{ textAlign: "center" }}
+                data-aos='fade-up'
               >
                 Auto Transport Services{" "}
                 <Box component={"span"} sx={{ color: "#E01933" }}>
@@ -57,6 +60,7 @@ function Services() {
                 variant="body1"
                 color={"#7A7A7A"}
                 sx={{ textAlign: "center", marginTop: "10px" }}
+                data-aos='fade-up'
               >
                 Our{" "}
                 <NavLink

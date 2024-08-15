@@ -7,6 +7,8 @@ import {
 } from "../../pages/how-it-works/styles";
 import { Box, Container } from "@mui/material";
 import CardStep from "../how-does-car-shipping/cards/CardStep";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const cardStepData = [
   {
@@ -47,14 +49,14 @@ function HowToShip() {
             component={"div"}
             sx={{ marginBottom: "30px", textAlign: "center" }}
           >
-            <Title variant="h2">
+            <Title variant="h2" data-aos='fade-up'>
               How to Ship a Car
               <span style={{ color: "#E01933" }}> in Three Simple Steps?</span>
             </Title>
-            <BodyText1 variant="subtitle1">
+            <BodyText1 variant="subtitle1" data-aos='fade-up'>
               Getting your ride shipped with us is as easy as 1, 2, 3!
             </BodyText1>
-            <BodyText1 variant="body1">
+            <BodyText1 variant="body1" data-aos='fade-up'>
               First give us a call and we’ll work with you to figure out the
               cost and schedule for shipping your vehicle. Secondly, Sit back
               and relax while our team of experts checks out your car and picks
@@ -63,7 +65,7 @@ function HowToShip() {
               your doorstep. We’ll even give it a final inspection to make sure
               everything’s A-OK.
             </BodyText1>
-            <BodyText1 variant="body1">
+            <BodyText1 variant="body1" data-aos='fade-up'>
               No need to worry, we’ve got you covered every step of the way. So,
               let’s get your car on the road and to its destination hassle-free!
             </BodyText1>

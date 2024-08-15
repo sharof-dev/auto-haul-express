@@ -9,7 +9,9 @@ import SliderOurCard from "./cards/SliderOurCard";
 import { Autoplay, Navigation } from "swiper/modules";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 const sliderData = [
   {
     description:
@@ -37,11 +39,15 @@ const sliderData = [
   },
 ];
 
-function  WhatOur({text}) {
-  console.log(text);
+function  WhatOur({data, sliderDataClients}) {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    })
+  })
   return (
     <>
-      <Section component={"section"} id="what-our">
+      <Section component={"section"} id="what-our" >
         {/* Banner Image */}
         <BannerImage
           image={"/assets/how-it-works/costs.jpg"}
@@ -52,7 +58,7 @@ function  WhatOur({text}) {
         <BannerColor
           color={"linear-gradient(180deg, #11172b 40%, #11172B 100%)"}
         />
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" >
           <Typography
             variant="h4"
             sx={{
@@ -62,14 +68,15 @@ function  WhatOur({text}) {
               color: "#fff",
               textAlign: "center",
             }}
+            data-aos='fade-up'
           >
             What Our {""}
             <Box component="span" sx={{ color: "#E01933" }}>
               Clients Say!
             </Box>
           </Typography>
-            {text && (
-              <Typography  sx={{
+            {data && (
+              <Typography data-aos='fade-up'  sx={{
                 marginBottom: "20px",
                 fontWeight: 400,
                 fontSize: { sm: "35px", md: "18px" },
@@ -89,28 +96,51 @@ function  WhatOur({text}) {
               position: "relative",
               padding: { xs: "0", sm: "0", md: "0 50px" },
             }}
+            data-aos='fade-up'
           >
             <Swiper
               style={{ padding: "5px" }}
-              centeredSlides={true}
-              spaceBetween={text ? 30 : 10}
-              slidesPerView={text ? 3 : 1}
+              centeredSlides={data ? false : true}
+              spaceBetween={data ? 30 : 10}
               navigation={{
                 nextEl: ".swipper-button-next",
                 prevEl: ".swipper-button-prev",
               }}
               speed={2500}
-              // autoplay={{
-              //   delay: 3000,
-              //   disableOnInteraction: false,
-              // }}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
               modules={[Navigation, Autoplay]}
+              breakpoints={{
+                // Adjust slidesPerView for different breakpoints
+                600: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 2,
+                },
+                1024: {
+                  slidesPerView: 3,
+                },
+              }}
             >
-              {sliderData.map((card, idx) => (
+             {data ? (
+              <>
+                 {sliderDataClients.map((card, idx) => (
                 <SwiperSlide key={idx}>
-                  <SliderOurCard {...card} text={text} />
+                  <SliderOurCard {...card} text={true} />
                 </SwiperSlide>
               ))}
+              </>
+             ) : (
+              <>
+               {sliderData.map((card, idx) => (
+                <SwiperSlide key={idx}>
+                  <SliderOurCard {...card} text={data} />
+                </SwiperSlide>
+              ))}</>
+             )}
             </Swiper>
 
             <Box

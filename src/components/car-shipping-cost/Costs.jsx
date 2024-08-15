@@ -8,6 +8,8 @@ import {
   FormTitle,
 } from "../../pages/how-it-works/styles";
 import { Title } from "../../pages/how-it-works/styles";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function Costs() {
   return (
@@ -46,6 +48,7 @@ function Costs() {
               <Title
                 variant="h1"
                 sx={{ textAlign: { xs: "center", sm: "left" } }}
+                data-aos='fade-down'
               >
                 Car Shipping Costs
                 <Box
@@ -76,7 +79,7 @@ function Costs() {
                 padding: { xs: "10px 0 0 0", sm: "10px" },
               }}
             >
-              <FormContainer>
+              <FormContainer data-aos='fade-left'>
                 <Box>
                   <FormTitle variant="h2">Fill Up the Get Quote Form</FormTitle>
                   <FormTitle variant="h4">

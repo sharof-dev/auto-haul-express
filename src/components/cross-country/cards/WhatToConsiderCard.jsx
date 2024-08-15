@@ -1,10 +1,13 @@
 import { Box, Card, Grid, Typography } from "@mui/material";
 import React from "react";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function WhatToConsiderCard({ text, hiddenText, img }) {
   return (
     <Grid
       item
+      data-aos='fade-up'
       sx={{
         width: { xs: "100%", sm: "100%", md: "auto" },
         margin: "10px",

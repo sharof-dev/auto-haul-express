@@ -59,11 +59,12 @@ function GetQuote() {
             <CardImg mini={true} img={"/assets/how-it-works/get_quote.webp"} />
           </Box>
 
-          <Box component={"div"} sx={{ marginTop: "70px" }}>
+          <Box component={"div"} sx={{ marginTop: "70px" }} data-aos="fade-up">
             <Title3
               variant="h3"
               textcolor="#11172B"
               sx={{ marginBottom: "20px" }}
+              pl={10}
             >
               FAQs
               <Box
@@ -78,7 +79,7 @@ function GetQuote() {
 
             <Stack spacing={"15px"}>
               {itemStep1Data.map((item, idx) => (
-                <ItemDrop {...item} key={idx} />
+                <ItemDrop {...item} itemget={true} key={idx} />
               ))}
             </Stack>
           </Box>

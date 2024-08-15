@@ -4,6 +4,8 @@ import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined
 import SupportAgentOutlinedIcon from "@mui/icons-material/SupportAgentOutlined";
 import PinDropOutlinedIcon from "@mui/icons-material/PinDropOutlined";
 import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const infoCardData = [
   {
@@ -56,7 +58,7 @@ function Info() {
                 }}
                 key={idx}
               >
-                <Box component={"div"} sx={{ marginBottom: "15px" }}>
+                <Box component={"div"} sx={{ marginBottom: "15px" }} data-aos='zoom-in'>
                   <card.icon sx={{ color: "#fff", fontSize: "60px" }} />
                 </Box>
                 <Box component={"div"}>
@@ -65,11 +67,12 @@ function Info() {
                     weight={"600"}
                     textcolor={"#E01933"}
                     sx={{ margin: "10px 0px" }}
+                    data-aos='zoom-out'
                   >
                     {card.title}
                   </Title4>
 
-                  <Typography variant="body1" sx={{ color: "#fff" }}>
+                  <Typography variant="body1" sx={{ color: "#fff" }} data-aos='zoom-in'>
                     {card.text}
                   </Typography>
                 </Box>

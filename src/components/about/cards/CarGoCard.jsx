@@ -1,12 +1,14 @@
 import { Box, Card, CardContent } from "@mui/material";
 import { BodyText1 } from "../../../pages/how-it-works/styles";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function CarGoCard({ icon, text, miniIcon }) {
   return (
     <Card
       sx={{
-        width: "100%",
-        maxWidth: { xs: "100%", sm: "100%", md: "373px" },
+        width: "80%",
+        maxWidth: { xs: "100%", sm: "100%", md: "350px" },
         backgroundColor: "transparent",
         display: "flex",
         alignItems: "center",
@@ -18,6 +20,7 @@ function CarGoCard({ icon, text, miniIcon }) {
           scale: "1.07",
         },
       }}
+      data-aos='zoom-in'
     >
       <Box
         component={"div"}
@@ -25,8 +28,8 @@ function CarGoCard({ icon, text, miniIcon }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          width: "150px",
-          height: "150px",
+          width: "130px",
+          height: "130px",
           marginBottom: "30px",
           border: "4px solid #818181",
           backgroundColor: "#11172B",
@@ -44,7 +47,7 @@ function CarGoCard({ icon, text, miniIcon }) {
         />
       </Box>
       <CardContent sx={{ padding: 0 }}>
-        <BodyText1 sx={{ textAlign: "center" }} color={"#F9F9F9"}>
+        <BodyText1 sx={{ textAlign: "center", lineHeight: 1 }} color={"#F9F9F9"}>
           {text}
         </BodyText1>
       </CardContent>

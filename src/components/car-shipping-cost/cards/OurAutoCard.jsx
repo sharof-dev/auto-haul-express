@@ -2,6 +2,8 @@ import { Box, Card, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 // TRUCK
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function OurAutoCard({ icon, title, text, path, index }) {
   const navigat = useNavigate();
@@ -26,6 +28,7 @@ function OurAutoCard({ icon, title, text, path, index }) {
           backgroundColor: "#E01933",
         },
       }}
+      data-aos='fade-up'
       onClick={() => navigatHandler(path)}
     >
       <Box

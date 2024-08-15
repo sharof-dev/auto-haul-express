@@ -9,6 +9,8 @@ import {
 } from "../../pages/how-it-works/styles";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import DescriptionIcon from "@mui/icons-material/Description";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function WhatToKnow() {
   return (
@@ -32,6 +34,7 @@ function WhatToKnow() {
               margin: "0 auto",
               textAlign: "center",
             }}
+            data-aos='fade-up'
           >
             <Title2 variant="h2">
               Want to know the <br />
@@ -58,6 +61,7 @@ function WhatToKnow() {
               width: "100%",
               margin: "30px auto",
             }}
+            data-aos='fade-up'
           >
             <ButtonStyled
               startIcon={<DescriptionIcon />}

@@ -1,6 +1,8 @@
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
 import { Section } from "../../pages/how-it-works/styles";
 import CardImg from "../how-does-car-shipping/cards/CardImg";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function HowMuch() {
   return (
@@ -40,6 +42,7 @@ function HowMuch() {
                 boxShadow: "0",
                 backgroundColor: "#ffffff00",
               }}
+              data-aos='fade-right'
             >
               <Box
                 sx={{

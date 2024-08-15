@@ -7,6 +7,8 @@ import {
   Title2,
 } from "../../pages/how-it-works/styles";
 import WhatToConsiderCard from "./cards/WhatToConsiderCard";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const CardData = [
   {
@@ -58,13 +60,13 @@ function WhatToConsider() {
               marginBottom: "20px",
             }}
           >
-            <Title2 variant="h2">
+            <Title2 variant="h2" data-aos='fade-up'>
               What to Consider When Choosing a <br />
               <Box component="span" sx={{ color: "#E01933" }}>
                 Cross Country Car Shipping Company?
               </Box>
             </Title2>
-            <BodyText1 variant="subtitle1">
+            <BodyText1 variant="subtitle1" data-aos='fade-up'>
               There are a few things to keep in mind when picking a{" "}
               <em>
                 <strong>cross country auto transport</strong>

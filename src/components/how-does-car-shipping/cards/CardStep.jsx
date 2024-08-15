@@ -1,4 +1,6 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function CardStep({ step, text, img, id }) {
   return (
@@ -29,6 +31,7 @@ function CardStep({ step, text, img, id }) {
         },
         textDecoration: "none",
       }}
+      data-aos="fade-up"
     >
       <Box component={"div"}>
         <img

@@ -8,6 +8,8 @@ import CalculateIcon from "@mui/icons-material/Calculate";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 // Import Swiper styles
 import "swiper/css";
@@ -103,6 +105,7 @@ function Faq() {
             <Title2
               variant="h3"
               color="#11172B"
+              data-aos="fade-down"
               sx={{ textAlign: "center", marginBottom: "50px" }}
             >
               FAQ

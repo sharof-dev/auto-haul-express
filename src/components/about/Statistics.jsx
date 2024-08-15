@@ -7,6 +7,8 @@ import {
 import StatisticsCard from "./cards/StatisticsCard";
 import { Box, Container } from "@mui/material";
 import ScrollTrigger from "react-scroll-trigger";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const StatisticsCardData = [
   {
@@ -52,6 +54,7 @@ function Statistics() {
                 justifyContent: "space-between",
                 flexDirection: { xs: "column", sm: "column", md: "row" },
               }}
+              data-aos="fade-up"
             >
               {StatisticsCardData.map((card, idx) => (
                 <StatisticsCard counterOn={counterOn} {...card} key={idx} />

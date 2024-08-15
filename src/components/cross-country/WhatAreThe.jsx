@@ -4,13 +4,13 @@ import {
   Section,
   Title2,
 } from "../../pages/how-it-works/styles";
-import { Box, Container, useMediaQuery } from "@mui/material";
+import { Box, Container, Typography, styled, useMediaQuery } from "@mui/material";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { useTheme } from "@emotion/react";
-import CircleIcon from "@mui/icons-material/Circle";
+import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 import SliderCard from "../car-shipping-cost/cards/SliderCard";
 const VerticalTimelineText = styled(VerticalTimeline)(({ theme }) => ({
   '&:before': {
@@ -70,8 +70,10 @@ const sliderData = [
     ),
   },
 ];
+import './custom.css'
 
-function WhatAreThe({whyChooseData, text}) {
+function WhatAreThe({ whyChooseData, text }) {
+  console.log(text);
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("xl"));
   const separate = (num) => {
@@ -101,14 +103,14 @@ function WhatAreThe({whyChooseData, text}) {
 
           {text ? (
             <VerticalTimelineText
-              animate="true"
+              animate={true}
               lineColor={"#E01933"}
               style={{ boxShadow: "none", border: "0" }}
             >
 
               {whyChooseData.map((card, idx) => (
                 <VerticalTimelineElement
-                  dateClassName="vertical-timeline-element-date"
+                  dateClassName={text ? "vertical-timeline-element-date": ' '}
                   date={card.title}
                   iconStyle={{ background: "#E01933", color: "#fff" }}
                   icon={<RadioButtonCheckedIcon />}

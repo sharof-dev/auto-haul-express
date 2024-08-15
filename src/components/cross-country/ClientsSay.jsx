@@ -9,6 +9,8 @@ import { Autoplay, Navigation } from "swiper/modules";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import SliderOurCard from "../car-shipping-cost/cards/SliderOurCard";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const sliderData = [
   {
@@ -61,6 +63,7 @@ function ClientsSay() {
               color: "#fff",
               textAlign: "center",
             }}
+            data-aos='fade-up'
           >
             What Our {""}
             <Box component="span" sx={{ color: "#E01933" }}>
@@ -74,6 +77,7 @@ function ClientsSay() {
               position: "relative",
               padding: { xs: "0", sm: "0", md: "0 45px" },
             }}
+            data-aos='fade-up'
           >
             <Swiper
               style={{ padding: "5px" }}

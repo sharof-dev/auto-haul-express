@@ -229,6 +229,12 @@ const Footer = () => {
                     </span>
                   </LinkMenu>
                 </ListItems>
+                <ListItems>
+                  <LinkMenu to="#" style={{ display: "flex" }}>
+                    <img src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-08.png?ID=d9b8220c-aef0-4db0-b18e-7729bc0b2213" alt="" />
+                    
+                  </LinkMenu>
+                </ListItems>
               </List>
             </Grid>
             <Grid item xs={12} sm={4}>

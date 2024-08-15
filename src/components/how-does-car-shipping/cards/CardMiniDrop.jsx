@@ -2,6 +2,8 @@ import { Box, Card, CardContent, IconButton, Typography } from "@mui/material";
 import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function CardMiniDrop({ icon, step, title, bodyText, hiddenText, reverse }) {
   const [collapse, setCollapse] = useState(false);
@@ -21,6 +23,7 @@ function CardMiniDrop({ icon, step, title, bodyText, hiddenText, reverse }) {
         boxShadow: "0",
         backgroundColor: "#ffffff00",
       }}
+      data-aos='fade-right'
     >
       <Box
         sx={{

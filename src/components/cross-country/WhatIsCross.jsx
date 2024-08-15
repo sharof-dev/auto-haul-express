@@ -1,5 +1,7 @@
 import { Section } from "../../pages/how-it-works/styles";
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function WhatIsCross() {
   return (
@@ -23,6 +25,7 @@ function WhatIsCross() {
                 md: "row",
               },
             }}
+            data-aos='fade-up'
           >
             <Card
               component="li"

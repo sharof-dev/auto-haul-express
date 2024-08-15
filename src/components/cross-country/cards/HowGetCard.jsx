@@ -1,5 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function HowGetCard({ title, icon }) {
   return (
@@ -18,6 +20,7 @@ function HowGetCard({ title, icon }) {
           },
         },
       }}
+      data-aos='fade-up'
     >
       <Box
         component={"div"}

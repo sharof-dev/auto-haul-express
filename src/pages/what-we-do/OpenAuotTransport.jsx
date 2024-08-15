@@ -1,9 +1,10 @@
 import React from 'react'
-
+import WhatOur from '../../components/car-shipping-cost/WhatOur'
+const openTransport = true
 const OpenAuotTransport = () => {
   return (
     <div>
-      <h1>OpenAuotTransport</h1>
+      <WhatOur openTransport={openTransport} />
     </div>
   )
 }

@@ -1,6 +1,8 @@
 import { BodyText1, Section, Title2 } from "../../pages/how-it-works/styles";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import HowGetCard from "./cards/HowGetCard";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const howGetCardData = [
   {
@@ -35,7 +37,7 @@ function HowGet() {
               marginBottom: "20px",
             }}
           >
-            <Title2 variant="h2" color={"#11172B"}>
+            <Title2 variant="h2" color={"#11172B"} data-aos='fade-up'>
               How to Get a Quote for <br />
               <Box component="span" sx={{ color: "#E01933" }}>
                 Shipping Car Across Country
@@ -45,6 +47,7 @@ function HowGet() {
               variant="subtitle1"
               color={"#7A7A7A"}
               sx={{ marginTop: "10px" }}
+              data-aos='fade-up'
             >
               Getting an accurate{" "}
               <Box
@@ -80,6 +83,7 @@ function HowGet() {
                 textAlign: "center",
                 color: "#7A7A7A",
               }}
+              data-aos='fade-up'
             >
               A price from the shipping business will be based on the details
               you supply. It is smart to inquire about any extra expenses that
