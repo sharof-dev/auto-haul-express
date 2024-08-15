@@ -3,14 +3,14 @@ import React from "react";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-function HowGetCard({ title, icon }) {
+function HowGetCard({ title, icon, data }) {
   return (
     <Grid
       item
       sx={{
         padding: "10px",
         width: "100%",
-        maxWidth: "285px",
+        maxWidth: data ? "351px" : "285px",
         backgroundColor: "#fff",
         transition: "transform 0.3s",
         "&:hover": {

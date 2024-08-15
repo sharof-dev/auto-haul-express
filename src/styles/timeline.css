@@ -14,7 +14,7 @@
   font-size: 40px !important;
   font-weight: 600 !important;
   line-height: 1.2em !important;
-  color: #fff ;
+  color: #fff;
 }
 .vertical-timeline-element-content-arrow {
   display: none;
@@ -22,4 +22,8 @@
 .vertical-timeline-element-content {
   box-shadow: none !important;
   background: #fff0 !important;
+}
+.timeline-title-black {
+  color: #11172b !important;
+  opacity: 1 !important;
 }

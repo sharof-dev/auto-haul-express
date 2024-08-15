@@ -11,6 +11,7 @@ import {
 } from "react-vertical-timeline-component";
 import { useTheme } from "@emotion/react";
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
+import AdjustIcon from "@mui/icons-material/Adjust";
 import SliderCard from "../car-shipping-cost/cards/SliderCard";
 const VerticalTimelineText = styled(VerticalTimeline)(({ theme }) => ({
   '&:before': {
@@ -73,7 +74,6 @@ const sliderData = [
 import './custom.css'
 
 function WhatAreThe({ whyChooseData, text }) {
-  console.log(text);
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("xl"));
   const separate = (num) => {
@@ -139,7 +139,42 @@ function WhatAreThe({ whyChooseData, text }) {
               ))}
             </VerticalTimeline>
           )}
-
+          <Title2
+            variant="h4"
+            sx={{
+              marginBottom: "20px",
+              textAlign: "center",
+            }}
+          >
+            What Are the Factors to Consider <br />
+            <Box component="span" sx={{ color: "#E01933" }}>
+              When Shipping a Car?
+            </Box>
+          </Title2>
+          <VerticalTimeline
+            layout={"2-columns"}
+            animate={true}
+            lineColor={"#E01933"}
+            style={{ boxShadow: "none", border: "0" }}
+          >
+            {data.map((card, idx) => (
+              <VerticalTimelineElement
+                style={{ marginTop: `${matches ? "50px" : "20px"}` }}
+                date={matches ? null : card.title}
+                iconStyle={{ background: "#E01933", color: "#fff" }}
+                icon={<AdjustIcon />}
+                key={idx}
+                position={separate(idx)}
+              >
+                <SliderCard
+                  {...card}
+                  dark={"true"}
+                  timeline={"true"}
+                  matches={matches}
+                />
+              </VerticalTimelineElement>
+            ))}
+          </VerticalTimeline>
         </Container>
       </Section>
     </>

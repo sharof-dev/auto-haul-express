@@ -25,21 +25,25 @@ import {
   SnowBirds,
   StudentAuto,
   OurGallery,
+  Blog,
+  BlogPost,
+  MotorcycleShipping,
 } from "./pages/";
 import CarShippingCost from "./pages/how-it-works/CarShippingCost";
 import CrosCountry from "./pages/how-it-works/CrosCountry";
 import HowDoesCarShipping from "./pages/how-it-works/HowDoesCarShipping";
 import UsaMapController from "./components/UsaMapController";
-
+import BlogRout from "./layout/BlogRout";
 const App = () => {
   return (
     <>
       <Header />
-      
+
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+
         <Route path="/contact" element={<Contact />} />
         <Route path="/our-gallery" element={<OurGallery />} />
         <Route path="/what_we_do" element={<WhatWeDo />} />
@@ -56,6 +60,7 @@ const App = () => {
           path="/enclosed-auto-transport"
           element={<EnclosedAutoTransport />}
         />
+        <Route path="/motorcycle-shipping" element={<MotorcycleShipping />} />
         <Route path="/expedited-car" element={<ExpeditedCar />} />
         <Route path="/heavy-shipping" element={<HeavyShipping />} />
         <Route path="/innoperable-vehicles" element={<InoperableVehicles />} />
@@ -71,6 +76,11 @@ const App = () => {
         />
         <Route path="/car-shipping-costs" element={<CarShippingCost />} />
         <Route path="/cross-country-car-shipping" element={<CrosCountry />} />
+        {/* BLOG page */}
+        <Route path="/blog" element={<BlogRout />}>
+          <Route index element={<Blog />} />
+          <Route path=":name" element={<BlogPost />} />
+        </Route>
       </Routes>
       <UsaMapController />
       <Footer />

@@ -1,12 +1,38 @@
-import React from 'react'
-import WhatOur from '../../components/car-shipping-cost/WhatOur'
-const openTransport = true
-const OpenAuotTransport = () => {
-  return (
-    <div>
-      <WhatOur openTransport={openTransport} />
-    </div>
-  )
-}
+import Nationwide from "../../components/what-we-do/Nationwide";
+import LookingFor from "../../components/open-auot-transport/LookingFor";
+import ClientsSay from "../../components/about/ClientsSay";
+import OpenAuto from "../../components/what-we-do/OpenAuto";
+import HowMuchDoes from "../../components/cross-country/HowMuchDoes";
+import ShipYour from "../../components/what-we-do/ShipYour";
+import WantToKnow from "../../components/what-we-do/WantToKnow ";
+import HowGet from "../../components/cross-country/HowGet";
+import WhatAreThe from "../../components/cross-country/WhatAreThe";
+import HowMuch from "../../components/car-shipping-cost/HowMuch";
+import OurAuto from "../../components/car-shipping-cost/OurAuto";
+import EnclosedAuto from "../../components/what-we-do/EnclosedAuto";
+import { HowGetDataCard, wantToKnowData, whatAreTheSliderData } from "../../constans";
 
-export default OpenAuotTransport
+
+const OpenAuotTransport = () => {
+  const text =
+    "Your Trusted Partner for Reliable and Affordable Vehicle Shipping";
+
+  return (
+    <>
+      <Nationwide text={text} />
+      <LookingFor />
+      <ClientsSay text={true} />
+      <OpenAuto text={true} />
+      <HowMuchDoes text={true} />
+      <ShipYour text={true} />
+      <WantToKnow {...wantToKnowData} />
+      <HowGet data={HowGetDataCard} />
+      <WhatAreThe data={whatAreTheSliderData} />
+      <HowMuch text={true} />
+      <EnclosedAuto text={true} />
+      <OurAuto />
+    </>
+  );
+};
+
+export default OpenAuotTransport;

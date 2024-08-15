@@ -41,7 +41,7 @@ const FlipCard = styled(Card)({
   boxShadow: '4px 3px 3px #991933',
   transition: '10s boxShadow',
   border: 'none',
-  '&:hover': {    
+  '&:hover': {
     boxShadow: '-4px 3px 3px #991933',
   },
   '&:hover .flip-card-inner': {

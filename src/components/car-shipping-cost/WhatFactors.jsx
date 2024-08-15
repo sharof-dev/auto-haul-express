@@ -11,8 +11,9 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import CircleIcon from "@mui/icons-material/Circle";
 import { useTheme } from "@emotion/react";
+import AdjustIcon from "@mui/icons-material/Adjust";
+
 
 const sliderData = [
   {
@@ -119,7 +120,7 @@ function WhatFactors() {
                 style={{ marginTop: `${matches ? "50px" : "20px"}`, }}
                 date={matches ? null : card.title}
                 iconStyle={{ background: "#E01933", color: "#fff" }}
-                icon={<CircleIcon />}
+                icon={<AdjustIcon />}
                 key={idx}
               >
                 <SliderCard

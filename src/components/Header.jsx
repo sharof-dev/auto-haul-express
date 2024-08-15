@@ -21,8 +21,7 @@ import Phone from '@mui/icons-material/Phone';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link as RouterLink } from 'react-router-dom';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-
-const list = ['Home', 'What_We_Do', 'How_It_Works'];
+const list = ['Home', 'What-We-Do', 'How-It-Works', ]
 
 const Header = () => {
   const theme = useTheme();
@@ -110,6 +109,14 @@ const Header = () => {
           </Link>
         )
       )}
+    {list.map(item => (
+      <Link to={item.replace(/-/g, ' ').toLowerCase() === 'home' ? '/' : `/${item.toLowerCase()}`} key={item} style={{color: 'white'}}>
+        <Button color="inherit">
+        {item.replace(/-/g, ' ')}
+        <span style={{ display: 'flex', alignItems: 'flex-end', marginTop: 10, color: '#e01933' }}>•</span>
+        </Button>
+      </Link>
+    ))}
     </>
   );
 
