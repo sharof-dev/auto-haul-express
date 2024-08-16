@@ -1,46 +1,45 @@
-import { createTheme } from "@mui/material";
+import { createTheme, ThemeProvider  } from "@mui/material";
 
-export const theme = createTheme({
-    palette: {
-        primary: {
-            main: '#212121',
-        },
-        secondary: {
-            main: '#FFC107',
-        },
-        background: {
-            default: '#F5F5F5',
-        },
-        text: {
-            primary: '#212121',
-            secondary: '#757575',
-        },
+ const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#212121",
     },
-    typography: {
-        fontFamily: 'Raleway, sans-serif',
+    secondary: {
+      main: "#FFC107",
     },
-    shape: {
-        borderRadius: 10,
+    background: {
+      default: "#F5F5F5",
     },
-    components: {
-        MuiButton: {
-            styleOverrides: {
-                root: {
-                    borderRadius: 10,
-                    padding: '10px 20px',
-                },
-            },
+    text: {
+      primary: "#212121",
+      secondary: "#757575",
+    },
+  },
+  typography: {
+    fontFamily: "Raleway, sans-serif",
+  },
+  shape: {
+    borderRadius: 10,
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 10,
+          padding: "10px 20px",
         },
+      },
     },
-    breakpoints: {
-        values: {
-            xs: 0,
-            sm: 576,
-            md: 768,
-            lg: 992,
-            xl: 1200,
-            xxl: 1400,
-        },
-    }
-
-})
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1200,
+      xl: 1400,
+    },
+  },
+});
+export default theme
