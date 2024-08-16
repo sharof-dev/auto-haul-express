@@ -1,5 +1,5 @@
-import React from "react";
-import { Container, Grid, Typography, Box } from "@mui/material";
+import React, { useState } from "react";
+import { Container, Typography, Box } from "@mui/material";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import PeopleIcon from "@mui/icons-material/People";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
@@ -13,30 +13,16 @@ import {
   Section,
 } from "../../pages/how-it-works/styles";
 
-<<<<<<< HEAD
-// Styled components
-const CircleContainer = styled('div')({
-  position: 'relative',
-  width: '600px',
-  height: '600px',
-  borderRadius: '50%',
-  border: '1px solid silver',
-  margin: '0 auto',
-  marginTop: '100px',
-  marginBottom: '150px',
-  maxWidth: '600px',
-=======
 const CircleContainer = styled("div")({
   position: "relative",
-  width: "500px",
-  height: "500px",
+  width: "600px",
+  height: "600px",
   borderRadius: "50%",
-  border: "1px solid #ddd",
+  border: "1px solid silver",
   margin: "0 auto",
-  marginTop: "50px",
+  marginTop: "100px",
   marginBottom: "150px",
   maxWidth: "600px",
->>>>>>> behruz
 });
 
 const ServiceItem = styled("div")(({ top, left, backgroundColor }) => ({
@@ -107,6 +93,8 @@ const services = [
 ];
 
 function App({ background, backgroundColor, title, text }) {
+  const [activeServiceId, setActiveServiceId] = useState(null);
+
   return (
     <>
       <Section>
@@ -117,7 +105,6 @@ function App({ background, backgroundColor, title, text }) {
               parallax={"true"}
               component={"div"}
             />
-            {/* Banner Color */}
             <BannerColor
               color={
                 backgroundColor
@@ -131,68 +118,21 @@ function App({ background, backgroundColor, title, text }) {
           maxWidth="lg"
           style={{ textAlign: "center", marginTop: title ? "0" : "50px" }}
         >
-<<<<<<< HEAD
-          {title ? title : <>What Makes <HighlightedSpan>Us Different?</HighlightedSpan></>}
-        </Typography>
-        <Typography variant="h5" color={"silver"}>
-          {text ? text : <>Affordable, reliable, experienced - the pillars of our <strong>auto shipping services</strong></>}
-        </Typography>
-        <CircleContainer>
-          {services.map((service, index) => (
-            <ServiceItem
-              key={index}
-              top={service.top}
-              left={service.left}
-              backgroundColor={service.backgroundColor}
-              isActive={activeServiceId === service.id}
-              onMouseEnter={() => setActiveServiceId(service.id)}
-            >
-              {service.icon}
-              <Typography variant="body1">{service.title}</Typography>
-            </ServiceItem>
-          ))}
-          <Box
-            position="absolute"
-            top="40%"
-            left="20%"
-            transform="translate(-50%, -50%)"
-            width="60%"
-            textAlign="center"
-            zIndex="0"
-            display={'grid'}
-            placeItems="center"
-=======
-          <Typography
-            variant="h2"
-            fontWeight={600}
-            sx={{ color: background ? "#fff" : "#11172B" }}
->>>>>>> behruz
-          >
-            {title ? (
-              title
-            ) : (
-              <>
-                What Makes <HighlightedSpan>Us Different?</HighlightedSpan>
-              </>
-            )}
+          <Typography variant="h2" fontWeight={600} sx={{ color: background ? "#fff" : "#11172B" }}>
+            {title ? title : <>What Makes <HighlightedSpan>Us Different?</HighlightedSpan></>}
           </Typography>
           <Typography variant="h5" color={"silver"}>
-            {text ? (
-              text
-            ) : (
-              <>
-                Affordable, reliable, experienced - the pillars of our{" "}
-                <strong>auto shipping services</strong>
-              </>
-            )}
+            {text ? text : <>Affordable, reliable, experienced - the pillars of our <strong>auto shipping services</strong></>}
           </Typography>
-          <CircleContainer sx={{ mt: 30 }}>
+          <CircleContainer>
             {services.map((service, index) => (
               <ServiceItem
                 key={index}
                 top={service.top}
                 left={service.left}
                 backgroundColor={service.backgroundColor}
+                isActive={activeServiceId === index}
+                onMouseEnter={() => setActiveServiceId(index)}
               >
                 {service.icon}
                 <Typography variant="body1">{service.title}</Typography>
@@ -200,11 +140,14 @@ function App({ background, backgroundColor, title, text }) {
             ))}
             <Box
               position="absolute"
-              top="40%"
-              left="20%"
+              top="50%"
+              left="50%"
               transform="translate(-50%, -50%)"
               width="60%"
               textAlign="center"
+              zIndex="0"
+              display={'grid'}
+              placeItems="center"
             >
               <Typography
                 variant="body1"

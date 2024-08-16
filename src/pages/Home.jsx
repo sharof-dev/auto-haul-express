@@ -120,13 +120,8 @@ const Home = () => {
         cardBg={cardBg}
       />
       <TransportCard />
-<<<<<<< HEAD
-      <ClientsSay data={text} />
-      <WhatAreThe whyChooseData={whyChooseData} text={text} />
-=======
       <ClientsSay text={text} />
       <WhatFactors whyChooseData={whyChooseData} text={text} />
->>>>>>> behruz
       <OurServices />
       <UseDifferent />
       <MiniCard />

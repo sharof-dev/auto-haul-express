@@ -39,11 +39,7 @@ const App = () => {
   return (
     <>
       <Header />
-<<<<<<< HEAD
-=======
-
       <Navbar />
->>>>>>> behruz
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
