@@ -1,5 +1,6 @@
 {
   "name": "auto-haul-express",
+  "homepage": "http://autohaulex.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",

@@ -39,18 +39,6 @@ const steps = [
 const title = `How To Ship in`;
 const titleMark = `3 easy steps`;
 
-const shippingBox = `
-backgroundColor: 'white',
-textAlign: 'center',
-width: '90%',
-p: "20px 20px",
-display: 'flex',
-flexDirection: 'column',
-justifyContent: 'space-between',
-height: '100%',
-borderRadius: '20px',
-ml: 4
-`;
 const cardBg = `https://uscargofreight.com/wp-content/uploads/2023/03/About-US-Car-Go-Freight-Bg.jpg`;
 
 const weareimg = [
@@ -138,7 +126,6 @@ const Home = () => {
         title={title}
         titleMark={titleMark}
         data={steps}
-        cardStyle={shippingBox}
         cardBg={cardBg}
       />
       <TransportCard />

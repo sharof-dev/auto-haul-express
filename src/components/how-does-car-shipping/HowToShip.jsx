@@ -76,6 +76,8 @@ function HowToShip() {
             sx={{
               display: "flex",
               flexDirection: { xs: "column", sm: "column", md: "row" },
+              alignItems: "center",
+              justifyContent: "center",
               gap: { xs: "20px", sm: "20px" },
             }}
           >

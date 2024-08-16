@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography, styled } from "@mui/material";
+import { Box, Container, Grid, Typography,  } from "@mui/material";
 import Typewriter from "typewriter-effect/dist/core";
 import React, { useEffect, useRef } from "react";
 import GetQuote from "../GetQuote";
@@ -13,17 +13,21 @@ const MainSection = () => {
         loop: true,
       });
     }
-    AOS.init({
-      duration: 2000,
-    })
   }, []);
-  document.addEventListener('aos:in', ({ detail }) => {
-    console.log('animated in', detail);
-  });
-
-  document.addEventListener('aos:out', ({ detail }) => {
-    console.log('animated out', detail);
-  });
+  useEffect(() => {
+    const handleAosIn = (event) => console.log('animated in', event.detail);
+    const handleAosOut = (event) => console.log('animated out', event.detail);
+  
+    document.addEventListener('aos:in', handleAosIn);
+    document.addEventListener('aos:out', handleAosOut);
+  
+    return () => {
+      document.removeEventListener('aos:in', handleAosIn);
+      document.removeEventListener('aos:out', handleAosOut);
+    };
+  }, []);
+  
+  
 
   return (
     <Box

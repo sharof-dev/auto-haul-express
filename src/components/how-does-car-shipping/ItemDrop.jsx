@@ -4,7 +4,7 @@ import AddIcon from "@mui/icons-material/Add";
 import React, { useState } from "react";
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-function ItemDrop({ list, title, text, dark, listDot }) {
+function ItemDrop({ list, title, text, dark, listDot, itemget }) {
   const [dropToggle, setDropToggle] = useState(false);
 
   return (
