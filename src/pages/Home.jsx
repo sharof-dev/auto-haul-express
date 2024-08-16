@@ -131,8 +131,6 @@ const Home = () => {
       <TransportCard />
       <ClientsSay data={text} />
       <WhatAreThe whyChooseData={whyChooseData} text={text} />
-      <ClientsSay text={text} />
-      <WhatFactors whyChooseData={whyChooseData} text={text} />
       <OurServices />
       <UseDifferent />
       <MiniCard />

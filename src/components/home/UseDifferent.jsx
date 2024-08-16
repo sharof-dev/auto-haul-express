@@ -18,7 +18,7 @@ const CircleContainer = styled('div')({
   borderRadius: '50%',
   border: '1px solid silver',
   margin: '0 auto',
-  marginTop: '50px',
+  marginTop: '100px',
   marginBottom: '150px',
   maxWidth: '600px',
 });
@@ -146,7 +146,7 @@ function App({ background, backgroundColor, title, text }) {
               left={service.left}
               backgroundColor={service.backgroundColor}
               isActive={activeServiceId === service.id}
-              onClick={() => setActiveServiceId(service.id)}
+              onMouseEnter={() => setActiveServiceId(service.id)}
             >
               {service.icon}
               <Typography variant="body1">{service.title}</Typography>
