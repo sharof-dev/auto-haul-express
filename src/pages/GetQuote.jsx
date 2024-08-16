@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import { BannerColor, BannerImage, Section } from "./how-it-works/styles";
 import "./custome.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const FormInput = styled(Input)(() => ({
   width: "100%",
@@ -75,10 +75,23 @@ const currencies = [
 
 function GetQuote() {
   const [selectVal, setSelectVal] = useState(currencies[0].value);
+  const [inputVal, setInputVal] = useState("");
+  const [originZip, setOriginZip] = useState("");
+  const [destinationZip, setDestinationZip] = useState("");
+  const [date, setDate] = useState("");
+  
+
 
   const handleSelect = (event) => {
     setSelectVal(event.target.value);
   };
+  const handleSubmit= () => {
+    console.log('hello');
+  }
+
+  useEffect(() => {
+
+  },[])
 
   return (
     <>
@@ -197,7 +210,7 @@ function GetQuote() {
                 <Typography variant="subtitle1" gutterBottom color="white">
                   Transport Type:
                 </Typography>
-                <RadioGroup row defaultValue="Open/Standard">
+                <RadioGroup  defaultValue="Open/Standard">
                   <FormControlLabel
                     value="Open/Standard"
                     control={
@@ -237,7 +250,7 @@ function GetQuote() {
                 <Typography variant="subtitle1" gutterBottom color="white">
                   Vehicle Condition:
                 </Typography>
-                <RadioGroup row defaultValue="Vehicle Drives">
+                <RadioGroup defaultValue="Vehicle Drives">
                   <FormControlLabel
                     value="Vehicle Drives"
                     control={
@@ -359,6 +372,7 @@ function GetQuote() {
 
             <Box sx={{ textAlign: "center", mt: 4 }}>
               <Button
+              onClick={handleSubmit}
                 type="submit"
                 variant="contained"
                 sx={{
