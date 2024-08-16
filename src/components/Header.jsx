@@ -21,7 +21,8 @@ import Phone from '@mui/icons-material/Phone';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link as RouterLink } from 'react-router-dom';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-const list = ['Home', 'What_We_Do', 'How_It_Works', ]
+const list = ['Home', 'What_We_Do', 'How_It_Works',]
+const lists = ['Home', 'What_We_Do', 'How_It_Works', 'About', 'Gallery', 'Contact']
 
 const Header = () => {
   const theme = useTheme();
@@ -109,33 +110,35 @@ const Header = () => {
           </Link>
         )
       )}
-    
+
     </>
   );
 
   return (
     <AppBar position="sticky" style={{ backgroundColor: '#0c0f25', fontWeight: 600 }}>
       <Container maxWidth="xl">
-        <Toolbar sx={{display: {xs: 'flex', lg: ''}, justifyContent: {xs: 'flex-end', lg: ''}}}>
+        <Toolbar sx={{ display: { xs: 'flex', lg: '' }, justifyContent: { xs: 'flex-end', lg: '' } }}>
           {isMobile || isTablet ? (
-             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'left' }}>
-             <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-               <img src="/public/assets/logo_re.png" alt="Logo" width="100px" />
-             </Typography>
-           </Box>
-          ): (<></>)}
+            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'left' }}>
+              <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                <img src="/public/assets/logo_re.png" alt="Logo" width="100px" />
+              </Typography>
+            </Box>
+          ) : (<></>)}
           {isMobile || isTablet ? (
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              
+
               <Drawer
                 anchor="left"
                 open={drawerOpen}
                 onClose={handleDrawerToggle}
               >
                 <List>
-                  {['Home', 'What We Do', 'How It Works', 'About', 'Our Gallery', 'Contact'].map((text) => (
-                    <ListItem key={text}>
-                      <ListItemText primary={text} />
+                  {lists.map(item => (
+                    <ListItem to={item.replace(/-/g, ' ').toLowerCase() === 'home' ? '/' : `/${item.toLowerCase()}`} key={item} style={{ color: 'white' }}>
+                      <Button color="primary">
+                        {item.replace(/-/g, ' ')}
+                      </Button>
                     </ListItem>
                   ))}
                 </List>
@@ -164,17 +167,17 @@ const Header = () => {
 
           {/* Logo */}
           {!isMobile && !isTablet ? (
-             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
-             <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-               <img src="/public/assets/logo_re.png" alt="Logo" width="100px" />
-             </Typography>
-           </Box>
-          ): (
+            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+              <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                <img src="/public/assets/logo_re.png" alt="Logo" width="100px" />
+              </Typography>
+            </Box>
+          ) : (
             <></>
           )}
 
           {/* Right section with menu items and call button */}
-          <Box sx={{ flexGrow: 1, display: {xs: 'none', md: 'flex', lg: 'flex'}, justifyContent: 'flex-end', alignItems: 'center' }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', lg: 'flex' }, justifyContent: 'flex-end', alignItems: 'center' }}>
             {!isMobile && !isTablet ? (
               <>
                 <Link

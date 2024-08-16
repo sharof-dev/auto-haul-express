@@ -16,7 +16,7 @@ function Logistics() {
         <Container
           maxWidth="xl"
           sx={{
-            overflow: "visible",
+            overflow: "hidden",
             padding: { xs: "0px", sm: "0px", md: "0 24px" },
           }}
         >
