@@ -20,7 +20,7 @@ function HowGetCard({ title, icon, data }) {
           },
         },
       }}
-      data-aos='fade-up'
+      // data-aos='fade-up'
     >
       <Box
         component={"div"}

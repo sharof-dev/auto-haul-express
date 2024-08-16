@@ -8,7 +8,7 @@ function AutoTransport() {
   return (
     <>
       <Section component={"section"} id="auto-transport">
-        <Container maxWidth="xl">
+        <Container maxWidth="xl"  sx={{ overflow: "hidden" }}>
           <Box
             component={"ul"}
             sx={{

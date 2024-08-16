@@ -8,8 +8,8 @@ import {
   FormTitle,
 } from "../../pages/how-it-works/styles";
 import { Title } from "../../pages/how-it-works/styles";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Costs() {
   return (
@@ -29,7 +29,7 @@ function Costs() {
         <BannerColor
           color={"linear-gradient(180deg, #11172b 40%, #11172B 100%)"}
         />
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{ overflow: "hidden" }}>
           <Box
             sx={{
               display: "flex",
@@ -48,7 +48,7 @@ function Costs() {
               <Title
                 variant="h1"
                 sx={{ textAlign: { xs: "center", sm: "left" } }}
-                data-aos='fade-down'
+                data-aos="fade-down"
               >
                 Car Shipping Costs
                 <Box
@@ -79,7 +79,7 @@ function Costs() {
                 padding: { xs: "10px 0 0 0", sm: "10px" },
               }}
             >
-              <FormContainer data-aos='fade-left'>
+              <FormContainer data-aos="fade-left">
                 <Box>
                   <FormTitle variant="h2">Fill Up the Get Quote Form</FormTitle>
                   <FormTitle variant="h4">

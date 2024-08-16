@@ -9,8 +9,9 @@ import OurServiceProgress from "../components/what-we-do/OurServiceProgress";
 import OurServices from "../components/what-we-do/OurServices";
 import ShipYour from "../components/what-we-do/ShipYour";
 import WantToKnow from "../components/what-we-do/WantToKnow ";
+import WhatAreThe from "../components/cross-country/WhatAreThe";
 
-const sliderData = [
+const defaultSliderData = [
   {
     img: "/assets/what-we-do/our_service_progress_slider0.webp",
     title: "Contact Us",
@@ -109,7 +110,16 @@ const WhatWeDo = () => {
       <OurServices />
       <Additional />
       <WantToKnow />
-      <OurServiceProgress data={sliderData} titleColor={true} />
+      <WhatAreThe
+        data={defaultSliderData}
+        title={"Our Service  "}
+        titleCustome={"Process."}
+        text={
+          "Look no further than US Car-Go Freight! Our team of seasoned professionals is dedicated to crafting custom shipping solutions tailored to your specific requirements. We offer a range of services, from door-to-door to expedited, and can accommodate both enclosed and open auto transport. Plus, with our expedited and standard delivery options, you can get your vehicles where they need to go on your timeline. Here's how the process of moving your vehicle with us works:"
+        }
+        br={true}
+      />
+      <OurServiceProgress data={[]} titleColor={true} />
     </>
   );
 };

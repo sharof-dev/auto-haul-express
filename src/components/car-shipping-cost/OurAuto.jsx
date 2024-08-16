@@ -57,7 +57,7 @@ function OurAuto() {
               sx={{
                 textAlign: "center",
               }}
-              data-aos='fade-up'
+              // data-aos='fade-up'
             >
               Our Auto Transport{" "}
               <Box component="span" sx={{ color: "#E01933" }}>
@@ -104,7 +104,7 @@ function OurAuto() {
                   backgroundColor: "#11172B",
                   color: "#fff",
                 }}
-                data-aos='fade-up'
+                // data-aos='fade-up'
               >
                 <Typography
                   variant="h4"
@@ -131,7 +131,7 @@ function OurAuto() {
                   nextEl: ".swipper-button-next",
                   prevEl: ".swipper-button-prev",
                 }}
-                data-aos='fade-up'
+                // data-aos='fade-up'
                 autoplay={{
                   delay: 3000,
                   disableOnInteraction: false,

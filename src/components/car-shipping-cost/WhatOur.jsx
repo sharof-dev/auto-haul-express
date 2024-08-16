@@ -9,8 +9,8 @@ import SliderOurCard from "./cards/SliderOurCard";
 import { Autoplay, Navigation } from "swiper/modules";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { useEffect } from "react";
 const sliderData = [
   {
@@ -39,16 +39,15 @@ const sliderData = [
   },
 ];
 
-
-function  WhatOur({data, sliderDataClients}) {
+function WhatOur({ data, sliderDataClients }) {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-    })
-  })
+    });
+  });
   return (
     <>
-      <Section component={"section"} id="what-our" >
+      <Section component={"section"} id="what-our">
         {/* Banner Image */}
         <BannerImage
           image={"/assets/how-it-works/costs.jpg"}
@@ -59,7 +58,7 @@ function  WhatOur({data, sliderDataClients}) {
         <BannerColor
           color={"linear-gradient(180deg, #11172b 40%, #11172B 100%)"}
         />
-        <Container maxWidth="xl" >
+        <Container maxWidth="xl">
           <Typography
             variant="h4"
             sx={{
@@ -69,7 +68,7 @@ function  WhatOur({data, sliderDataClients}) {
               color: "#fff",
               textAlign: "center",
             }}
-            data-aos='fade-up'
+            data-aos="fade-up"
           >
             What Our {""}
             <Box component="span" sx={{ color: "#E01933" }}>
@@ -101,11 +100,11 @@ function  WhatOur({data, sliderDataClients}) {
               position: "relative",
               padding: { xs: "0", sm: "0", md: "0 50px" },
             }}
-            data-aos='fade-up'
+            data-aos="fade-up"
           >
             <Swiper
               style={{ padding: "5px" }}
-              centeredSlides={data ? false : true}
+              centeredSlides={false}
               spaceBetween={data ? 30 : 10}
               navigation={{
                 nextEl: ".swipper-button-next",
@@ -130,22 +129,23 @@ function  WhatOur({data, sliderDataClients}) {
                 },
               }}
             >
-             {data ? (
-              <>
-                 {sliderDataClients.map((card, idx) => (
-                <SwiperSlide key={idx}>
-                  <SliderOurCard {...card} text={true} />
-                </SwiperSlide>
-              ))}
-              </>
-             ) : (
-              <>
-               {sliderData.map((card, idx) => (
-                <SwiperSlide key={idx}>
-                  <SliderOurCard {...card} text={data} />
-                </SwiperSlide>
-              ))}</>
-             )}
+              {data ? (
+                <>
+                  {sliderDataClients.map((card, idx) => (
+                    <SwiperSlide key={idx}>
+                      <SliderOurCard {...card} text={true} />
+                    </SwiperSlide>
+                  ))}
+                </>
+              ) : (
+                <>
+                  {sliderData.map((card, idx) => (
+                    <SwiperSlide key={idx}>
+                      <SliderOurCard {...card} text={data} />
+                    </SwiperSlide>
+                  ))}
+                </>
+              )}
             </Swiper>
 
             <Box

@@ -28,7 +28,7 @@ function OurAutoCard({ icon, title, text, path, index }) {
           backgroundColor: "#E01933",
         },
       }}
-      data-aos='fade-up'
+      // data-aos='fade-up'
       onClick={() => navigatHandler(path)}
     >
       <Box

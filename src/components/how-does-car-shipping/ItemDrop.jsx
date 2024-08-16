@@ -2,8 +2,8 @@ import { Box, Typography } from "@mui/material";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import React, { useState } from "react";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import AOS from "aos";
+import "aos/dist/aos.css";
 function ItemDrop({ list, title, text, dark, listDot, itemget }) {
   const [dropToggle, setDropToggle] = useState(false);
 
@@ -20,10 +20,10 @@ function ItemDrop({ list, title, text, dark, listDot, itemget }) {
           borderRadius: "50px",
           cursor: "pointer",
           userSelect: "none",
-          margin: '0 auto',
+          margin: "0 auto",
         }}
         onClick={() => setDropToggle((prev) => !prev)}
-        data-aos="fade-up"
+        // data-aos="fade-up"
       >
         <Box
           component={"div"}

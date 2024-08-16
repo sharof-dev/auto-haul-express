@@ -1,7 +1,7 @@
 import { Section } from "../../pages/how-it-works/styles";
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function WhatIsCross() {
   return (
@@ -10,7 +10,7 @@ function WhatIsCross() {
         <Container
           maxWidth="xl"
           sx={{
-            overflow: "visible",
+            overflow: "hidden",
             padding: { xs: "0px", sm: "0px", md: "0 24px" },
           }}
         >
@@ -25,7 +25,7 @@ function WhatIsCross() {
                 md: "row",
               },
             }}
-            data-aos='fade-up'
+            data-aos="fade-up"
           >
             <Card
               component="li"

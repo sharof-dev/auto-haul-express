@@ -8,8 +8,8 @@ import CalculateIcon from "@mui/icons-material/Calculate";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // Import Swiper styles
 import "swiper/css";
@@ -167,7 +167,7 @@ function Faq() {
                 style={{
                   maxWidth: "1052px",
                   width: "100%",
-                  padding: "0px 10px 20px 10px",
+                  padding: "78px 10px 20px 10px",
                 }}
                 slidesPerView={1}
                 spaceBetween={70}
