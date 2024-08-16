@@ -1,4 +1,4 @@
-import { Box, Button, Container, duration } from "@mui/material";
+import { Box, Button, Container } from "@mui/material";
 import {
   BannerColor,
   BannerImage,
@@ -8,17 +8,8 @@ import {
   FormTitle,
   Title,
 } from "../../pages/how-it-works/styles";
-import { useEffect } from "react";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-
 
 function CarShipping() {
-  useEffect(()=>{
-    AOS.init({
-      duration: 1000
-    })
-  })
   return (
     <>
       <Box
@@ -54,7 +45,6 @@ function CarShipping() {
               <Title
                 variant="h1"
                 sx={{ textAlign: { xs: "center", sm: "left" } }}
-                data-aos='fade-up'
               >
                 How does Car <br /> Shipping Work
                 <Box
@@ -101,7 +91,7 @@ function CarShipping() {
                 padding: { xs: "10px 0 0 0", sm: "10px" },
               }}
             >
-              <FormContainer data-aos='fade-left'>
+              <FormContainer>
                 <Box>
                   <FormTitle variant="h2">Fill Up the Get Quote Form</FormTitle>
                   <FormTitle variant="h4">

@@ -117,7 +117,7 @@ function WhatFactors() {
           >
             {sliderData.map((card, idx) => (
               <VerticalTimelineElement
-                style={{ marginTop: `${matches ? "50px" : "20px"}`, }}
+                style={{ marginTop: `${matches ? "50px" : "20px"}` }}
                 date={matches ? null : card.title}
                 iconStyle={{ background: "#E01933", color: "#fff" }}
                 icon={<AdjustIcon />}

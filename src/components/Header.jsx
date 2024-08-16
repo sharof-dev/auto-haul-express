@@ -13,38 +13,33 @@ import {
   ListItemText,
   useMediaQuery,
   useTheme,
-  MenuItem,
-  Menu,
-  Link,
 } from '@mui/material';
 import Phone from '@mui/icons-material/Phone';
 import MenuIcon from '@mui/icons-material/Menu';
+<<<<<<< HEAD
 import { Link as RouterLink } from 'react-router-dom';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 const list = ['Home', 'What_We_Do', 'How_It_Works',]
 const lists = ['Home', 'What_We_Do', 'How_It_Works', 'About', 'Gallery', 'Contact']
+=======
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Link } from 'react-router-dom';
+const list = ['Home', 'What-We-Do', 'How-It-Works', ]
+>>>>>>> behruz
 
 const Header = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+  console.log(isMobile);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
   };
 
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
-
   const menuItems = (
     <>
+<<<<<<< HEAD
       {list.map((item) =>
         item.replace(/_/g, ' ') === 'How It Works' ? (
           <Button
@@ -111,12 +106,23 @@ const Header = () => {
         )
       )}
 
+=======
+    {list.map(item => (
+      <Link to={item.replace(/-/g, ' ').toLowerCase() === 'home' ? '/' : `/${item.toLowerCase()}`} key={item} style={{color: 'white'}}>
+        <Button color="inherit">
+        {item.replace(/-/g, ' ')}
+        <span style={{ display: 'flex', alignItems: 'flex-end', marginTop: 10, color: '#e01933' }}>•</span>
+        </Button>
+      </Link>
+    ))}
+>>>>>>> behruz
     </>
   );
 
   return (
     <AppBar position="sticky" style={{ backgroundColor: '#0c0f25', fontWeight: 600 }}>
       <Container maxWidth="xl">
+<<<<<<< HEAD
         <Toolbar sx={{ display: { xs: 'flex', lg: '' }, justifyContent: { xs: 'flex-end', lg: '' } }}>
           {isMobile || isTablet ? (
             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'left' }}>
@@ -159,6 +165,13 @@ const Header = () => {
                 <MenuIcon />
               </IconButton>
             </Box>
+=======
+        <Toolbar>
+          {isMobile ? (
+            <>
+              
+            </>
+>>>>>>> behruz
           ) : (
             <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
               {menuItems}
@@ -166,6 +179,7 @@ const Header = () => {
           )}
 
           {/* Logo */}
+<<<<<<< HEAD
           {!isMobile && !isTablet ? (
             <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
               <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
@@ -179,32 +193,61 @@ const Header = () => {
           {/* Right section with menu items and call button */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', lg: 'flex' }, justifyContent: 'flex-end', alignItems: 'center' }}>
             {!isMobile && !isTablet ? (
+=======
+          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: {sm: '', md: 'center'} }}>
+            <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+              <img src="/public/assets/logo_re.png" alt="Logo" width="100px" />
+            </Typography>
+          </Box>
+
+          {/* Right section with menu items and call button */}
+          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+            {isMobile ? (
+              <Box>
+               <Button
+                  variant="contained"
+                  sx={{ backgroundColor: '#e01933', color: '#fff', borderRadius: 2, mr: 3, fontSize: 10 }}
+                  startIcon={<Phone />}
+                >
+                  (888) 249-8840
+                </Button>
+                <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Drawer
+                anchor="left"
+                open={drawerOpen}
+                onClose={handleDrawerToggle}
+              >
+                <List>
+                  {['Home', 'What We Do', 'How It Works', 'About', 'Our Gallery', 'Contact'].map((text) => (
+                    <ListItem  key={text}>
+                      <ListItemText primary={text} />
+                    </ListItem>
+                  ))}
+                </List>
+              </Drawer>
+              </Box>
+            ) : (
+>>>>>>> behruz
               <>
-                <Link
-                  component={RouterLink}
-                  to="/about"
-                  style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <Button color="inherit">
-                    About
-                    <span style={{ display: 'flex', alignItems: 'flex-end', marginTop: 10, color: '#e01933' }}>•</span>
-                  </Button>
-                </Link>
-                <Link component={RouterLink}
-                  to="/our-gallery"
-                  style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <Button color="inherit">
-                    Our Gallery
-                    <span style={{ display: 'flex', alignItems: 'flex-end', marginTop: 10, color: '#e01933' }}>•</span>
-                  </Button>
-                </Link>
-                <Link component={RouterLink}
-                  to="/contact"
-                  style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <Button color="inherit">
-                    Contact
-                    <span style={{ display: 'flex', alignItems: 'flex-end', marginTop: 10, color: '#e01933' }}>•</span>
-                  </Button>
-                </Link>
+                <Button color="inherit">
+                  About
+                  <span style={{ display: 'flex', alignItems: 'flex-end', marginTop: 10, color: '#e01933' }}>•</span>
+                </Button>
+                <Button color="inherit">
+                  Our Gallery
+                  <span style={{ display: 'flex', alignItems: 'flex-end', marginTop: 10, color: '#e01933' }}>•</span>
+                </Button>
+                <Button color="inherit">
+                  Contact
+                  <span style={{ display: 'flex', alignItems: 'flex-end', marginTop: 10, color: '#e01933' }}>•</span>
+                </Button>
                 <Button
                   variant="contained"
                   sx={{ backgroundColor: '#e01933', color: '#fff', marginLeft: 2, borderRadius: 2 }}
@@ -213,7 +256,7 @@ const Header = () => {
                   (888) 249-8840
                 </Button>
               </>
-            ) : null}
+            )}
           </Box>
         </Toolbar>
       </Container>

@@ -4,8 +4,6 @@ import {
   BannerImage,
   Section,
 } from "../../pages/how-it-works/styles";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 function HowMuchDoes({ text }) {
   return (
@@ -57,7 +55,6 @@ function HowMuchDoes({ text }) {
             >
               <Box
                 component={"div"}
-                data-aos='fade-up'
                 sx={{
                   width: "100%",
                   maxWidth: "550px",
@@ -100,7 +97,6 @@ function HowMuchDoes({ text }) {
                   overflow: "hidden",
                   backgroundColor: text ? "#fff" : "#11172B",
                 }}
-                data-aos='fade-up'
               >
                 <CardContent sx={{ padding: "30px", width: "100%" }}>
                   <Typography

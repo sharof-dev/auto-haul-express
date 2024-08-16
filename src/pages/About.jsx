@@ -9,16 +9,8 @@ import Services from "../components/about/Services";
 import Statistics from "../components/about/Statistics";
 import Teamwork from "../components/about/Teamwork";
 import TrustedBy from "../components/about/TrustedBy";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-import { useEffect } from "react";
 
 const About = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  }, []);
   return (
     <>
       <AboutForm />

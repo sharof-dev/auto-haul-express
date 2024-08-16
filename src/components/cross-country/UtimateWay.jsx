@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   BannerColor,
   BannerImage,
@@ -7,15 +7,8 @@ import {
   Title,
 } from "../../pages/how-it-works/styles";
 import { Box, Container, Typography } from "@mui/material";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 function UtimateWay() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    })
-  })
   return (
     <>
       <Box
@@ -39,12 +32,12 @@ function UtimateWay() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              width: "80%",
+              width: "100%",
               margin: "0 auto",
               textAlign: "center",
             }}
           >
-            <Title variant="h2" gutterBottom sx={{ lineHeight: "1.2em" }} data-aos='fade-down'>
+            <Title variant="h2" gutterBottom sx={{ lineHeight: "1.2em" }}>
               Cross Country Car Shipping: <br />
               <Box component={"span"} sx={{ color: "#E01933" }}>
                 The Ultimate Way to Move your Vehicle.
@@ -53,7 +46,7 @@ function UtimateWay() {
             <Typography
               variant="subtitle1"
               sx={{
-                fontSize: { xs: "18px", sm: "18px", md: "20px", lg: "28px" },
+                fontSize: { xs: "18px", sm: "18px", md: "20px", lg: "29px" },
                 fontWeight: 500,
                 lineHeight: "1.4em",
                 color: "#ffffff",
@@ -62,7 +55,7 @@ function UtimateWay() {
             >
               Vehicle owners and shippers alike can take use of{" "}
               <em>
-                <strong>cross country car shipping</strong> &nbsp;
+                <strong>cross country car shipping</strong>
               </em>
               services to relocate their automobiles across the country. Those
               who are moving great distances or who need to transport their

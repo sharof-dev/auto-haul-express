@@ -24,27 +24,33 @@ import {
   OpenAuotTransport,
   SnowBirds,
   StudentAuto,
-  OurGallery,
   Blog,
   BlogPost,
   MotorcycleShipping,
+  GetQuote,
 } from "./pages/";
+
 import CarShippingCost from "./pages/how-it-works/CarShippingCost";
 import CrosCountry from "./pages/how-it-works/CrosCountry";
 import HowDoesCarShipping from "./pages/how-it-works/HowDoesCarShipping";
-import UsaMapController from "./components/UsaMapController";
 import BlogRout from "./layout/BlogRout";
+
 const App = () => {
   return (
     <>
       <Header />
+<<<<<<< HEAD
+=======
+
+      <Navbar />
+>>>>>>> behruz
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
 
         <Route path="/contact" element={<Contact />} />
-        <Route path="/our-gallery" element={<OurGallery />} />
-        <Route path="/what_we_do" element={<WhatWeDo />} />
+        <Route path="/get-a-quote" element={<GetQuote />} />
+        <Route path="/what-we-do" element={<WhatWeDo />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
         <Route path="/faq" element={<FAQs />} />
         <Route path="/privacy-policy" element={<Privacypolicy />} />
@@ -80,7 +86,6 @@ const App = () => {
           <Route path=":name" element={<BlogPost />} />
         </Route>
       </Routes>
-      <UsaMapController />
       <Footer />
     </>
   );

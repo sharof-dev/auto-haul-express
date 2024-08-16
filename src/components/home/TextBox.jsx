@@ -1,7 +1,5 @@
 import { Box, Container, Typography, styled } from '@mui/material';
 import React from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css'
 
 
 
@@ -21,8 +19,6 @@ const TextBox = () => {
           color: '#999',
         },
       }}
-      data-aos='zoom-in'
-      data-aos-duration='1000'
     >
       <Container maxWidth="xl">
         <Typography variant='h4'

@@ -1,6 +1,4 @@
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 function Logistics() {
   return (
@@ -42,7 +40,6 @@ function Logistics() {
                 boxShadow: "0",
                 backgroundColor: "#ffffff00",
               }}
-              data-aos='fade-right'
             >
               <Box
                 sx={{
@@ -127,7 +124,6 @@ function Logistics() {
               </Box>
             </Card>
             <Card
-            data-aos='fade-left'
               component="li"
               sx={{
                 width: "100%",

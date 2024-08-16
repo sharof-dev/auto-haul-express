@@ -1,8 +1,5 @@
 import { Box, Button, FormGroup, Input, Typography, styled } from "@mui/material";
 import React from "react";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-
 const FormContainer = styled(FormGroup)(({ theme }) => ({
   padding: "20px 30px",
   width: "80%",
@@ -40,7 +37,7 @@ const FormInput = styled(Input)(() => ({
 
 const GetQuote = () => {
   return (
-    <FormContainer data-aos='fade-left'>
+    <FormContainer>
       <Box>
         <FormTitle variant="h2">Fill Up the Get Quote Form</FormTitle>
         <FormTitle variant="h4">

@@ -1,8 +1,6 @@
 import { BodyText1, Section, Title2 } from "../../pages/how-it-works/styles";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import HowGetCard from "./cards/HowGetCard";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 const howGetCardData = [
   {
@@ -37,9 +35,6 @@ function HowGet({ data }) {
               marginBottom: "20px",
             }}
           >
-            <Title2 variant="h2" color={"#11172B"} data-aos='fade-up'>
-              How to Get a Quote for <br />
-            </Title2>
             <Title2 variant="h2" color={"#11172B"}>
               {data
                 ? "Factor Affects Car Shipping Cost"
@@ -53,7 +48,6 @@ function HowGet({ data }) {
               variant="subtitle1"
               color={"#7A7A7A"}
               sx={{ marginTop: "10px" }}
-              data-aos='fade-up'
             >
               {data ? (
                 <>
@@ -110,7 +104,6 @@ function HowGet({ data }) {
                 textAlign: "center",
                 color: "#7A7A7A",
               }}
-              data-aos='fade-up'
             >
               {data
                 ? "At US CAR-GO FREIGHT, we take all these factors into consideration when providing you with a quote for shipping your vehicle. Our team of experts will work with you to determine the most efficient and cost-effective shipping solution for your unique needs, ensuring that your vehicle arrives safely and on time."

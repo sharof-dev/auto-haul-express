@@ -2,8 +2,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Box, Container } from "@mui/material";
 import { Heading, Section } from "../../pages/how-it-works/styles";
 import { Navigation, Autoplay } from "swiper/modules";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 const TrustedByCardData = [
   {
@@ -38,7 +36,7 @@ function TrustedBy() {
       <Section component={"section"} id="trusted-by">
         <Container maxWidth="xl">
           <Box component={"div"}>
-            <Heading color={"#11172B"} sx={{ textAlign: "center" }} data-aos='fade-up'>
+            <Heading color={"#11172B"} sx={{ textAlign: "center" }}>
               Trusted By
               <Box component={"span"} sx={{ color: "#E01933" }}>
                 .
@@ -64,7 +62,6 @@ function TrustedBy() {
                 delay: 3000,
                 disableOnInteraction: false,
               }}
-              data-aos='fade-up'
               modules={[Navigation, Autoplay]}
               className="mySwiper"
             >

@@ -1,7 +1,8 @@
-import { Box, Container, Grid, Typography,  } from "@mui/material";
+import { Box, Container, Grid, Typography, styled } from "@mui/material";
 import Typewriter from "typewriter-effect/dist/core";
 import React, { useEffect, useRef } from "react";
 import GetQuote from "../GetQuote";
+
 const MainSection = () => {
   const typewriterContainerRef = useRef(null);
 
@@ -14,20 +15,6 @@ const MainSection = () => {
       });
     }
   }, []);
-  useEffect(() => {
-    const handleAosIn = (event) => console.log('animated in', event.detail);
-    const handleAosOut = (event) => console.log('animated out', event.detail);
-  
-    document.addEventListener('aos:in', handleAosIn);
-    document.addEventListener('aos:out', handleAosOut);
-  
-    return () => {
-      document.removeEventListener('aos:in', handleAosIn);
-      document.removeEventListener('aos:out', handleAosOut);
-    };
-  }, []);
-  
-  
 
   return (
     <Box
@@ -71,17 +58,17 @@ const MainSection = () => {
             >
               <Box>
                 <Typography
-                  sx={{ fontSize: { xs: '2.5rem', sm: '3rem' } }}
+                  sx={{fontSize: {xs: '2.5rem', sm: '3rem'}}}
                   color={"#e01933"}
                   fontWeight={600}
                   gutterBottom
                   ref={typewriterContainerRef}
                 ></Typography>
-                <Typography sx={{ fontSize: { xs: '2.5rem', sm: '3rem' } }} fontWeight={500}>
+                <Typography sx={{fontSize: {xs: '2.5rem', sm: '3rem'}}} fontWeight={500}>
                   auto shipping services.
                 </Typography>
                 <br />
-                <Typography sx={{ fontSize: { xs: '1.5rem', sm: '2.5rem' } }} fontWeight={500}>
+                <Typography sx={{fontSize: {xs: '1.5rem', sm: '2.5rem'}}} fontWeight={500}>
                   Welcome to{" "}
                   <span style={{ color: "#e01933" }}>US CAR-GO FREIGHT</span>.{" "}
                   <br />
@@ -98,13 +85,6 @@ const MainSection = () => {
               display={"flex"}
               justifyContent={"center"}
               alignItems={"center"}
-              data-aos="fade-left"
-              data-aos-offset="100"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-out"
-              data-aos-mirror="true"
-              data-aos-once="false"
-              data-aos-anchor-placement="top-center"
             >
               <GetQuote />
             </Grid>

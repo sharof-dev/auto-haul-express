@@ -1,7 +1,5 @@
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
 import { Section } from "../../pages/how-it-works/styles";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 function Dynamic() {
   return (
@@ -36,7 +34,6 @@ function Dynamic() {
                 boxShadow: "0",
                 backgroundColor: "#ffffff00",
               }}
-              data-aos='fade-up'
             >
               <Box
                 sx={{
@@ -102,7 +99,6 @@ function Dynamic() {
                 backgroundColor: "transparent",
                 boxShadow: "0",
               }}
-              data-aos='fade-up'
             >
               <Box
                 component={"div"}
@@ -136,7 +132,6 @@ function Dynamic() {
                 fontSize: "16px",
                 fontWeight: 500,
               }}
-              data-aos='zoom-in'
             >
               US Car-Go is in compliance with all requirements of the{" "}
               <Box component={"a"} href="#" sx={{ color: "#7A7A7A" }}>

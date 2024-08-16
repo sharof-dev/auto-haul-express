@@ -1,6 +1,4 @@
 import { Box, Card } from "@mui/material";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 function CardImg({ img, mini, reverse }) {
   const cardMiniWidth = mini
@@ -21,7 +19,6 @@ function CardImg({ img, mini, reverse }) {
         backgroundColor: "transparent",
         boxShadow: "0",
       }}
-      data-aos='fade-left'
     >
       <Box
         component={"div"}

@@ -1,30 +1,23 @@
 import React from 'react';
-import { Typography, Card, CardContent, Container, CardMedia, Box } from '@mui/material';
-
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-
-
-
+import { Typography, Card, CardContent, CardActions, Button, Container, CardMedia, Box } from '@mui/material';
 import { styled } from '@mui/system';
-const FlipCardContainer = styled(Box)(({ theme }) => ({
-  perspective: '1000px',
+
+const FlipCardContainer = styled(Box)({
+  perspective: '10000px',
   display: 'flex',
   justifyContent: 'center',
-  flexDirection: 'column', 
   margin: 'auto',
-  padding: theme.breakpoints.down('sm') ? "2rem 1rem" : "10rem 2rem",
+  padding: { xs: "10rem 1rem", sm: "10rem 2rem" },
   gap: '5rem',
-  [theme.breakpoints.up('md')]: {
-    flexDirection: 'row', 
-  },
-}))
+  border: 'none',
+  boxShadow: '3px solid #e01933',
+});
 
 const FlipCardInner = styled('div')({
   width: '100%',
   height: '300px',
   transformStyle: 'preserve-3d',
-  transition: 'transform 1s',
+  transition: 'transform 0.5s',
   position: 'relative',
   display: 'flex',
   border: 'none',
@@ -39,15 +32,13 @@ const FlipCard = styled(Card)({
   transformStyle: 'preserve-3d',
   transition: 'transform 0.5s',
   boxShadow: '4px 3px 3px #991933',
+  transition: '10s boxShadow',
   border: 'none',
   '&:hover': {
     boxShadow: '-4px 3px 3px #991933',
   },
   '&:hover .flip-card-inner': {
     transform: 'rotateY(180deg)',
-  },
-  "&:hover .icon": {
-    transformStyle: 'translateZ(90px) scale(.91)'
   },
 });
 
@@ -103,13 +94,13 @@ const step = [
 const  TransportCard = () => {
 
   return (
-    <Container maxWidth="xl" sx={{ textAlign: 'center', marginTop: '4rem', padding: { xs: "10rem 1rem", sm: "5rem 2rem" }, }}>
-      <FlipCardContainer data-aos='fade-up' data-aos-duration='2000'>
+    <Container maxWidth="xl" sx={{ textAlign: 'center', marginTop: '4rem', padding: { xs: "10rem 1rem", sm: "10rem 2rem" }, }}>
+      <FlipCardContainer>
         {step.map((step, index) => (
           <FlipCard key={index}>
             <FlipCardInner className="flip-card-inner">
               <FlipCardFront>
-                <Box className='icon' sx={{
+                <Box sx={{
                   width: '100px',
                   height: '100px',
                   display: 'grid',
@@ -119,7 +110,6 @@ const  TransportCard = () => {
                   borderColor: '#565656',
                   padding: '20px 20px 20px 20px',
                   borderRadius: '50%',
-                  perspective: '1000px'
                 }}>
                   {step.image ? (
                     <CardMedia
@@ -127,7 +117,6 @@ const  TransportCard = () => {
                       component="img"
                       image={step.image}
                       alt={step.title}
-                      
                     />) : (
                     <i className={step.icon} style={{ color: 'white', fontSize: '3rem' }} ></i>
                   )}

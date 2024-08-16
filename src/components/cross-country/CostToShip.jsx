@@ -8,8 +8,6 @@ import {
 } from "../../pages/how-it-works/styles";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import { Box, Button, Container, Typography } from "@mui/material";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 function CostToShip() {
   return (
@@ -34,7 +32,6 @@ function CostToShip() {
                 maxWidth: { sm: "900px", md: "587px" },
                 width: "100%",
               }}
-              data-aos='fade-up'
             >
               <Typography
                 variant="h4"
@@ -72,7 +69,6 @@ function CostToShip() {
                     opacity: 0.8,
                   },
                 }}
-                data-aos='fade-right'
               >
                 Call At (888) 249-8840
               </ButtonStyled>
@@ -84,7 +80,7 @@ function CostToShip() {
                 padding: { xs: "10px 0 0 0", sm: "10px" },
               }}
             >
-              <FormContainer sx={{ marginBottom: "20px" }} data-aos='fade-left'>
+              <FormContainer sx={{ marginBottom: "20px" }}>
                 <Box>
                   <FormTitle variant="h2">Fill Up the Get Quote Form</FormTitle>
                   <FormTitle variant="h4">

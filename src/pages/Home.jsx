@@ -1,9 +1,4 @@
-
-
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-import { Helmet } from 'react-helmet'
-import React, { useEffect } from "react";
+import React from "react";
 import MainSection from "../components/home/MainSection";
 import TextBox from "../components/home/TextBox";
 import ShippingSteps from "../components/home/ShippingSets";
@@ -14,7 +9,6 @@ import OurServices from "../components/home/OurServices";
 import UseDifferent from "../components/home/UseDifferent";
 import MiniCard from "../components/home/MiniCard";
 import LatestNews from "../components/home/LatestNews";
-import WhatAreThe from '../components/cross-country/WhatAreThe';
 
 const steps = [
   {
@@ -39,6 +33,16 @@ const steps = [
 const title = `How To Ship in`;
 const titleMark = `3 easy steps`;
 
+const shippingBox = `backgroundColor: 'white',
+textAlign: 'center',
+width: '90%',
+p: "20px 20px",
+display: 'flex',
+flexDirection: 'column',
+justifyContent: 'space-between',
+height: '100%',
+borderRadius: '20px',
+ml: 4`;
 const cardBg = `https://uscargofreight.com/wp-content/uploads/2023/03/About-US-Car-Go-Freight-Bg.jpg`;
 
 const weareimg = [
@@ -67,10 +71,9 @@ const text = true;
 
 const whyChooseData = [
   {
-    img: '/assets/home_img/1.webp',
+    img: "/assets/home_img/1.webp",
     title: "Driving You Crazy? Sit Back and Relax",
     text: "As a highly-rated  auto transport company , you can trust us to seamlessly transport your car from one location to another without you having to worry. By opting for door-to-door service, you allow our experts to handle every aspect of the process, guaranteeing (assured) a smooth journey without any hiccups along the way.",
-
   },
   {
     img: "/assets/home_img/2.jpg",
@@ -105,32 +108,25 @@ const whyChooseData = [
 ];
 
 const Home = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    })
-  })
   return (
     <>
-      <Helmet>
-        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-        <title>Auto haul express LLC</title>
-        <meta name="description" content="We offer a range of options to meet your specific needs, including open auto transport, enclosed car shipping, and more. Reach out to us for a quote!" />
-        <meta name="keywords" content="logistic, cargo, machine, deliver,delivery service" />
-        <meta property="og:title" content="A1 Auto Shipping Services | Top Car Shipping Company" />
-        <meta property="og:type" content="website" />
-      </Helmet>
       <MainSection />
       <TextBox />
       <ShippingSteps
         title={title}
         titleMark={titleMark}
         data={steps}
+        cardStyle={shippingBox}
         cardBg={cardBg}
       />
       <TransportCard />
+<<<<<<< HEAD
       <ClientsSay data={text} />
       <WhatAreThe whyChooseData={whyChooseData} text={text} />
+=======
+      <ClientsSay text={text} />
+      <WhatFactors whyChooseData={whyChooseData} text={text} />
+>>>>>>> behruz
       <OurServices />
       <UseDifferent />
       <MiniCard />

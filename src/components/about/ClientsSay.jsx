@@ -9,8 +9,6 @@ import { Autoplay, Navigation } from "swiper/modules";
 import SliderOurCard from "../car-shipping-cost/cards/SliderOurCard";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 const sliderData = [
   {
@@ -67,7 +65,6 @@ function ClientsSay({ text }) {
               color: "#fff",
               textAlign: "center",
             }}
-            data-aos='fade-up'
           >
             {text ? "Our Customer’s" : " What Our"}
 
@@ -82,7 +79,6 @@ function ClientsSay({ text }) {
               position: "relative",
               padding: { xs: "0", sm: "0", md: "0 45px" },
             }}
-            data-aos='fade-down'
           >
             <Swiper
               style={{ padding: "5px" }}
@@ -97,7 +93,6 @@ function ClientsSay({ text }) {
                   slidesPerView: 2,
                 },
               }}
-              
               spaceBetween={10}
               slidesPerView={1}
               navigation={{
@@ -112,7 +107,7 @@ function ClientsSay({ text }) {
               modules={[Navigation, Autoplay]}
             >
               {sliderData.map((card, idx) => (
-                <SwiperSlide key={idx} style={{ width: "50%" }} >
+                <SwiperSlide key={idx} style={{ width: "50%" }}>
                   <SliderOurCard {...card} />
                 </SwiperSlide>
               ))}

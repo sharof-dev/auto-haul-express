@@ -8,13 +8,8 @@ import {
   Heading,
   BodyText,
 } from "../../pages/how-it-works/styles";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 function AboutForm() {
-  AOS.init({
-    duration: 1000,
-  })
   return (
     <>
       <Box
@@ -50,7 +45,6 @@ function AboutForm() {
                 maxWidth: { sm: "900px", md: "587px" },
                 width: "100%",
               }}
-              data-aos='fade-up'
             >
               <Heading
                 variant="h1"
@@ -96,7 +90,7 @@ function AboutForm() {
                 padding: { xs: "10px 0 0 0", sm: "10px" },
               }}
             >
-              <FormContainer data-aos='fade-up'>
+              <FormContainer>
                 <Box>
                   <FormTitle variant="h2">Fill Up the Get Quote Form</FormTitle>
                   <FormTitle variant="h4">
