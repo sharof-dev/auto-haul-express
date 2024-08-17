@@ -88,7 +88,7 @@ const Footer = () => {
               </Typography>
               <List>
                 <ListItems>
-                  <LinkMenu to="#" style={{ display: "flex" }}>
+                  <LinkMenu to="/" style={{ display: "flex" }}>
                     Home
                     <span
                       style={{
@@ -103,7 +103,7 @@ const Footer = () => {
                   </LinkMenu>
                 </ListItems>
                 <ListItems>
-                  <LinkMenu to="#" style={{ display: "flex" }}>
+                  <LinkMenu to="/what-we-do" style={{ display: "flex" }}>
                     What We Do
                     <span
                       style={{
@@ -118,7 +118,7 @@ const Footer = () => {
                   </LinkMenu>
                 </ListItems>
                 <ListItems>
-                  <LinkMenu to="#" style={{ display: "flex" }}>
+                  <LinkMenu to="/about" style={{ display: "flex" }}>
                     About
                     <span
                       style={{
@@ -133,7 +133,7 @@ const Footer = () => {
                   </LinkMenu>
                 </ListItems>
                 <ListItems>
-                  <LinkMenu to="#" style={{ display: "flex" }}>
+                  <LinkMenu to="/blog" style={{ display: "flex" }}>
                     Blog
                     <span
                       style={{
@@ -148,7 +148,7 @@ const Footer = () => {
                   </LinkMenu>
                 </ListItems>
                 <ListItems>
-                  <LinkMenu to="#" style={{ display: "flex" }}>
+                  <LinkMenu to="/our-gallery" style={{ display: "flex" }}>
                     Gallery
                     <span
                       style={{
@@ -170,7 +170,7 @@ const Footer = () => {
               </Typography>
               <List>
                 <ListItems>
-                  <LinkMenu to="#" style={{ display: "flex" }}>
+                  <LinkMenu to="/contact" style={{ display: "flex" }}>
                     Contact
                     <span
                       style={{
@@ -185,7 +185,7 @@ const Footer = () => {
                   </LinkMenu>
                 </ListItems>
                 <ListItems>
-                  <LinkMenu to="#" style={{ display: "flex" }}>
+                  <LinkMenu to="/faq" style={{ display: "flex" }}>
                     FAQs
                     <span
                       style={{
@@ -215,7 +215,7 @@ const Footer = () => {
                   </LinkMenu>
                 </ListItems>
                 <ListItems>
-                  <LinkMenu to="#" style={{ display: "flex" }}>
+                  <LinkMenu to="/privacy-policy" style={{ display: "flex" }}>
                     Privacy Policy
                     <span
                       style={{

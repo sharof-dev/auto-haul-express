@@ -15,6 +15,9 @@ import {
 import { BannerColor, BannerImage, Section } from "./how-it-works/styles";
 import "./custome.css";
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 
 export const FormInput = styled(Input)(() => ({
   width: "100%",
@@ -75,23 +78,65 @@ const currencies = [
 
 function GetQuote() {
   const [selectVal, setSelectVal] = useState(currencies[0].value);
-  const [inputVal, setInputVal] = useState("");
-  const [originZip, setOriginZip] = useState("");
-  const [destinationZip, setDestinationZip] = useState("");
-  const [date, setDate] = useState("");
-  
-
 
   const handleSelect = (event) => {
     setSelectVal(event.target.value);
   };
-  const handleSubmit= () => {
-    console.log('hello');
+  const [input, setInput] = useState({
+    originZip: '',
+    destinationZip: '',
+    date: '',
+    vehivTipe: selectVal,
+    transportType: undefined,
+    vehicleCondition: undefined,
+    year: null,
+    machineMake: "",
+    machineModel: "",
+    username: "",
+    email: "",
+    phone: "",
+    submitting: false
+  });
+  const handleSubmit = (e) => {
+    const trimmedInput = {
+      ...input,
+      origin: input.originZip.trim(),
+      destination: input.destinationZip.trim(),
+      date: input.date.trim(),
+      vehicle_drives: input.vehivTipe,
+      make: input.machineMake.trim(),
+      model: input.machineModel.trim(),
+      username: input.username.trim(),
+      mail: input.email.trim(),
+      phone: input.phone.trim(),
+    };
+  
+    if (
+      trimmedInput.origin === "" ||
+      trimmedInput.destination === "" ||
+      trimmedInput.date === "" ||
+      trimmedInput.vehicle_drives === "undefined" || 
+      trimmedInput.year === null ||
+      trimmedInput.make === "" ||
+      trimmedInput.model === "" ||
+      trimmedInput.username === "" ||
+      trimmedInput.mail === "" ||
+      trimmedInput.phone === "" ||
+      trimmedInput.submitting === false
+    ) {
+      toast.error("Please fill out all required fields!");
+      return;
+    } else {
+        console.log(trimmedInput);
+        const api = "http://45.138.158.215:8080/main/v1/order/create"
+        axios.post(api, trimmedInput).then(response => console.log(response)).catch(error => console.log(error))
+      
+    }
   }
-
+  
   useEffect(() => {
 
-  },[])
+  }, [])
 
   return (
     <>
@@ -115,6 +160,17 @@ function GetQuote() {
             alignItems: "center",
           }}
         >
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark" />
           <Box sx={{ textAlign: "center", mb: 4 }}>
             <Typography variant="h4" gutterBottom color="white">
               We Want to Earn Your Trust
@@ -150,6 +206,7 @@ function GetQuote() {
                   fullWidth
                   placeholder="Origin Zip or City"
                   variant="outlined"
+                  onChange={(e) => setInput({ ...input, originZip: e.target.value })}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
@@ -159,6 +216,7 @@ function GetQuote() {
                   placeholder="Destination Zip or City"
                   variant="outlined"
                   sx={{ input: { color: "white" } }}
+                  onChange={(e) => setInput({ ...input, destinationZip: e.target.value })}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
@@ -169,6 +227,7 @@ function GetQuote() {
                   type="date"
                   variant="outlined"
                   sx={{ colorScheme: "dark" }}
+                  onChange={(e) => setInput({ ...input, date: e.target.value })}
                 />
               </Grid>
 
@@ -195,8 +254,8 @@ function GetQuote() {
                       color: "#11172B",
                     },
                   }}
-                  value={selectVal}
-                  onChange={handleSelect}
+                  value={input.vehivTipe}
+                  onChange={e => setInput({ ...input, vehivTipe: e.target.value })}
                   required
                 >
                   {currencies.map(({ value, label }, idx) => (
@@ -210,7 +269,7 @@ function GetQuote() {
                 <Typography variant="subtitle1" gutterBottom color="white">
                   Transport Type:
                 </Typography>
-                <RadioGroup  defaultValue="Open/Standard">
+                <RadioGroup defaultValue="Open/Standard">
                   <FormControlLabel
                     value="Open/Standard"
                     control={
@@ -222,6 +281,7 @@ function GetQuote() {
                             color: "#E01933",
                           },
                         }}
+                        onChange={() => setInput({ ...input, transportType: true })}
                       />
                     }
                     label="Open/Standard"
@@ -238,6 +298,7 @@ function GetQuote() {
                             color: "#E01933",
                           },
                         }}
+                        onChange={() => setInput({ ...input, transportType: false })}
                       />
                     }
                     label="Enclosed"
@@ -262,6 +323,7 @@ function GetQuote() {
                             color: "#E01933",
                           },
                         }}
+                        onChange={() => setInput({ ...input, vehicleCondition: true })}
                       />
                     }
                     label="Vehicle Drives"
@@ -279,6 +341,7 @@ function GetQuote() {
                             color: "#E01933",
                           },
                         }}
+                        onChange={() => setInput({ ...input, vehicleCondition: false })}
                       />
                     }
                     label="Inoperable"
@@ -288,41 +351,44 @@ function GetQuote() {
               </Grid>
 
               {/* other cars */}
-              {selectVal === "other" && (
-                <>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <FormInput
-                      required
-                      fullWidth
-                      type="number"
-                      placeholder="Enter Year"
-                      variant="outlined"
-                      min={1000}
-                      max={9999}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <FormInput
-                      required
-                      fullWidth
-                      type="text"
-                      placeholder="Enter Make"
-                      variant="outlined"
-                      sx={{ input: { color: "white" } }}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <FormInput
-                      required
-                      fullWidth
-                      type="text"
-                      placeholder="Enter Model"
-                      variant="outlined"
-                      sx={{ input: { color: "white" } }}
-                    />
-                  </Grid>
-                </>
-              )}
+
+              <>
+                <Grid item xs={12} sm={6} md={4}>
+                  <FormInput
+                    required
+                    fullWidth
+                    type="number"
+                    placeholder="Enter Year"
+                    variant="outlined"
+                    min={1000}
+                    max={9999}
+                    onChange={e => setInput({ ...input, year: e.target.value })}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <FormInput
+                    required
+                    fullWidth
+                    type="text"
+                    placeholder="Enter Make"
+                    variant="outlined"
+                    sx={{ input: { color: "white" } }}
+                    onChange={e => setInput({ ...input, machineMake: e.target.value })}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                  <FormInput
+                    required
+                    fullWidth
+                    type="text"
+                    placeholder="Enter Model"
+                    variant="outlined"
+                    sx={{ input: { color: "white" } }}
+                    onChange={e => setInput({ ...input, machineModel: e.target.value })}
+                  />
+                </Grid>
+              </>
+
 
               <Grid item xs={12} sm={6} md={4}>
                 <FormInput
@@ -331,6 +397,7 @@ function GetQuote() {
                   placeholder="Name"
                   variant="outlined"
                   sx={{ input: { color: "white" } }}
+                  onChange={e => setInput({ ...input, username: e.target.value })}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
@@ -340,6 +407,7 @@ function GetQuote() {
                   placeholder="Email"
                   variant="outlined"
                   sx={{ input: { color: "white" } }}
+                  onChange={e => setInput({ ...input, email: e.target.value })}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
@@ -348,6 +416,7 @@ function GetQuote() {
                   placeholder="Phone"
                   variant="outlined"
                   sx={{ input: { color: "white" } }}
+                  onChange={e => setInput({ ...input, phone: e.target.value })}
                 />
               </Grid>
             </Grid>
@@ -368,11 +437,13 @@ function GetQuote() {
               sx={{
                 color: "#fff",
               }}
+              value={input.check}
+              onChange={e => setInput({ ...input, submitting: !input.submitting })}
             />
 
             <Box sx={{ textAlign: "center", mt: 4 }}>
               <Button
-              onClick={handleSubmit}
+                onClick={handleSubmit}
                 type="submit"
                 variant="contained"
                 sx={{
