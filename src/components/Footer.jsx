@@ -81,7 +81,6 @@ const Footer = () => {
               <Typography
                 variant="h6"
                 gutterBottom
-                sx={{ borderBottom: "2px solid red" }}
                 color="inherit"
               >
                 Menu

@@ -15,6 +15,18 @@ const MainSection = () => {
       });
     }
   }, []);
+  useEffect(() => {
+    const handleAosIn = (event) => console.log("animated in", event.detail);
+    const handleAosOut = (event) => console.log("animated out", event.detail);
+
+    document.addEventListener("aos:in", handleAosIn);
+    document.addEventListener("aos:out", handleAosOut);
+
+    return () => {
+      document.removeEventListener("aos:in", handleAosIn);
+      document.removeEventListener("aos:out", handleAosOut);
+    };
+  }, []);
 
   return (
     <Box
@@ -23,7 +35,12 @@ const MainSection = () => {
           "url(https://uscargofreight.com/wp-content/uploads/2023/04/Home-Page-Bg.jpg)",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        padding: { xs: "25rem 1rem", sm: "15rem 2rem", md: "20rem 3rem", lg: "23rem 4rem" },
+        padding: {
+          xs: "25rem 1rem",
+          sm: "15rem 2rem",
+          md: "20rem 3rem",
+          lg: "23rem 4rem",
+        },
         color: "white",
         position: "relative",
       }}
@@ -44,7 +61,7 @@ const MainSection = () => {
           alignItems: "center",
         }}
       >
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{ overflow: "hidden" }}>
           <Grid container spacing={2}>
             {/* Left section */}
             <Grid
@@ -64,11 +81,17 @@ const MainSection = () => {
                   gutterBottom
                   ref={typewriterContainerRef}
                 ></Typography>
-                <Typography sx={{fontSize: {xs: '2.5rem', sm: '3rem'}}} fontWeight={500}>
+                <Typography
+                  sx={{ fontSize: { xs: "2.5rem", sm: "3rem" } }}
+                  fontWeight={500}
+                >
                   auto shipping services.
                 </Typography>
                 <br />
-                <Typography sx={{fontSize: {xs: '1.5rem', sm: '2.5rem'}}} fontWeight={500}>
+                <Typography
+                  sx={{ fontSize: { xs: "1.5rem", sm: "2.5rem" } }}
+                  fontWeight={500}
+                >
                   Welcome to{" "}
                   <span style={{ color: "#e01933" }}>US CAR-GO FREIGHT</span>.{" "}
                   <br />

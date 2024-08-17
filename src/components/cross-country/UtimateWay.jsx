@@ -2,7 +2,7 @@ import React from "react";
 import {
   BannerColor,
   BannerImage,
-  BodyText1,
+  
   ButtonStyled,
   Title,
 } from "../../pages/how-it-works/styles";

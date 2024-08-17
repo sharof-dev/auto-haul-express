@@ -28,6 +28,7 @@ import {
   BlogPost,
   MotorcycleShipping,
   GetQuote,
+  OurGallery,
 } from "./pages/";
 
 import CarShippingCost from "./pages/how-it-works/CarShippingCost";
@@ -35,20 +36,24 @@ import CrosCountry from "./pages/how-it-works/CrosCountry";
 import HowDoesCarShipping from "./pages/how-it-works/HowDoesCarShipping";
 import BlogRout from "./layout/BlogRout";
 
+import ScrollToTop from 'react-scroll-to-top';
+
 const App = () => {
   return (
     <>
       <Header />
       <Navbar />
+      <ScrollToTop smooth style={{bottom: 200, right: 15, fontSize: '18px'}} width="20" height="20"color="#E01933" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/our-gallery" element={<OurGallery />} />
         <Route path="/get-a-quote" element={<GetQuote />} />
         <Route path="/what-we-do" element={<WhatWeDo />} />
-        <Route path="/terms-of-use" element={<TermsOfUse />} />
-        <Route path="/faq" element={<FAQs />} />
-        <Route path="/privacy-policy" element={<Privacypolicy />} />
+        <Route path="/terms-of-use?" element={<TermsOfUse />} />
+        <Route path="/faq?" element={<FAQs />} />
+        <Route path="/privacy-policy?" element={<Privacypolicy />} />
         <Route path="/atv-rtv-shipping" element={<AtvRtvShipping />} />
         <Route path="/boat-or-yacht" element={<BoatOrYacht />} />
         <Route path="/business-services" element={<BusinessServices />} />
@@ -80,8 +85,9 @@ const App = () => {
           <Route index element={<Blog />} />
           <Route path=":name" element={<BlogPost />} />
         </Route>
-        <Route path="/get-quote" element={<GetQuote />} />
+        <Route path="/get-quote/:id" element={<GetQuote />} />
       </Routes>
+       
       <Footer />
     </>
   );

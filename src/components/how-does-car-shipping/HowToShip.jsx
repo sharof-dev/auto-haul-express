@@ -42,7 +42,7 @@ function HowToShip() {
         <BannerColor
           color={"linear-gradient(180deg, #11172b 40%, #11172B 100%)"}
         />
-        <Container maxWidth="xl">
+        <Container maxWidth="xl"  sx={{ overflow: "hidden" }}>
           <Box
             component={"div"}
             sx={{ marginBottom: "30px", textAlign: "center" }}

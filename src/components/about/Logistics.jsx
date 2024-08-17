@@ -1,6 +1,14 @@
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Logistics() {
+  useEffect(() =>{
+    AOS.init({
+      duration: 1000,
+    });
+  })
   return (
     <>
       <Box
@@ -40,6 +48,7 @@ function Logistics() {
                 boxShadow: "0",
                 backgroundColor: "#ffffff00",
               }}
+              data-aos="fade-right"
             >
               <Box
                 sx={{
@@ -49,7 +58,6 @@ function Logistics() {
                     "-5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
                   borderRadius: "35px",
                   padding: 0,
-                  overflow: "hidden",
                   backgroundColor: "#11172B",
                 }}
               >
@@ -124,6 +132,7 @@ function Logistics() {
               </Box>
             </Card>
             <Card
+              data-aos="fade-left"
               component="li"
               sx={{
                 width: "100%",

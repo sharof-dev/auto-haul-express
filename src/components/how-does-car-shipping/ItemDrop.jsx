@@ -2,8 +2,9 @@ import { Box, Typography } from "@mui/material";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import React, { useState } from "react";
-
-function ItemDrop({ list, title, text, dark, listDot }) {
+import AOS from "aos";
+import "aos/dist/aos.css";
+function ItemDrop({ list, title, text, dark, listDot, itemget }) {
   const [dropToggle, setDropToggle] = useState(false);
 
   return (

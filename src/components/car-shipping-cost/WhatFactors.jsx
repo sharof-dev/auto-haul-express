@@ -14,7 +14,6 @@ import "react-vertical-timeline-component/style.min.css";
 import { useTheme } from "@emotion/react";
 import AdjustIcon from "@mui/icons-material/Adjust";
 
-
 const sliderData = [
   {
     img: "/assets/how-it-works/what_factors_timeline0.webp",
@@ -97,7 +96,7 @@ function WhatFactors() {
         <BannerColor
           color={"linear-gradient(180deg, #11172b 40%, #11172B 100%)"}
         />
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{ overflow: "hidden" }}>
           <Title2
             variant="h4"
             sx={{

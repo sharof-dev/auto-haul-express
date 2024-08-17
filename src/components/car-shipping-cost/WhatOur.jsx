@@ -9,7 +9,9 @@ import SliderOurCard from "./cards/SliderOurCard";
 import { Autoplay, Navigation } from "swiper/modules";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const sliderData = [
   {
     description:
@@ -37,8 +39,12 @@ const sliderData = [
   },
 ];
 
-function WhatOur({ text }) {
-  console.log(text);
+function WhatOur({ data, sliderDataClients }) {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  });
   return (
     <>
       <Section component={"section"} id="what-our">
@@ -62,13 +68,14 @@ function WhatOur({ text }) {
               color: "#fff",
               textAlign: "center",
             }}
+            data-aos="fade-up"
           >
             What Our {""}
             <Box component="span" sx={{ color: "#E01933" }}>
               Clients Say!
             </Box>
           </Typography>
-          {text && (
+          {data && (
             <Typography
               sx={{
                 marginBottom: "20px",
@@ -93,12 +100,12 @@ function WhatOur({ text }) {
               position: "relative",
               padding: { xs: "0", sm: "0", md: "0 50px" },
             }}
+            data-aos="fade-up"
           >
             <Swiper
               style={{ padding: "5px" }}
-              centeredSlides={true}
-              spaceBetween={text ? 30 : 10}
-              slidesPerView={text ? 3 : 1}
+              centeredSlides={false}
+              spaceBetween={data ? 30 : 10}
               navigation={{
                 nextEl: ".swipper-button-next",
                 prevEl: ".swipper-button-prev",
@@ -112,9 +119,26 @@ function WhatOur({ text }) {
             >
               {sliderData.map((card, idx) => (
                 <SwiperSlide key={idx}>
-                  <SliderOurCard {...card} text={text} />
+                  <SliderOurCard {...card} text={data} />
                 </SwiperSlide>
               ))}
+              {data ? (
+                <>
+                  {sliderDataClients.map((card, idx) => (
+                    <SwiperSlide key={idx}>
+                      <SliderOurCard {...card} text={true} />
+                    </SwiperSlide>
+                  ))}
+                </>
+              ) : (
+                <>
+                  {sliderData.map((card, idx) => (
+                    <SwiperSlide key={idx}>
+                      <SliderOurCard {...card} text={data} />
+                    </SwiperSlide>
+                  ))}
+                </>
+              )}
             </Swiper>
 
             <Box

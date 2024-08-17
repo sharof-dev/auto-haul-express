@@ -3,7 +3,10 @@ import InsuranceIcon from '@mui/icons-material/Policy';
 import TruckIcon from '@mui/icons-material/LocalShipping';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import GroupIcon from '@mui/icons-material/Group';
-import { Container, Typography, Grid, Box, Card, CardContent } from '@mui/material';
+
+import ArticleIcon from '@mui/icons-material/Article';
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+import { Container, Typography, Grid, Box, Card, CardContent, Button } from '@mui/material';
 import { BannerColor, BannerImage, Section } from '../../pages/how-it-works/styles'
 
 const data = [
@@ -56,6 +59,10 @@ const MiniCard = () => {
                         Known for their competitive rates from individual services to business shipping solutions. <br />
                         US Car-Go strives to deliver a 5-star vehicle-shipping experience to every customer.
                     </Typography>
+                    <Box sx={{display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center', flexDirection: {xs: 'column', md: 'row'}}}>
+                        <Button variant='contained' style={{ color: 'white', backgroundColor: '#e01933', borderRadius: 30 }}><ArticleIcon /> &nbsp; GET INSTANT QUOTE</Button>
+                        <Button variant='contained' style={{ color: 'white', backgroundColor: '#e01933', borderRadius: 30 }}><PhoneAndroidIcon /> &nbsp; CALL AT (888) 249-8840</Button>
+                    </Box>
                 </Box>
             </Container>
         </Section>

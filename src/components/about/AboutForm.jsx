@@ -8,8 +8,28 @@ import {
   Heading,
   BodyText,
 } from "../../pages/how-it-works/styles";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function AboutForm() {
+  const navigate = useNavigate()
+  const [originZip, setOriginZip] = useState("");
+  const [destinationZip, setDestinationZip] = useState("");
+  const handleSubmit = (e) => {
+    if(originZip === '' || destinationZip === ''){
+      alert("Please fill in both fields");
+      return;
+    }else{
+      const setData ={
+        originZip: originZip,
+        destinationZip: destinationZip,
+        date: 2
+      }
+      localStorage.setItem('data', JSON.stringify(setData))
+
+      navigate(`/get-quote/${setData.date}`);
+    }
+  };
   return (
     <>
       <Box
@@ -104,11 +124,13 @@ function AboutForm() {
                     name="origin-zip"
                     placeholder="Origin Zip or City"
                     variant="plain"
+                    onChange={e => setOriginZip(e.target.value)}
                   />
                   <FormInput
                     type="text"
                     name="destination-zip"
                     placeholder="Destination Zip or City"
+                    onChange={e => setDestinationZip(e.target.value)}
                   />
                 </Box>
                 <Button
@@ -129,6 +151,7 @@ function AboutForm() {
                     },
                   }}
                   disableRipple
+                  onClick={handleSubmit}
                 >
                   Continue
                 </Button>

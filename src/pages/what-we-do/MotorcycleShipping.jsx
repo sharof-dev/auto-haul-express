@@ -13,7 +13,7 @@ import {
   fullyLicensedCards14,
   useDifferentData,
   getQuoteData4,
-  motorcycleShippingRightSliderData
+  motorcycleShippingRightSliderData,
 } from "../../constans";
 
 function MotorcycleShipping() {

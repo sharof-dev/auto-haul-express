@@ -1,79 +1,99 @@
+import React from "react";
 import {
   BannerColor,
   BannerImage,
   Section,
   Title2,
+  Title4,
 } from "../../pages/how-it-works/styles";
-import { Box, Container, useMediaQuery } from "@mui/material";
+import { Box, Container, styled, useMediaQuery } from "@mui/material";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { useTheme } from "@emotion/react";
-import AdjustIcon from "@mui/icons-material/Adjust";
+import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
 import SliderCard from "../car-shipping-cost/cards/SliderCard";
+import "./custom.css";
 
+// Styled VerticalTimeline
+const VerticalTimelineText = styled(VerticalTimeline)(({ theme }) => ({
+  "&:before": {
+    top: "8% !important",
+    height: "84% !important",
+  },
+}));
 
-function WhatAreThe({ data }) {
+function WhatAreThe({ title, titleCustome, data, text, background, br }) {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("xl"));
-  const separate = (num) => {
-    if (num % 2) {
-      return "left";
-    }
-    return "right";
-  };
+  const separate = (num) => (num % 2 ? "left" : "right");
 
   return (
     <>
       <Section component={"section"} id="what-are-the">
         {/* Banner Image */}
         <BannerImage
-          image={"/assets/how-it-works/what_are_the.jpg"}
+          image={background ? background : ""}
           parallax={"true"}
           component={"div"}
         />
         {/* Banner Color */}
         <BannerColor
-          color={"linear-gradient(180deg, #11172b 40%, #11172B 100%)"}
+          color={
+            background
+              ? "linear-gradient(180deg, #11172b 40%, #11172B 100%)"
+              : ""
+          }
         />
         <Container maxWidth="xl">
           <Title2
-            variant="h4"
+            variant="h2"
             sx={{
+              fontWeight: 600,
               marginBottom: "20px",
               textAlign: "center",
+              color: background ? "#fff" : "#11172B",
             }}
           >
-            What Are the Factors to Consider <br />
-            <Box component="span" sx={{ color: "#E01933" }}>
-              When Shipping a Car?
-            </Box>
+            {title} {br && <br />}{" "}
+            <span style={{ color: "#e01933" }}>{titleCustome}</span>
           </Title2>
-          <VerticalTimeline
-            layout={"2-columns"}
+          {text && (
+            <Title4
+              variant="h4"
+              textcolor={"#7A7A7A"}
+              sx={{
+                margin: "10px 0px",
+                fontWeight: 500,
+                textAlign: "center",
+              }}
+            >
+              {text}
+            </Title4>
+          )}
+          <VerticalTimelineText
             animate={true}
-            lineColor={"#E01933"}
+            lineColor={background ? "#fff" : "#E01933"}
             style={{ boxShadow: "none", border: "0" }}
           >
-            {data.map((card, idx) => (
+            {data?.map((card, idx) => (
               <VerticalTimelineElement
-                style={{ marginTop: `${matches ? "50px" : "20px"}` }}
+                dateClassName={background ? "date-dark" : "date-light"}
                 date={matches ? null : card.title}
                 iconStyle={{ background: "#E01933", color: "#fff" }}
-                icon={<AdjustIcon />}
-                key={idx}
+                icon={<RadioButtonCheckedIcon />}
                 position={separate(idx)}
+                key={idx}
               >
                 <SliderCard
                   {...card}
-                  dark={"true"}
-                  timeline={"true"}
+                  background={background}
                   matches={matches}
                 />
               </VerticalTimelineElement>
             ))}
-          </VerticalTimeline>
+          </VerticalTimelineText>
         </Container>
       </Section>
     </>

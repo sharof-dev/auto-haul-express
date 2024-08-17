@@ -10,8 +10,11 @@ import WhatAreThe from "../../components/cross-country/WhatAreThe";
 import HowMuch from "../../components/car-shipping-cost/HowMuch";
 import OurAuto from "../../components/car-shipping-cost/OurAuto";
 import EnclosedAuto from "../../components/what-we-do/EnclosedAuto";
-import { HowGetDataCard, wantToKnowData, whatAreTheSliderData } from "../../constans";
-
+import {
+  HowGetDataCard,
+  wantToKnowData,
+  whatAreTheSliderData,
+} from "../../constans";
 
 const OpenAuotTransport = () => {
   const text =
@@ -27,7 +30,12 @@ const OpenAuotTransport = () => {
       <ShipYour text={true} />
       <WantToKnow {...wantToKnowData} />
       <HowGet data={HowGetDataCard} />
-      <WhatAreThe data={whatAreTheSliderData} />
+      <WhatAreThe
+        data={whatAreTheSliderData}
+        background={"https://uscargofreight.com/wp-content/uploads/2023/04/open-auto-transport-option.jpg"}
+        title={"Why choose US Car-Go for  "}
+        titleCustome={"Open Car Shipping?"}
+      />
       <HowMuch text={true} />
       <EnclosedAuto text={true} />
       <OurAuto />

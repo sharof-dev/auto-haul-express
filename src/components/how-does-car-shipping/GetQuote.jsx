@@ -31,7 +31,7 @@ function GetQuote() {
   return (
     <>
       <Section component={"section"} id="get-quote">
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{ overflow: "hidden" }}>
           <Box
             component={"ul"}
             sx={{

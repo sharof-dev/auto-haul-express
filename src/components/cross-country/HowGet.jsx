@@ -1,6 +1,8 @@
 import { BodyText1, Section, Title2 } from "../../pages/how-it-works/styles";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import HowGetCard from "./cards/HowGetCard";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const howGetCardData = [
   {
@@ -35,7 +37,11 @@ function HowGet({ data }) {
               marginBottom: "20px",
             }}
           >
-            <Title2 variant="h2" color={"#11172B"}>
+            <Title2
+              variant="h2"
+              color={"#11172B"}
+              // data-aos="fade-up"
+            >
               {data
                 ? "Factor Affects Car Shipping Cost"
                 : " How to Get a Quote for"}{" "}

@@ -18,6 +18,7 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 export const FormInput = styled(Input)(() => ({
   width: "100%",
@@ -78,6 +79,8 @@ const currencies = [
 
 function GetQuote() {
   const [selectVal, setSelectVal] = useState(currencies[0].value);
+  const params = useParams()
+  const getData = localStorage.getItem('data')
 
   const handleSelect = (event) => {
     setSelectVal(event.target.value);
@@ -97,46 +100,78 @@ function GetQuote() {
     phone: "",
     submitting: false
   });
-  const handleSubmit = (e) => {
-    const trimmedInput = {
-      ...input,
-      origin: input.originZip.trim(),
-      destination: input.destinationZip.trim(),
-      date: input.date.trim(),
-      vehicle_drives: input.vehivTipe,
-      make: input.machineMake.trim(),
-      model: input.machineModel.trim(),
-      username: input.username.trim(),
-      mail: input.email.trim(),
-      phone: input.phone.trim(),
-    };
-  
-    if (
-      trimmedInput.origin === "" ||
-      trimmedInput.destination === "" ||
-      trimmedInput.date === "" ||
-      trimmedInput.vehicle_drives === "undefined" || 
-      trimmedInput.year === null ||
-      trimmedInput.make === "" ||
-      trimmedInput.model === "" ||
-      trimmedInput.username === "" ||
-      trimmedInput.mail === "" ||
-      trimmedInput.phone === "" ||
-      trimmedInput.submitting === false
-    ) {
-      toast.error("Please fill out all required fields!");
-      return;
-    } else {
-        console.log(trimmedInput);
-        const api = "http://45.138.158.215:8080/main/v1/order/create"
-        axios.post(api, trimmedInput).then(response => console.log(response)).catch(error => console.log(error))
-      
-    }
-  }
-  
   useEffect(() => {
+    const storedData = JSON.parse(getData);
+    if (storedData && storedData.date === +params.id) {
+      setInput((prevInput) => ({
+        ...prevInput,
+        originZip: storedData.originZip,
+        destinationZip: storedData.destinationZip,
+      }));
+    }
+  }, [getData, params.id]);
 
-  }, [])
+  const handleSubmit = async (e) => {
+    try {
+      const trimmedInput = {
+        ...input,
+        origin: input.originZip.trim(),
+        destination: input.destinationZip.trim(),
+        date: input.date.trim(),
+        vehicle_type: input.vehivTipe.trim(),
+        make: input.machineMake.trim(),
+        model: input.machineModel.trim(),
+        name: input.username.trim(),
+        mail: input.email.trim(),
+        phone: input.phone.trim(),
+      };
+  
+      if (
+        trimmedInput.origin === "" ||
+        trimmedInput.destination === "" ||
+        trimmedInput.date === "" ||
+        trimmedInput.vehicle_drives === "undefined" ||
+        trimmedInput.year === null ||
+        trimmedInput.make === "" ||
+        trimmedInput.model === "" ||
+        trimmedInput.name === "" ||
+        trimmedInput.mail === "" ||
+        trimmedInput.phone === "" ||
+        !input.submitting
+      ) {
+        toast.error("Please fill out all required fields!");
+        return;
+      }
+  
+      const api = "http://45.138.158.215:8080/main/v1/order/create";
+      const response = await axios.post(api, trimmedInput);
+  
+      if (response.status === 200) {
+        toast.success("Form submitted successfully!");
+        setInput({
+          originZip: "",
+          destinationZip: "",
+          date: "",
+          vehivTipe: selectVal,
+          transportType: undefined,
+          vehicleCondition: undefined,
+          year: null,
+          machineMake: "",
+          machineModel: "",
+          username: "",
+          email: "",
+          phone: "",
+          submitting: false,
+        });
+      } else {
+        toast.error("Failed to submit the form!");
+      }
+    } catch (error) {
+      toast.error("An error occurred while submitting the form.");
+      console.error(error);
+    }
+  };
+  
 
   return (
     <>
@@ -206,6 +241,7 @@ function GetQuote() {
                   fullWidth
                   placeholder="Origin Zip or City"
                   variant="outlined"
+                  value={input.originZip}
                   onChange={(e) => setInput({ ...input, originZip: e.target.value })}
                 />
               </Grid>
@@ -216,6 +252,7 @@ function GetQuote() {
                   placeholder="Destination Zip or City"
                   variant="outlined"
                   sx={{ input: { color: "white" } }}
+                  value={input.destinationZip}
                   onChange={(e) => setInput({ ...input, destinationZip: e.target.value })}
                 />
               </Grid>
@@ -227,6 +264,7 @@ function GetQuote() {
                   type="date"
                   variant="outlined"
                   sx={{ colorScheme: "dark" }}
+                  value={input.date}
                   onChange={(e) => setInput({ ...input, date: e.target.value })}
                 />
               </Grid>
@@ -323,6 +361,7 @@ function GetQuote() {
                             color: "#E01933",
                           },
                         }}
+                        value={input.vehicleCondition}
                         onChange={() => setInput({ ...input, vehicleCondition: true })}
                       />
                     }
@@ -363,6 +402,7 @@ function GetQuote() {
                     min={1000}
                     max={9999}
                     onChange={e => setInput({ ...input, year: e.target.value })}
+                    value={input.year}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
@@ -374,6 +414,7 @@ function GetQuote() {
                     variant="outlined"
                     sx={{ input: { color: "white" } }}
                     onChange={e => setInput({ ...input, machineMake: e.target.value })}
+                    value={input.machineMake}
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
@@ -385,6 +426,7 @@ function GetQuote() {
                     variant="outlined"
                     sx={{ input: { color: "white" } }}
                     onChange={e => setInput({ ...input, machineModel: e.target.value })}
+                    value={input.machineModel}
                   />
                 </Grid>
               </>
@@ -398,6 +440,7 @@ function GetQuote() {
                   variant="outlined"
                   sx={{ input: { color: "white" } }}
                   onChange={e => setInput({ ...input, username: e.target.value })}
+                  value={input.username}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
@@ -408,6 +451,7 @@ function GetQuote() {
                   variant="outlined"
                   sx={{ input: { color: "white" } }}
                   onChange={e => setInput({ ...input, email: e.target.value })}
+                  value={input.email}
                 />
               </Grid>
               <Grid item xs={12} sm={6} md={4}>
@@ -417,6 +461,7 @@ function GetQuote() {
                   variant="outlined"
                   sx={{ input: { color: "white" } }}
                   onChange={e => setInput({ ...input, phone: e.target.value })}
+                  value={input.phone}
                 />
               </Grid>
             </Grid>

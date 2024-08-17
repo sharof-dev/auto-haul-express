@@ -97,6 +97,7 @@ function HowMuchDoes({ text }) {
                   overflow: "hidden",
                   backgroundColor: text ? "#fff" : "#11172B",
                 }}
+                // data-aos='fade-up'
               >
                 <CardContent sx={{ padding: "30px", width: "100%" }}>
                   <Typography

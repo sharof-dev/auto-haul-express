@@ -1,4 +1,8 @@
 import { Box, Button, Container } from "@mui/material";
+
+import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   BannerColor,
   BannerImage,
@@ -8,8 +12,31 @@ import {
   FormTitle,
   Title,
 } from "../../pages/how-it-works/styles";
-
+import { useNavigate } from "react-router-dom";
 function CarShipping() {
+  const navigate = useNavigate()
+  const [originZip, setOriginZip] = useState("");
+  const [destinationZip, setDestinationZip] = useState("");
+  const handleSubmit = (e) => {
+    if(originZip === '' || destinationZip === ''){
+      alert("Please fill in both fields");
+      return;
+    }else{
+      const setData ={
+        originZip: originZip,
+        destinationZip: destinationZip,
+        date: 3
+      }
+      localStorage.setItem('data', JSON.stringify(setData))
+
+      navigate(`/get-quote/${setData.date}`);
+    }
+  };
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  });
   return (
     <>
       <Box
@@ -26,7 +53,7 @@ function CarShipping() {
         <BannerColor
           color={"linear-gradient(180deg, #11172b 40%, #11172B 100%)"}
         />
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{ overflow: "hidden" }}>
           <Box
             sx={{
               display: "flex",
@@ -45,6 +72,7 @@ function CarShipping() {
               <Title
                 variant="h1"
                 sx={{ textAlign: { xs: "center", sm: "left" } }}
+                data-aos="fade-up"
               >
                 How does Car <br /> Shipping Work
                 <Box
@@ -91,7 +119,7 @@ function CarShipping() {
                 padding: { xs: "10px 0 0 0", sm: "10px" },
               }}
             >
-              <FormContainer>
+              <FormContainer data-aos="fade-left">
                 <Box>
                   <FormTitle variant="h2">Fill Up the Get Quote Form</FormTitle>
                   <FormTitle variant="h4">
@@ -105,11 +133,13 @@ function CarShipping() {
                     name="origin-zip"
                     placeholder="Origin Zip or City"
                     variant="plain"
+                    onChange={e => setOriginZip(e.target.value)}
                   />
                   <FormInput
                     type="text"
                     name="destination-zip"
                     placeholder="Destination Zip or City"
+                    onChange={e => setDestinationZip(e.target.value)}
                   />
                 </Box>
                 <Button
@@ -130,6 +160,7 @@ function CarShipping() {
                     },
                   }}
                   disableRipple
+                  onClick={handleSubmit}
                 >
                   Continue
                 </Button>

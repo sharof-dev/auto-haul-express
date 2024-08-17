@@ -1,8 +1,6 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import { Title4 } from "../../../pages/how-it-works/styles";
 
-
-
 const CardIcon = ({ Icon }) => {
   return (
     <Box
@@ -46,19 +44,20 @@ const CardIcon = ({ Icon }) => {
   );
 };
 
-function SliderCard({ Icon, img, title, text, dark, timeline, matches }) {
+function SliderCard({ Icon, img, title, text, timeline, matches, background }) {
   return (
     <Card
       sx={{
-        marginTop: `${Icon ? "75px" : "0px"}`,
+        // marginTop: `${Icon ? "75px" : "0px"}`,
+        marginTop: matches ? "30px" : "0px",
         maxWidth: `${timeline ? "100%" : "493px"}`,
         width: "100%",
-        minHeight: `${timeline ? "auto" : "570px"}`,
+        minHeight: matches ? "auto" : `${timeline ? "auto" : "570px"}`,
         padding: "30px",
         boxShadow:
           "5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
         borderRadius: "35px",
-        backgroundColor: `${dark ? "#ffffff" : "#11172B"}`,
+        backgroundColor: `${background ? "#ffffff" : "#11172B"}`,
         position: "relative",
         overflow: "visible",
         "&:hover": {
@@ -101,7 +100,7 @@ function SliderCard({ Icon, img, title, text, dark, timeline, matches }) {
       <CardContent sx={{ padding: "0" }}>
         <Title4
           variant="h6"
-          textcolor={`${dark ? "#000000" : "#E01933"}`}
+          textcolor={`${background ? "#000000" : "#E01933"}`}
           sx={{
             display: `${timeline ? `${matches ? "block" : "none"}` : "block"}`,
             marginBottom: "10px",
@@ -115,7 +114,7 @@ function SliderCard({ Icon, img, title, text, dark, timeline, matches }) {
             fontSize: { sm: "0.8rem", md: "1rem" },
             fontWeight: "400",
             lineHeight: "1.5",
-            color: `${dark ? "#000000" : "#ffffff"}`,
+            color: `${background ? "#000000" : "#ffffff"}`,
           }}
         >
           {text}
