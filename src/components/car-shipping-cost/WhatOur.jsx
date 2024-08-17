@@ -131,7 +131,7 @@ function WhatOur({ data, sliderDataClients }) {
             >
               {data ? (
                 <>
-                  {sliderDataClients.map((card, idx) => (
+                  {data.map((card, idx) => (
                     <SwiperSlide key={idx}>
                       <SliderOurCard {...card} text={true} />
                     </SwiperSlide>
