@@ -47,7 +47,6 @@ function HowMuch({ text }) {
                 boxShadow: "0",
                 backgroundColor: "#ffffff00",
               }}
-              // data-aos="fade-right"
             >
               <Box
                 sx={{

@@ -1,7 +1,5 @@
 import { Section } from "../../pages/how-it-works/styles";
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 function HowDoesCross() {
   return (
@@ -48,7 +46,6 @@ function HowDoesCross() {
                   overflow: "hidden",
                   backgroundColor: "#11172B",
                 }}
-                data-aos='fade-up'
               >
                 <CardContent sx={{ padding: "30px", width: "100%" }}>
                   <Typography
@@ -109,7 +106,7 @@ function HowDoesCross() {
                     driven to its final location. To protect the car during
                     transit, belts or other restraints are used to secure it.
                     After the car has arrived at the location, it will be
-                    unloaded and delivered to the client Fuck You🤌.
+                    unloaded and delivered to the client.
                   </Typography>
                 </CardContent>
               </Box>
@@ -124,7 +121,6 @@ function HowDoesCross() {
                 backgroundColor: "transparent",
                 boxShadow: "0",
               }}
-              data-aos="fade-up"
             >
               <Box
                 component={"div"}

@@ -105,7 +105,6 @@ function Faq() {
             <Title2
               variant="h3"
               color="#11172B"
-              data-aos="fade-down"
               sx={{ textAlign: "center", marginBottom: "50px" }}
             >
               FAQ

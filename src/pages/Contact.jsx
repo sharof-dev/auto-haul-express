@@ -1,5 +1,5 @@
 import { Avatar, Box, Button, Container, TextField, Typography } from '@mui/material'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import DraftsIcon from '@mui/icons-material/Drafts';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
@@ -7,16 +7,35 @@ import ChatIcon from '@mui/icons-material/Chat';
 import GetQuote from '../components/GetQuote';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { useNavigate } from 'react-router-dom';
 
 
 function Contact() {
+  const navigate = useNavigate()
+  const [originZip, setOriginZip] = useState("");
+  const [destinationZip, setDestinationZip] = useState("");
+  const handleSubmit = (e) => {
+    if(originZip === '' || destinationZip === ''){
+      alert("Please fill in both fields");
+      return;
+    }else{
+      const setData ={
+        originZip: originZip,
+        destinationZip: destinationZip,
+        date: 5
+      }
+      localStorage.setItem('data', JSON.stringify(setData))
+
+      navigate(`/get-quote/${setData.date}`);
+    }
+  };
   useEffect(()=>{
     AOS.init({
       duration: 1000,
     })
   })
   return (
-    <Box  >
+    <Box  overflow={'hidden'}>
       <Box sx={{
         backgroundImage: 'url(https://uscargofreight.com/wp-content/uploads/2023/04/us-cargo-contact-us-banner.jpg)',
         backgroundPosition: 'center center',
@@ -28,6 +47,7 @@ function Contact() {
         backgroundAttachment: 'fixed',
         position: 'relative',
         width: '100%',
+        overflow: 'hidden',
       }}>
 
         <Box sx={{
@@ -252,7 +272,8 @@ function Contact() {
         </Box>
 
         <Box sx={{
-          width: '590px'
+          width: {xs: '500px', lg: '590px'},
+          mt: {xs: 10, lg: 0}
         }} data-aos="fade-left">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3524.652346076398!2d-82.47230212400187!3d27.94330121504419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c483624ec7f1%3A0x21cfceac87883ecf!2s1001%20W%20Cleveland%20St%2C%20Tampa%2C%20FL%2033606%2C%20USA!5e0!3m2!1sen!2sin!4v1712344582693!5m2!1sen!2sin" width="100%" height={400} style={{ border: 'none' }}></iframe>
         </Box>

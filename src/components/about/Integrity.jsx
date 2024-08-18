@@ -9,8 +9,6 @@ import {
 } from "../../pages/how-it-works/styles";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import DescriptionIcon from "@mui/icons-material/Description";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 function Integrity() {
   return (
@@ -35,7 +33,7 @@ function Integrity() {
               textAlign: "center",
             }}
           >
-            <Title2 variant="h2" data-aos='fade-up'>
+            <Title2 variant="h2">
               Trust
               <Box component="span" sx={{ color: "#E01933" }}>
                 .
@@ -45,7 +43,7 @@ function Integrity() {
                 .
               </Box>
             </Title2>
-            <BodyText1 variant="subtitle1" data-aos='fade-up'>
+            <BodyText1 variant="subtitle1">
               Your vehicle is our priority. Safe and reliable car shipping you
               can trust. Experience integrity and professionalism in every auto
               transit.
@@ -77,7 +75,6 @@ function Integrity() {
                   opacity: 0.8,
                 },
               }}
-              data-aos='fade-right'
             >
               Get Instant Quote
             </ButtonStyled>
@@ -95,7 +92,6 @@ function Integrity() {
                   opacity: 0.8,
                 },
               }}
-              data-aos='fade-left'
             >
               Call At (888) 249-8840
             </ButtonStyled>

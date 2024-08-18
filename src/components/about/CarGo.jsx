@@ -7,8 +7,6 @@ import {
   ButtonStyled,
 } from "../../pages/how-it-works/styles";
 import CarGoCard from "./cards/CarGoCard";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 const CarGoCardData = [
   {
@@ -43,7 +41,7 @@ function CarGo() {
         <Container maxWidth="xl">
           <Box component={"div"}>
             <Box component={"div"} sx={{ marginBottom: "50px" }}>
-              <Title variant="h3" color={"#fff"} sx={{ textAlign: "center" }} data-aos='fade-up'>
+              <Title variant="h3" color={"#fff"} sx={{ textAlign: "center" }}>
                 US Car-Go Freight{" "}
               </Title>
             </Box>
@@ -51,7 +49,7 @@ function CarGo() {
               component={"div"}
               sx={{
                 display: "flex",
-                justifyContent: "space-around",
+                justifyContent: "space-between",
                 alignItems: { xs: "center", sm: "center", md: "flex-start" },
                 flexDirection: { xs: "column", sm: "column", md: "row" },
               }}
@@ -74,7 +72,6 @@ function CarGo() {
                   opacity: 0.8,
                 },
               }}
-              data-aos='fade-up'
             >
               Get a Quote
             </ButtonStyled>

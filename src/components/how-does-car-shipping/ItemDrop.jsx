@@ -14,16 +14,14 @@ function ItemDrop({ list, title, text, dark, listDot, itemget }) {
           display: "flex",
           alignItems: "center",
           gap: "10px",
-          width: itemget ? "90%" : "100%",
+          width: "100%",
           padding: "15px",
           border: `2px solid ${dark ? "#fff" : "rgba(0, 0, 0, 0.2)"}`,
           borderRadius: "50px",
           cursor: "pointer",
           userSelect: "none",
-          margin: "0 auto",
         }}
         onClick={() => setDropToggle((prev) => !prev)}
-        // data-aos="fade-up"
       >
         <Box
           component={"div"}

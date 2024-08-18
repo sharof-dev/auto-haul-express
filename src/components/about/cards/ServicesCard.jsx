@@ -3,8 +3,6 @@ import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { BodyText } from "../../../pages/how-it-works/styles";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 function ServicesCard({ icon, title, text, hiddenText, bigIcon }) {
   const [collapse, setCollapse] = useState(false);
@@ -29,7 +27,6 @@ function ServicesCard({ icon, title, text, hiddenText, bigIcon }) {
             "-5px 5px 0px 0px rgba(153, 24.999999999999996, 50.999999999999986, 0.8509803921568627)",
         },
       }}
-      data-aos="fade-up"
     >
       <Box
         component={"div"}

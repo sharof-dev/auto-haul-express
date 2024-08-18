@@ -1,8 +1,6 @@
 import { Box, Card, CardContent, Container, Typography } from "@mui/material";
 import { Section } from "../../pages/how-it-works/styles";
 import CardImg from "../how-does-car-shipping/cards/CardImg";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 function AutoTransport() {
   return (
@@ -32,7 +30,6 @@ function AutoTransport() {
                 boxShadow: "0",
                 backgroundColor: "#ffffff00",
               }}
-              data-aos='fade-right'
             >
               <Box
                 sx={{
@@ -44,7 +41,6 @@ function AutoTransport() {
                   overflow: "hidden",
                   backgroundColor: "#11172B",
                 }}
-                
               >
                 <CardContent sx={{ padding: "30px", width: "100%" }}>
                   <Typography

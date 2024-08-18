@@ -1,3 +1,4 @@
+import React from "react";
 import {
   BannerColor,
   BannerImage,
@@ -5,14 +6,13 @@ import {
   Title2,
   Title4,
 } from "../../pages/how-it-works/styles";
-import { Container, Typography, styled, useMediaQuery } from "@mui/material";
+import { Box, Container, styled, useMediaQuery } from "@mui/material";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { useTheme } from "@emotion/react";
 import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
-import AdjustIcon from "@mui/icons-material/Adjust";
 import SliderCard from "../car-shipping-cost/cards/SliderCard";
 import "./custom.css";
 
@@ -27,12 +27,11 @@ const VerticalTimelineText = styled(VerticalTimeline)(({ theme }) => ({
 function WhatAreThe({ title, titleCustome, data, text, background, br }) {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("xl"));
-
   const separate = (num) => (num % 2 ? "left" : "right");
 
   return (
     <>
-      <Section component={"section"} id="what-factors">
+      <Section component={"section"} id="what-are-the">
         {/* Banner Image */}
         <BannerImage
           image={background ? background : ""}
@@ -58,19 +57,21 @@ function WhatAreThe({ title, titleCustome, data, text, background, br }) {
             }}
           >
             {title} {br && <br />}{" "}
-            <span style={{ color: "#e01933" }}> {titleCustome}</span>
+            <span style={{ color: "#e01933" }}>{titleCustome}</span>
           </Title2>
-
           {text && (
             <Title4
               variant="h4"
               textcolor={"#7A7A7A"}
-              sx={{ margin: "10px 0px", fontWeight: 500, textAlign: "center" }}
+              sx={{
+                margin: "10px 0px",
+                fontWeight: 500,
+                textAlign: "center",
+              }}
             >
               {text}
             </Title4>
           )}
-
           <VerticalTimelineText
             animate={true}
             lineColor={background ? "#fff" : "#E01933"}

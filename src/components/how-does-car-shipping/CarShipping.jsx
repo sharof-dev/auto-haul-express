@@ -1,4 +1,8 @@
-import { Box, Button, Container, duration } from "@mui/material";
+import { Box, Button, Container } from "@mui/material";
+
+import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   BannerColor,
   BannerImage,
@@ -8,11 +12,26 @@ import {
   FormTitle,
   Title,
 } from "../../pages/how-it-works/styles";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
+import { useNavigate } from "react-router-dom";
 function CarShipping() {
+  const navigate = useNavigate()
+  const [originZip, setOriginZip] = useState("");
+  const [destinationZip, setDestinationZip] = useState("");
+  const handleSubmit = (e) => {
+    if(originZip === '' || destinationZip === ''){
+      alert("Please fill in both fields");
+      return;
+    }else{
+      const setData ={
+        originZip: originZip,
+        destinationZip: destinationZip,
+        date: 3
+      }
+      localStorage.setItem('data', JSON.stringify(setData))
+
+      navigate(`/get-quote/${setData.date}`);
+    }
+  };
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -114,11 +133,13 @@ function CarShipping() {
                     name="origin-zip"
                     placeholder="Origin Zip or City"
                     variant="plain"
+                    onChange={e => setOriginZip(e.target.value)}
                   />
                   <FormInput
                     type="text"
                     name="destination-zip"
                     placeholder="Destination Zip or City"
+                    onChange={e => setDestinationZip(e.target.value)}
                   />
                 </Box>
                 <Button
@@ -139,6 +160,7 @@ function CarShipping() {
                     },
                   }}
                   disableRipple
+                  onClick={handleSubmit}
                 >
                   Continue
                 </Button>

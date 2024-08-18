@@ -67,7 +67,6 @@ function ClientsSay({ text }) {
               color: "#fff",
               textAlign: "center",
             }}
-            // data-aos="fade-up"
           >
             {text ? "Our Customer’s" : " What Our"}
 
@@ -82,7 +81,6 @@ function ClientsSay({ text }) {
               position: "relative",
               padding: { xs: "0", sm: "0", md: "0 45px" },
             }}
-            // data-aos="fade-right"
           >
             <Swiper
               style={{ padding: "5px" }}

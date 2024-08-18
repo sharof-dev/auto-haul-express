@@ -21,7 +21,6 @@ function CardImg({ img, mini, reverse }) {
         backgroundColor: "transparent",
         boxShadow: "0",
       }}
-      // data-aos="fade-left"
     >
       <Box
         component={"div"}

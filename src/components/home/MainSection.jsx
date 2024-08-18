@@ -1,7 +1,8 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography, styled } from "@mui/material";
 import Typewriter from "typewriter-effect/dist/core";
 import React, { useEffect, useRef } from "react";
 import GetQuote from "../GetQuote";
+
 const MainSection = () => {
   const typewriterContainerRef = useRef(null);
 
@@ -74,7 +75,7 @@ const MainSection = () => {
             >
               <Box>
                 <Typography
-                  sx={{ fontSize: { xs: "2.5rem", sm: "3rem" } }}
+                  sx={{fontSize: {xs: '2.5rem', sm: '3rem'}}}
                   color={"#e01933"}
                   fontWeight={600}
                   gutterBottom
@@ -107,13 +108,6 @@ const MainSection = () => {
               display={"flex"}
               justifyContent={"center"}
               alignItems={"center"}
-              data-aos="fade-left"
-              data-aos-offset="100"
-              data-aos-duration="1000"
-              data-aos-easing="ease-in-out"
-              data-aos-mirror="true"
-              data-aos-once="false"
-              data-aos-anchor-placement="top-center"
             >
               <GetQuote />
             </Grid>

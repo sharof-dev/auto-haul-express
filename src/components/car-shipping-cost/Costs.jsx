@@ -10,8 +10,28 @@ import {
 import { Title } from "../../pages/how-it-works/styles";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function Costs() {
+  const navigate = useNavigate()
+  const [originZip, setOriginZip] = useState("");
+  const [destinationZip, setDestinationZip] = useState("");
+  const handleSubmit = (e) => {
+    if(originZip === '' || destinationZip === ''){
+      alert("Please fill in both fields");
+      return;
+    }else{
+      const setData ={
+        originZip: originZip,
+        destinationZip: destinationZip,
+        date: 4
+      }
+      localStorage.setItem('data', JSON.stringify(setData))
+
+      navigate(`/get-quote/${setData.date}`);
+    }
+  };
   return (
     <>
       <Box
@@ -93,11 +113,13 @@ function Costs() {
                     name="origin-zip"
                     placeholder="Origin Zip or City"
                     variant="plain"
+                    onChange={e => setOriginZip(e.target.value)}
                   />
                   <FormInput
                     type="text"
                     name="destination-zip"
                     placeholder="Destination Zip or City"
+                    onChange={e => setDestinationZip(e.target.value)}
                   />
                 </Box>
                 <Button
@@ -118,6 +140,7 @@ function Costs() {
                     },
                   }}
                   disableRipple
+                  onClick={handleSubmit}
                 >
                   Continue
                 </Button>

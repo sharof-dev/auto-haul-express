@@ -111,23 +111,11 @@ function WhatOur({ data, sliderDataClients }) {
                 prevEl: ".swipper-button-prev",
               }}
               speed={2500}
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-              }}
+              // autoplay={{
+              //   delay: 3000,
+              //   disableOnInteraction: false,
+              // }}
               modules={[Navigation, Autoplay]}
-              breakpoints={{
-                // Adjust slidesPerView for different breakpoints
-                600: {
-                  slidesPerView: 1,
-                },
-                768: {
-                  slidesPerView: 2,
-                },
-                1024: {
-                  slidesPerView: 3,
-                },
-              }}
             >
               {data ? (
                 <>

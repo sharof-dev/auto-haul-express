@@ -2,6 +2,7 @@ import CardImg from "../how-does-car-shipping/cards/CardImg";
 import CardDrop from "../how-does-car-shipping/CardDrop";
 import { Section } from "../../pages/how-it-works/styles";
 import { Box, Container } from "@mui/material";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 function ProcessOf() {

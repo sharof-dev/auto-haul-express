@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   Grid,
   Card,
@@ -8,15 +8,7 @@ import {
   Box,
 } from "@mui/material";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
-
 const ShippingSteps = ({ title, titleMark, data, cardBg }) => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  });
   return (
     <Box
       sx={{
@@ -43,15 +35,7 @@ const ShippingSteps = ({ title, titleMark, data, cardBg }) => {
       />
       <Container maxWidth="xl" sx={{ position: "relative", zIndex: 2 }}>
         <Grid container spacing={4} justifyContent="center">
-          <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            style={{ textAlign: "center" }}
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
+          <Grid item xs={12} sm={12} md={12} style={{ textAlign: "center" }}>
             {title && (
               <Typography
                 sx={{ fontSize: { xs: "1.8rem", sm: "4rem" } }}
@@ -67,15 +51,7 @@ const ShippingSteps = ({ title, titleMark, data, cardBg }) => {
           </Grid>
           {data &&
             data.map((item, index) => (
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                key={index}
-                data-aos="fade-up"
-                data-aos-duration="1000"
-              >
+              <Grid item xs={12} sm={6} md={4} key={index}>
                 <Card
                   sx={{
                     backgroundColor: "white",

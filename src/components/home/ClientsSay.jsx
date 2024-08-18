@@ -1,7 +1,6 @@
 import React from "react";
 import WhatOur from "../car-shipping-cost/WhatOur";
-import { Swiper, SwiperSlide } from "swiper/react";
-const bottomText = true;
+
 const sliderDataClients = [
   {
     id: 0,
@@ -176,7 +175,7 @@ const sliderDataClients = [
 const ClientsSay = () => {
   return (
     <>
-      <WhatOur data={bottomText} sliderDataClients={sliderDataClients} />
+      <WhatOur data={sliderDataClients} />
     </>
   );
 };

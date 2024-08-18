@@ -1,8 +1,6 @@
 import { Box, Button, FormGroup, Input, Typography, styled } from "@mui/material";
-import React from "react";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-
+import React, { useState } from "react";
+import { json, useNavigate } from "react-router-dom";
 const FormContainer = styled(FormGroup)(({ theme }) => ({
   padding: "20px 30px",
   width: "80%",
@@ -39,8 +37,26 @@ const FormInput = styled(Input)(() => ({
 }));
 
 const GetQuote = () => {
+  const navigate = useNavigate()
+  const [originZip, setOriginZip] = useState("");
+  const [destinationZip, setDestinationZip] = useState("");
+  const handleSubmit = (e) => {
+    if(originZip === '' || destinationZip === ''){
+      alert("Please fill in both fields");
+      return;
+    }else{
+      const setData ={
+        originZip: originZip,
+        destinationZip: destinationZip,
+        date: 1
+      }
+      localStorage.setItem('data', JSON.stringify(setData))
+
+      navigate(`/get-quote/${1}`);
+    }
+  };
   return (
-    <FormContainer data-aos='fade-left'>
+    <FormContainer>
       <Box>
         <FormTitle variant="h2">Fill Up the Get Quote Form</FormTitle>
         <FormTitle variant="h4">
@@ -54,11 +70,13 @@ const GetQuote = () => {
           name="origin-zip"
           placeholder="Origin Zip or City"
           variant="plain"
+          onChange={e => setOriginZip(e.target.value)}
         />
         <FormInput
           type="text"
           name="destination-zip"
           placeholder="Destination Zip or City"
+          onChange={e => setDestinationZip(e.target.value)}
         />
       </Box>
       <Button
@@ -79,6 +97,7 @@ const GetQuote = () => {
           },
         }}
         disableRipple
+        onClick={handleSubmit}
       >
         Continue
       </Button>

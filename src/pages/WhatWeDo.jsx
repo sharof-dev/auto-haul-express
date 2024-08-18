@@ -119,7 +119,6 @@ const WhatWeDo = () => {
         }
         br={true}
       />
-      <OurServiceProgress data={[]} titleColor={true} />
     </>
   );
 };

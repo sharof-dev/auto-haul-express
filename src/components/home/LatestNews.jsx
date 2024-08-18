@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Typography, Grid, Card, CardContent, CardMedia, Box, Button, styled } from '@mui/material';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import zIndex from '@mui/material/styles/zIndex';
+import { BorderBottom, BorderTop } from '@mui/icons-material';
 const DateBox = styled(Box)(({ theme }) => ({
     width: '100px',
     height: 'auto',
@@ -54,7 +54,7 @@ const newsData = [
 ];
 
 const NewsCard = ({ date, image, title, author, dateFull, description }) => (
-    <Grid item xs={12} md={4}  data-aos='fade-up'  data-aos-duration='2000'>
+    <Grid item xs={12} md={4}>
         <Card sx={{ backgroundColor: '#11172b', color: 'white', borderRadius: 2, position: 'relative' }}>
             <CardMedia component="img" height="250" image={image} alt={title} />
             <DateBox>
@@ -90,7 +90,7 @@ const NewsCard = ({ date, image, title, author, dateFull, description }) => (
 
 const LatestNews = () => (
     <Container sx={{ py: 6 }}>
-        <Typography data-aos='fade-up' variant="h2" component="h2" gutterBottom sx={{ textAlign: 'center', fontWeight: 'bold', m: '2rem 0' }}>
+        <Typography variant="h2" component="h2" gutterBottom sx={{ textAlign: 'center', fontWeight: 'bold', m: '2rem 0' }}>
             Latest <span style={{ color: '#E53935' }}>News.</span>
         </Typography>
         <Grid container spacing={4}>
