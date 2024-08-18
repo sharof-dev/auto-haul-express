@@ -18,24 +18,34 @@ import "aos/dist/aos.css";
 import {
   BannerColor,
   BannerImage,
+  Heading,
   Section,
+  Title4,
 } from "../../pages/how-it-works/styles";
 
 // Styled components
-const CircleContainer = styled("div")({
+const CircleContainer = styled("div")(({ theme }) => ({
   position: "relative",
-  width: "600px",
+  width: "100%",
+  maxWidth: "600px",
   height: "600px",
   borderRadius: "50%",
   border: "1px solid silver",
-  margin: "0 auto",
-  marginTop: "50px",
+  margin: "120px auto",
   marginBottom: "150px",
-  maxWidth: "600px",
-});
+  [theme.breakpoints.down("md")]: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "20px",
+    border: "0px",
+    height: "auto",
+    margin: "40px auto",
+  },
+}));
 
 const ServiceItem = styled("div")(
-  ({ top, left, backgroundColor, isActive }) => ({
+  ({ top, left, backgroundColor, isActive, theme }) => ({
     position: "absolute",
     width: "150px",
     height: "150px",
@@ -55,6 +65,12 @@ const ServiceItem = styled("div")(
       "transform 0.5s ease, background-color 0.3s ease, z-index 0.3s ease",
     zIndex: isActive ? 2 : 1,
     cursor: "pointer",
+    [theme.breakpoints.down("md")]: {
+      position: "relative",
+      top: 0,
+      left: 0,
+      transform: "translate(0%, 0%)",
+    },
   })
 );
 
@@ -191,7 +207,7 @@ function App({ background, backgroundColor, title, text }) {
           maxWidth="lg"
           style={{ textAlign: "center", marginTop: title ? "0" : "50px" }}
         >
-          <Typography
+          <Heading
             variant="h2"
             fontWeight={600}
             sx={{ color: background ? "#fff" : "#11172B" }}
@@ -203,8 +219,8 @@ function App({ background, backgroundColor, title, text }) {
                 What Makes <HighlightedSpan>Us Different?</HighlightedSpan>
               </>
             )}
-          </Typography>
-          <Typography variant="h5" color={"silver"}>
+          </Heading>
+          <Title4 variant="h5" textcolor={"silver"} sx={{ fontWeight: 400 }}>
             {text ? (
               text
             ) : (
@@ -213,20 +229,39 @@ function App({ background, backgroundColor, title, text }) {
                 <strong>auto shipping services</strong>
               </>
             )}
-          </Typography>
+          </Title4>
           <CircleContainer>
             {services.map((service, index) => (
-              <ServiceItem
+              <Box
                 key={index}
-                top={service.top}
-                left={service.left}
-                backgroundColor={service.backgroundColor}
-                isActive={activeServiceId === service.id}
-                onClick={() => setActiveServiceId(service.id)}
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: "15px",
+                }}
               >
-                {service.icon}
-                <Typography variant="body1">{service.title}</Typography>
-              </ServiceItem>
+                <ServiceItem
+                  top={service.top}
+                  left={service.left}
+                  backgroundColor={service.backgroundColor}
+                  isActive={activeServiceId === service.id}
+                  onClick={() => setActiveServiceId(service.id)}
+                >
+                  {service.icon}
+                  <Typography variant="body1">{service.title}</Typography>
+                </ServiceItem>
+
+                <Typography
+                  variant="body1"
+                  sx={{
+                    display: { xs: "block", sm: "block", md: "none" },
+                    color: background ? "#fff" : "#0D1B2A",
+                  }}
+                >
+                  {serviceTxt[index].desc}
+                </Typography>
+              </Box>
             ))}
             <Box
               position="absolute"
@@ -238,8 +273,12 @@ function App({ background, backgroundColor, title, text }) {
               zIndex="0"
               display={"grid"}
               placeItems="center"
+              sx={{ display: { xs: "none", sm: "none", md: "block" } }}
             >
-              <Typography variant="body1" style={{ color: "#0D1B2A" }}>
+              <Typography
+                variant="body1"
+                style={{ color: background ? "#fff" : "#0D1B2A" }}
+              >
                 {getServiceDesc(activeServiceId)
                   ? getServiceDesc(activeServiceId)
                   : serviceTxt[0].desc}

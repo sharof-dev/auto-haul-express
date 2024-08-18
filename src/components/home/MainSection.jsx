@@ -60,7 +60,7 @@ const MainSection = () => {
           alignItems: "center",
         }}
       >
-        <Container maxWidth="xl" sx={{ overflow: "hidden" }}>
+        <Container maxWidth="xl" sx={{ padding: "10px 0", overflow: "hidden" }}>
           <Grid container spacing={2}>
             {/* Left section */}
             <Grid
