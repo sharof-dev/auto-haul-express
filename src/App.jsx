@@ -36,14 +36,20 @@ import CrosCountry from "./pages/how-it-works/CrosCountry";
 import HowDoesCarShipping from "./pages/how-it-works/HowDoesCarShipping";
 import BlogRout from "./layout/BlogRout";
 
-import ScrollToTop from 'react-scroll-to-top';
+import ScrollToTop from "react-scroll-to-top";
 
 const App = () => {
   return (
     <>
       <Header />
       <Navbar />
-      <ScrollToTop smooth style={{bottom: 200, right: 15, fontSize: '18px'}} width="20" height="20"color="#E01933" />
+      <ScrollToTop
+        smooth
+        style={{ bottom: 200, right: 15, fontSize: "18px" }}
+        width="20"
+        height="20"
+        color="#E01933"
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -87,7 +93,7 @@ const App = () => {
         </Route>
         <Route path="/get-quote/:id" element={<GetQuote />} />
       </Routes>
-       
+
       <Footer />
     </>
   );

@@ -2,6 +2,8 @@ import { Box, Container, IconButton, Typography } from "@mui/material";
 import {
   BannerColor,
   BannerImage,
+  BodyText1,
+  Heading,
   Section,
 } from "../../pages/how-it-works/styles";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -36,32 +38,29 @@ function ClientsSaySlider({
 
       <Container maxWidth="xl">
         <Container maxWidth="xl">
-          <Typography
+          <Heading
             variant="h4"
             sx={{
               marginBottom: "30px",
               fontWeight: 700,
-              fontSize: { sm: "35px", md: "60px" },
-              color: "#fff",
               textAlign: "center",
             }}
           >
             {title}
-          </Typography>
+          </Heading>
 
           {subTitle && (
-            <Typography
+            <BodyText1
               variant="h4"
               sx={{
                 marginBottom: "20px",
                 fontWeight: 500,
-                fontSize: { sm: "18px", md: "20px" },
                 color: "#F9F9F9",
                 textAlign: "center",
               }}
             >
               {subTitle}
-            </Typography>
+            </BodyText1>
           )}
 
           <Box

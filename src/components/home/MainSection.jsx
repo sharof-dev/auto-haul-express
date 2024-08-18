@@ -2,6 +2,7 @@ import { Box, Container, Grid, Typography, styled } from "@mui/material";
 import Typewriter from "typewriter-effect/dist/core";
 import React, { useEffect, useRef } from "react";
 import GetQuote from "../GetQuote";
+import { BodyText, Heading } from "../../pages/how-it-works/styles";
 
 const MainSection = () => {
   const typewriterContainerRef = useRef(null);
@@ -61,7 +62,10 @@ const MainSection = () => {
           alignItems: "center",
         }}
       >
-        <Container maxWidth="xl" sx={{ padding: "10px 0", overflow: "hidden" }}>
+        <Container
+          maxWidth="xl"
+          sx={{ padding: "10px 5px", overflow: "hidden" }}
+        >
           <Grid container spacing={2}>
             {/* Left section */}
             <Grid
@@ -70,33 +74,39 @@ const MainSection = () => {
               sm={6}
               sx={{
                 textAlign: { xs: "center", sm: "left" },
-                mb: { xs: 4, sm: 0 },
+                mb: { xs: 0, sm: 0 },
               }}
             >
               <Box>
                 <Typography
-                  sx={{fontSize: {xs: '2.5rem', sm: '3rem'}}}
+                  sx={{ fontSize: { xs: "2.5rem", sm: "3rem" } }}
                   color={"#e01933"}
                   fontWeight={600}
                   gutterBottom
                   ref={typewriterContainerRef}
                 ></Typography>
                 <Typography
-                  sx={{ fontSize: { xs: "2.5rem", sm: "3rem" } }}
+                  sx={{
+                    fontSize: {
+                      xs: "2.4rem",
+                      sm: "3rem",
+                      lineHeight: "normal",
+                    },
+                  }}
                   fontWeight={500}
                 >
                   auto shipping services.
                 </Typography>
                 <br />
-                <Typography
-                  sx={{ fontSize: { xs: "1.5rem", sm: "2.5rem" } }}
-                  fontWeight={500}
-                >
+                <BodyText sx={{ fontWeight: 500 }}>
                   Welcome to{" "}
                   <span style={{ color: "#e01933" }}>US CAR-GO FREIGHT</span>.{" "}
-                  <br />
+                  <Box
+                    component={"br"}
+                    sx={{ display: { xs: "none", sm: "none", md: "block" } }}
+                  />
                   Your one-stop solution for shipping your vehicle nationwide.
-                </Typography>
+                </BodyText>
               </Box>
             </Grid>
 
