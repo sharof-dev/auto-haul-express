@@ -12,7 +12,6 @@ import MiniCard from "../components/home/MiniCard";
 import LatestNews from "../components/home/LatestNews";
 import WhatAreThe from "../components/cross-country/WhatAreThe";
 import ShippingSteps from "../components/home/ShippingSets";
-import { enclosedClientsSaySliderData } from "../constans";
 import { Box } from "@mui/material";
 
 const steps = [

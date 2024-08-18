@@ -50,7 +50,7 @@ function SliderCard({ Icon, img, title, text, timeline, matches, background }) {
       sx={{
         // marginTop: `${Icon ? "75px" : "0px"}`,
         marginTop: matches ? "30px" : "0px",
-        maxWidth: `${timeline ? "100%" : "493px"}`,
+        maxWidth: `${matches ? "100%" : "493px"}`,
         width: "100%",
         minHeight: matches ? "auto" : `${timeline ? "auto" : "570px"}`,
         padding: "30px",
